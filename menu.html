@@ -1,118 +1,14 @@
-<!-- 2026-09-08 00:48 変更済み -->
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>お料理メニュー | 中国料理 福林楼</title>
-<meta name="description" content="中国料理 福林楼のお料理メニューです。店内でご提供している点心・前菜・主菜・定食・お酒・コースをご覧いただけます。">
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap');
-  :root{--paper:#f7f0e3;--paper-deep:#eee0c8;--ink:#282018;--red:#8f2b1b;--gold:#a9822c;--line:#dbcdb5;--white:#fffdfa}
-  *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--paper);color:var(--ink);font-family:"Noto Sans JP",sans-serif;line-height:1.7}
-  a{color:inherit}.wrap{width:min(1040px,calc(100% - 36px));margin:auto}.topbar{background:var(--red);color:#fffaf0}.topbar-inner{min-height:66px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{font-family:"Noto Serif JP",serif;font-size:1.35rem;font-weight:700;text-decoration:none;letter-spacing:.08em}.brand small{display:block;font-family:"Noto Sans JP",sans-serif;font-size:.62rem;font-weight:400;letter-spacing:.12em;opacity:.8}
-  .top-links{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.top-links a{font-size:.82rem;text-decoration:none;border:1px solid rgba(255,255,255,.65);padding:6px 12px;border-radius:3px}.top-links a:hover{background:#fff;color:var(--red)}
-  .intro{padding:46px 0 28px;background:linear-gradient(115deg,#f7f0e3,#f3e6d0)}.eyebrow{font-size:.72rem;letter-spacing:.22em;color:var(--red);font-weight:700}.intro h1{font-family:"Noto Serif JP",serif;font-size:clamp(2rem,5vw,3rem);margin:7px 0 12px}.intro p{max-width:42rem;margin:0;color:#594d42}.view-note{margin:24px 0 0;border-left:4px solid var(--gold);background:#fffaf1;padding:13px 16px;font-size:.9rem}
-  .tabs{position:sticky;top:0;z-index:3;background:rgba(247,240,227,.95);backdrop-filter:blur(8px);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.tab-row{display:flex;gap:8px;overflow:auto;padding:12px 0}.tab-row a{white-space:nowrap;text-decoration:none;background:#fffdfa;border:1px solid var(--line);border-radius:999px;padding:6px 13px;font-size:.8rem}.tab-row a:hover{border-color:var(--red);color:var(--red)}
-  main{padding:34px 0 60px}.menu-page{scroll-margin-top:70px;background:var(--white);border:1px solid var(--line);margin:0 0 28px;box-shadow:0 5px 18px rgba(49,33,15,.06)}.menu-page-head{padding:16px 20px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:baseline;gap:16px}.menu-page h2{font-family:"Noto Serif JP",serif;font-size:1.25rem;margin:0}.menu-page-head span{font-size:.76rem;color:#786a5d}.menu-page img{display:block;width:100%;height:auto;background:#fff}
-  .price-hidden-message{display:none;margin:0 0 20px;padding:13px 16px;background:#fff8eb;border:1px solid #dcc68e;font-size:.9rem}.prices-hidden .price-hidden-message{display:block}.footer{border-top:1px solid var(--line);padding:28px 0 34px;font-size:.8rem;color:#6d5f51}.footer p{margin:6px 0}
-  @media(max-width:620px){.topbar-inner{padding:10px 0}.top-links a{padding:5px 9px}.intro{padding-top:32px}.menu-page-head{padding:12px 14px}.menu-page h2{font-size:1.05rem}.wrap{width:min(100% - 24px,1040px)}main{padding-top:22px}.tab-row{padding-left:2px;padding-right:2px}}
-</style>
-</head>
-<body>
-<header class="topbar">
-  <div class="wrap topbar-inner">
-    <a class="brand" href="./index.html">福林楼<small>CHINESE RESTAURANT · HAKATA</small></a>
-    <nav class="top-links" aria-label="メニュー操作">
-      <a href="./index.html">ホーム</a>
-      <a href="tel:0924811369">電話で予約</a>
-    </nav>
-  </div>
-</header>
-
-<section class="intro">
-  <div class="wrap">
-    <div class="eyebrow">FOOD MENU</div>
-    <h1>お料理メニュー</h1>
-    <p>福林楼の店内メニューです。こちらのページから注文・予約はできません。ご予約はお電話で承ります。</p>
-    <div class="view-note" id="priceNote"></div>
-  </div>
-</section>
-
-<nav class="tabs" aria-label="メニューの種類"><div class="wrap tab-row" id="tabRow"></div></nav>
-
-<main class="wrap" id="menuContents">
-  <div class="price-hidden-message">現在、価格は掲載していません。内容やご予算については、店舗へお電話でお問い合わせください。</div>
-</main>
-
-<footer class="footer">
-  <div class="wrap">
-    <p>中国料理 福林楼　〒812-0016 福岡県福岡市博多区博多駅南3丁目7-14 岡元ビル</p>
-    <p>電話：<a href="tel:0924811369">092-481-1369</a>　月〜土 11:30〜14:30／17:30〜23:00　日曜 17:30〜23:00</p>
-  </div>
-</footer>
-
-<script>
-  // ===== 価格表示の設定：ここだけを書き換えてください =====
-  const SHOW_PRICES = true; // true：価格を表示　false：価格を非表示
-  // =====================================================
-
-  const menuPages = [
-    { id: 'dim-sum', title: '点心', sub: '自家製の点心', file: 'dim-sum.jpg' },
-    { id: 'appetizers', title: '前菜', sub: '前菜・おつまみ', file: 'appetizers.jpg' },
-    { id: 'main-1', title: '主菜①', sub: '海鮮・肉料理', file: 'main-1.jpg' },
-    { id: 'main-2', title: '主菜②', sub: '海鮮・肉料理', file: 'main-2.jpg' },
-    { id: 'vegetables', title: '野菜・スープ・デザート', sub: '野菜料理・スープ・甘味', file: 'vegetables-soup-dessert.jpg' },
-    { id: 'lunch-set', title: '昼セット', sub: 'ランチセット', file: 'lunch-set.jpg' },
-    { id: 'lunch-a-la-carte', title: '昼・単品／定食', sub: 'ランチ単品・定食', file: 'lunch-a-la-carte.jpg' },
-    { id: 'dinner-set', title: '夜セット', sub: '夜のセット', file: 'dinner-set.jpg' },
-    { id: 'dinner-a-la-carte', title: '夜・単品／定食', sub: '夜の単品・定食', file: 'dinner-a-la-carte.jpg' },
-    { id: 'drinks', title: 'お酒・ドリンク①', sub: 'サワー・果実酒・ソフトドリンク', file: 'drinks-1.jpg' },
-    { id: 'drinks-2', title: 'お酒・ドリンク②', sub: 'ビール・焼酎・中国酒', file: 'drinks-2.jpg' },
-    { id: 'course-drink', title: '飲み放題', sub: '飲み放題メニュー', file: 'course-drink.jpg' },
-    { id: 'course', title: 'コース', sub: '福林コース・招福コース・家族コース', file: 'course.jpg' }
-  ];
-
-  const imageFolder = SHOW_PRICES ? 'assets/menu/price/' : 'assets/menu/no-price/';
-  const tabRow = document.getElementById('tabRow');
-  const menuContents = document.getElementById('menuContents');
-  const priceNote = document.getElementById('priceNote');
-
-  if (!SHOW_PRICES) {
-    document.body.classList.add('prices-hidden');
-    priceNote.textContent = '現在は価格を掲載していません。料理内容は下のメニューからご覧いただけます。';
-  } else {
-    priceNote.textContent = '表示価格は税込みです。仕入れ状況等により内容・価格が変わる場合があります。';
-  }
-
-  menuPages.forEach(function(page) {
-    const tab = document.createElement('a');
-    tab.href = '#' + page.id;
-    tab.textContent = page.title;
-    tabRow.appendChild(tab);
-
-    const section = document.createElement('section');
-    section.className = 'menu-page';
-    section.id = page.id;
-
-    const head = document.createElement('div');
-    head.className = 'menu-page-head';
-    const title = document.createElement('h2');
-    title.textContent = page.title;
-    const sub = document.createElement('span');
-    sub.textContent = page.sub;
-    head.appendChild(title);
-    head.appendChild(sub);
-
-    const image = document.createElement('img');
-    image.src = imageFolder + page.file;
-    image.alt = '福林楼 ' + page.title + 'メニュー';
-    image.loading = 'lazy';
-
-    section.appendChild(head);
-    section.appendChild(image);
-    menuContents.appendChild(section);
-  });
-</script>
-</body>
-</html>
+<!-- 2026-09-08 01:20 変更済み -->
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>お料理メニュー｜福林楼</title><style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap');:root{--p:#f7f0e3;--w:#fffdfa;--i:#292017;--r:#8f2b1b;--g:#aa812d;--l:#dfd0b7}*{box-sizing:border-box}body{margin:0;background:var(--p);color:var(--i);font-family:"Noto Sans JP",sans-serif}.wrap{width:min(1040px,calc(100% - 28px));margin:auto}.bar{background:var(--r);color:white}.bar .wrap{min-height:62px;display:flex;justify-content:space-between;align-items:center;gap:12px}.brand{font:700 1.25rem "Noto Serif JP";text-decoration:none;color:white}.toplink{color:white;text-decoration:none;border:1px solid #ffffff99;border-radius:3px;padding:6px 10px;font-size:.8rem}.intro{padding:32px 0 24px}.tag{color:var(--r);font-size:.72rem;letter-spacing:.2em;font-weight:bold}.intro h1{font:700 clamp(1.8rem,5vw,2.6rem) "Noto Serif JP";margin:5px 0}.intro p{margin:0;color:#67594c;font-size:.9rem}.notice{margin-top:14px;padding:10px 13px;border-left:4px solid var(--g);background:#fff9ef;font-size:.85rem}.tabs{border-block:1px solid var(--l);background:#fdf7ec;position:sticky;top:0;z-index:5}.tabs .wrap{display:flex;gap:7px;overflow:auto;padding:10px 0}.tabs button,.move button{font:inherit;cursor:pointer;white-space:nowrap;border:1px solid var(--l);background:var(--w);border-radius:999px;padding:6px 12px;font-size:.8rem}.tabs button:hover,.move button:hover{border-color:var(--r);color:var(--r)}main{padding:26px 0 46px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card{border:1px solid var(--l);background:var(--w);padding:0;text-align:left;cursor:pointer;overflow:hidden}.card img{display:block;width:100%;aspect-ratio:1.15;object-fit:cover;object-position:top}.card div{padding:11px 12px}.card b{font-family:"Noto Serif JP";font-size:1rem}.card span{display:block;font-size:.75rem;color:#78695b;margin-top:2px}.card:hover{transform:translateY(-2px);box-shadow:0 8px 20px #4c30121a}.detail{display:none}.detail.show{display:block}.back{margin-bottom:14px}.back button{border:0;background:none;padding:0;color:var(--r);font-weight:bold;cursor:pointer}.detail-head{display:flex;justify-content:space-between;gap:12px;align-items:end;margin:4px 0 12px}.detail h2{font:700 1.5rem "Noto Serif JP";margin:0}.detail img{width:100%;display:block;border:1px solid var(--l);background:white}.move{display:flex;justify-content:space-between;gap:10px;margin-top:16px}.priceOff{display:none;margin:0 0 12px;padding:10px;background:#fff9ef;border:1px solid #dec887;font-size:.83rem}.hide .priceOff{display:block}@media(max-width:620px){.grid{grid-template-columns:repeat(2,1fr);gap:10px}.card div{padding:9px}.card b{font-size:.9rem}.intro{padding-top:25px}.detail h2{font-size:1.25rem}}
+</style></head><body><header class="bar"><div class="wrap"><a class="brand" href="./index.html">福林楼</a><a class="toplink" href="./index.html">ホームへ</a></div></header><section class="intro"><div class="wrap"><div class="tag">FOOD MENU</div><h1>お料理メニュー</h1><p>閲覧専用です。ご注文・ご予約はお電話で承ります。</p><div class="notice" id="note"></div></div></section><nav class="tabs"><div class="wrap" id="tabs"></div></nav><main class="wrap"><div class="priceOff">現在は価格を掲載していません。内容は店舗へお問い合わせください。</div><section id="list"><div class="grid" id="grid"></div></section><section class="detail" id="detail"><p class="back"><button onclick="showList()">← メニュー一覧へ</button></p><div class="detail-head"><h2 id="title"></h2><span id="sub"></span></div><img id="image" alt=""><div class="move"><button id="prev">← 前のメニュー</button><button id="next">次のメニュー →</button></div></section></main><script>
+// ===== 価格表示の設定：ここだけを書き換えてください =====
+const SHOW_PRICES=true; // true：表示　false：非表示
+const pages=[['dim-sum','点心','自家製の点心','dim-sum.jpg'],['appetizers','前菜類','前菜・おつまみ','appetizers.jpg'],['main-1','主菜①','海鮮・肉料理','main-1.jpg'],['main-2','主菜②','海鮮・肉料理','main-2.jpg'],['vegetables','野菜・スープ・デザート','野菜料理・甘味','vegetables-soup-dessert.jpg'],['drinks','お酒・ドリンク①','サワー・果実酒など','drinks-1.jpg'],['drinks-2','お酒・ドリンク②','ビール・焼酎・中国酒','drinks-2.jpg'],['course-drink','飲み放題','飲み放題メニュー','course-drink.jpg'],['course','コース料理','福林・招福・家族コース','course.jpg']];
+const folder=SHOW_PRICES?'assets/menu/price/':'assets/menu/no-price/';let current=0;
+const q=id=>document.getElementById(id);if(!SHOW_PRICES){document.body.classList.add('hide');q('note').textContent='現在、価格は掲載していません。';}else q('note').textContent='表示価格は税込みです。';
+pages.forEach((p,i)=>{let b=document.createElement('button');b.textContent=p[1];b.onclick=()=>show(i);q('tabs').append(b);let c=document.createElement('button');c.className='card';c.innerHTML='<img src="'+folder+p[3]+'" alt="'+p[1]+'"><div><b>'+p[1]+'</b><span>'+p[2]+'</span></div>';c.onclick=()=>show(i);q('grid').append(c);});
+function show(i){current=(i+pages.length)%pages.length;let p=pages[current];q('title').textContent=p[1];q('sub').textContent=p[2];q('image').src=folder+p[3];q('image').alt='福林楼 '+p[1]+'メニュー';q('list').style.display='none';q('detail').classList.add('show');history.replaceState(null,'','#'+p[0]);window.scrollTo({top:0,behavior:'smooth'});}
+function showList(){q('detail').classList.remove('show');q('list').style.display='block';history.replaceState(null,'','#menu');window.scrollTo({top:0,behavior:'smooth'});}
+q('prev').onclick=()=>show(current-1);q('next').onclick=()=>show(current+1);let initial=pages.findIndex(p=>p[0]===location.hash.slice(1));if(initial>=0)show(initial);
+</script></body></html>

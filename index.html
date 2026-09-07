@@ -1,4 +1,4 @@
-<!-- 2026-09-08 00:55 変更済み -->
+<!-- 2026-09-08 01:20 変更済み -->
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -185,9 +185,9 @@
   }
 
   /* sections */
-  section{ padding: 72px 0; }
+  section{ padding: 52px 0; }
   section + section{ border-top: 1px solid var(--line); }
-  .section-head{ margin-bottom: 40px; }
+  .section-head{ margin-bottom: 26px; }
   .section-head .label{
     font-size: 0.74rem; color: var(--jade); letter-spacing: 0.22em; margin-bottom: 8px;
   }
@@ -248,7 +248,8 @@
   .seasonal-period{ font-size:.82rem!important; color:var(--jade); font-weight:700; }
   .category-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
   @media (max-width:720px){ .category-grid{ grid-template-columns:repeat(2,1fr); } }
-  .category-item{ padding:17px; border:1px solid var(--line); background:#fbf7ef; }
+  .category-item{ padding:17px; border:1px solid var(--line); background:#fbf7ef; text-decoration:none; transition:.15s ease; }
+  a.category-item:hover{border-color:var(--brass);transform:translateY(-2px);box-shadow:0 8px 18px rgba(33,28,22,.08)}
   .category-item h3{ font-size:1rem; }
   .category-item p{ margin:4px 0 0; font-size:.82rem; opacity:.75; }
   .gallery-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:18px; }
@@ -404,12 +405,12 @@
         <p>定食・一品料理・前菜・麺飯・点心・デザート・お酒／ドリンクをそろえています。</p>
       </div>
       <div class="category-grid">
-        <div class="category-item"><h3>定食・一品料理</h3><p>毎日のお食事に</p></div>
-        <div class="category-item"><h3>前菜・海鮮料理</h3><p>おつまみから本格料理まで</p></div>
-        <div class="category-item"><h3>肉料理</h3><p>山東料理の味わい</p></div>
-        <div class="category-item"><h3>野菜・豆腐料理</h3><p>定番の炒め物・麻婆豆腐</p></div>
-        <div class="category-item"><h3>麺・飯・スープ</h3><p>しっかり食べたい方に</p></div>
-        <div class="category-item"><h3>点心・デザート・ドリンク</h3><p>お食事の最後まで</p></div>
+        <a class="category-item" href="./menu.html#main-1"><h3>一品料理</h3><p>海鮮・肉料理</p></a>
+        <a class="category-item" href="./menu.html#appetizers"><h3>前菜類</h3><p>おつまみから本格料理まで</p></a>
+        <a class="category-item" href="./menu.html#main-2"><h3>肉・海鮮料理</h3><p>山東料理の味わい</p></a>
+        <a class="category-item" href="./menu.html#vegetables"><h3>野菜・スープ・デザート</h3><p>定番の炒め物・甘味</p></a>
+        <a class="category-item" href="./menu.html#dim-sum"><h3>点心</h3><p>自家製の味</p></a>
+        <a class="category-item" href="./menu.html#drinks"><h3>お酒・ドリンク</h3><p>お食事と一緒に</p></a>
       </div>
       <p class="menu-note">店内メニューをすべて掲載しています。こちらは閲覧専用で、ご注文はできません。</p>
       <p><a class="btn btn-line" href="./menu.html">全メニューを見る</a></p>
@@ -450,11 +451,11 @@
       <div class="section-head">
         <div class="label">RESERVATION</div>
         <h2>ご予約</h2>
-        <p>店内のお席は1名様から45名様までご予約を受け付けています。用途に合わせて、下のボタンからお進みください。</p>
+        <p>店内のお席は1名様から45名様までご予約を受け付けています。<br>用途に合わせて、下のボタンからお進みください。</p>
       </div>
       <div class="link-grid">
         <a class="link-card primary" href="tel:0924811369">
-          <div><div class="eyebrow">TABLE / COURSE</div><h3>店内・コースを予約</h3><p>1名様〜45名様まで受付しています。日時・人数・ご希望をお電話でお伝えください。</p></div>
+          <div><div class="eyebrow">TABLE / COURSE</div><h3>店内・コースを予約</h3><p>1名様〜45名様まで受付。<br>コースのネット予約は準備中です。</p></div>
           <div class="card-arrow">092-481-1369 →</div>
         </a>
         <a class="link-card" data-link="horsDOeuvreReservation" href="#">
