@@ -1,4 +1,4 @@
-<!-- 2026-09-07 23:00 変更済み -->
+<!-- 2026-09-08 00:20 変更済み -->
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -195,7 +195,7 @@
   }
   .notice-bar a{ color:inherit; font-weight:700; text-underline-offset:3px; }
   .link-grid{
-    display:grid; grid-template-columns:repeat(2, 1fr); gap:16px;
+    display:grid; grid-template-columns:repeat(3, 1fr); gap:16px;
   }
   @media (max-width: 640px){ .link-grid{ grid-template-columns:1fr; } }
   .link-card{
@@ -227,6 +227,13 @@
   .category-item{ padding:17px; border:1px solid var(--line); background:#fbf7ef; }
   .category-item h3{ font-size:1rem; }
   .category-item p{ margin:4px 0 0; font-size:.82rem; opacity:.75; }
+  .gallery-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+  @media (max-width:720px){ .gallery-grid{ grid-template-columns:1fr; } }
+  .gallery-card{ margin:0; background:#fbf7ef; border:1px solid var(--line); overflow:hidden; }
+  .gallery-card img{ width:100%; aspect-ratio:4/3; object-fit:cover; }
+  .gallery-card figcaption{ padding:15px 16px 17px; }
+  .gallery-card h3{ font-size:1.08rem; }
+  .gallery-card p{ margin:4px 0 0; font-size:.83rem; opacity:.76; }
   .history-text{ max-width:42em; margin:0; }
   .contact-box{ background:var(--ink); color:var(--ivory); padding:34px 32px; }
   .contact-box h2{ color:var(--ivory); font-size:1.65rem; }
@@ -311,6 +318,7 @@
       <ul id="navList">
         <li><a href="#limited">限定商品</a></li>
         <li><a href="#menu">お料理</a></li>
+        <li><a href="#gallery">料理写真</a></li>
         <li><a href="#reservation">ご予約</a></li>
         <li><a href="#access">店舗案内</a></li>
         <li><a data-link="instagram" href="#">Instagram</a></li>
@@ -327,7 +335,7 @@
     <div class="wrap">
       <div class="kicker">博多駅南 · 山東料理 · 町中華</div>
       <h1 id="hero-title">中国料理 福林楼<span class="yomi">フクリンロウ</span></h1>
-      <p class="copy">30年以上の経験を持つ中国人シェフがつくる、親しみのある本格中国料理。<br>普段のお食事からご宴会、オードブルまで、心を込めてご用意します。</p>
+      <p class="copy">30年以上の経験を持つ中国人シェフがつくる、親しみのある本格中国料理。普段のお食事からご宴会、おせち・オードブルまで、心を込めてご用意します。</p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="tel:0924811369">お電話で予約・お問い合わせ</a>
         <a class="btn btn-line" href="#reservation">予約方法を見る</a>
@@ -380,6 +388,31 @@
     </div>
   </section>
 
+  <section id="gallery">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="label">FOOD GALLERY</div>
+        <h2>福林楼の一皿</h2>
+        <p>定番料理の写真を掲載しています。季節の料理や新しい写真も、順次追加します。</p>
+      </div>
+      <!-- 写真を追加するときは、このgallery-cardを複製して画像・料理名・説明を差し替えます。 -->
+      <div class="gallery-grid">
+        <figure class="gallery-card">
+          <img src="assets/subuta.jpg" alt="福林楼の酢豚" loading="lazy">
+          <figcaption><h3>酢豚</h3><p>甘酢あんが香る、人気の定番料理です。</p></figcaption>
+        </figure>
+        <figure class="gallery-card">
+          <img src="assets/ebichili.jpg" alt="福林楼のエビのチリソース炒め" loading="lazy">
+          <figcaption><h3>エビのチリソース炒め</h3><p>ぷりっとしたエビを、特製チリソースで。</p></figcaption>
+        </figure>
+        <figure class="gallery-card">
+          <img src="assets/yakigyoza.jpg" alt="福林楼の焼き餃子" loading="lazy">
+          <figcaption><h3>焼き餃子</h3><p>外は香ばしく、中はジューシーに仕上げます。</p></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
   <section id="reservation">
     <div class="wrap">
       <div class="section-head">
@@ -393,16 +426,12 @@
           <div class="card-arrow">092-481-1369 →</div>
         </a>
         <a class="link-card" data-link="horsDOeuvreReservation" href="#">
-          <div><div class="eyebrow">TAKEOUT</div><h3>オードブルを予約</h3><p>お持ち帰り用オードブルの内容・受取日時を、専用の予約ページからお申し込みいただけます。</p></div>
+          <div><div class="eyebrow">OSECHI / TAKEOUT</div><h3>おせち・オードブルを予約</h3><p>おせち・お持ち帰り用オードブルの内容・受取日時を、専用の予約ページからお申し込みいただけます。</p></div>
           <div class="card-arrow">予約ページへ →</div>
         </a>
         <a class="link-card" data-link="instagram" href="#">
           <div><div class="eyebrow">FOLLOW US</div><h3>Instagram</h3><p>おすすめ料理、期間限定商品、営業に関するお知らせを発信しています。</p></div>
           <div class="card-arrow">Instagramを見る →</div>
-        </a>
-        <a class="link-card" data-link="contactPage" href="#">
-          <div><div class="eyebrow">ONLINE CONTACT</div><h3>お問い合わせフォーム</h3><p>オードブル予約に関するお問い合わせ、その他のご質問はこちらからお送りください。</p></div>
-          <div class="card-arrow">お問い合わせへ →</div>
         </a>
       </div>
     </div>
@@ -442,37 +471,24 @@
     </div>
   </section>
 
-  <section id="contact">
-    <div class="wrap">
-      <div class="contact-box">
-        <h2>お気軽にお問い合わせください</h2>
-        <p>店内予約・コースのご相談は、お電話が一番確実です。オードブルに関するご質問は、専用お問い合わせフォームもご利用いただけます。</p>
-        <div class="hero-actions" style="justify-content:flex-start; margin-top:0;">
-          <a class="btn btn-primary" href="tel:0924811369">電話する：092-481-1369</a>
-          <a class="btn btn-line" data-link="contactPage" href="#">お問い合わせフォーム</a>
-        </div>
-      </div>
-    </div>
-  </section>
 </main>
 
 <footer>
   <div class="wrap">
     <div><div class="brand">福林楼<small>CHINESE RESTAURANT · HAKATA</small></div></div>
     <div class="foot-links">
-      <a href="#limited">限定商品</a><a href="#menu">メニュー</a><a href="#reservation">ご予約</a><a href="#access">店舗案内</a><a data-link="instagram" href="#">Instagram</a>
+      <a href="#limited">限定商品</a><a href="#menu">メニュー</a><a href="#gallery">料理写真</a><a href="#reservation">ご予約</a><a href="#access">店舗案内</a><a data-link="instagram" href="#">Instagram</a>
     </div>
   </div>
   <div class="wrap copyright">&copy; 中国料理 福林楼</div>
 </footer>
 
 <script>
-  /* URLを受け取った後は、この4行だけを本物のURLに差し替えます。 */
+  /* メニューはQR注文システムに「閲覧専用画面」を追加後、そのURLを設定します。 */
   const siteLinks = {
-    instagram: '',
-    horsDOeuvreReservation: '',
-    contactPage: '',
-    fullMenu: ''
+    instagram: 'https://www.instagram.com/fukurinrou?stkn=aWtmb2x6bGxxd2Jv',
+    horsDOeuvreReservation: 'https://fukurinrou-osechi.yangshiyuan2004.workers.dev/',
+    fullMenu: './menu.html?view=menu'
   };
 
   document.querySelectorAll('[data-link]').forEach(function(link){

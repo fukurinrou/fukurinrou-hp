@@ -1,0 +1,317 @@
+<!-- 2026-09-08 00:15 変更済み -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+<title>福林楼 お料理メニュー</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FAF3E7;--paper-deep:#F1E7D3;--ink:#2B241D;--ink-soft:#6B6053;--lacquer:#A8362B;--lacquer-deep:#7C271F;--gold:#C9972B;--bamboo:#4B6350;--line:#DCD0B6;--white:#FFFDF8;--font-display:'Noto Serif JP',serif;--font-body:'Noto Sans JP',sans-serif;--font-ticket:'DM Mono',monospace}
+*{box-sizing:border-box}html,body{margin:0;padding:0}body{background:var(--paper);color:var(--ink);font-family:var(--font-body);-webkit-font-smoothing:antialiased}#app{min-height:100vh}button,input,textarea{font-family:var(--font-body)}button{cursor:pointer;border:none;background:none}.btn-primary{background:var(--lacquer);color:var(--white);font-weight:700;font-size:15px;padding:14px 20px;border-radius:5px}.btn-primary:disabled{background:#C9BBA3}.btn-ghost{color:var(--ink-soft);font-size:13px;padding:8px 10px;text-decoration:underline;text-underline-offset:3px}.loading{padding:60px 20px;text-align:center;color:var(--ink-soft);font-size:13.5px}.perforation{height:1px;background-image:repeating-linear-gradient(to right,var(--line) 0 6px,transparent 6px 12px)}::-webkit-scrollbar{height:0;width:0}
+
+.cust-wrap{max-width:560px;margin:0 auto;padding-bottom:98px}.cust-header{background:var(--lacquer);color:var(--white);padding:24px 20px 26px}.cust-header h1{font-family:var(--font-display);font-weight:900;font-size:28px;margin:0 0 4px}.cust-header .sub{font-size:13px;opacity:.88}.cat-tabs{display:flex;gap:6px;overflow-x:auto;padding:14px 16px;background:var(--paper);position:sticky;top:0;z-index:10;border-bottom:1px solid var(--line)}.cat-tab{flex:0 0 auto;font-size:13px;padding:7px 14px;border-radius:20px;color:var(--ink-soft);background:var(--white);border:1px solid var(--line);white-space:nowrap}.cat-tab.active{background:var(--ink);color:var(--white);border-color:var(--ink)}.menu-section{padding:6px 20px 8px}.menu-section h3{font-family:var(--font-display);font-size:15px;color:var(--lacquer-deep);margin:22px 0 4px}.menu-row{display:flex;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}.menu-row.sold-out{opacity:.5}.menu-row .info{flex:1;min-width:0}.menu-row .name{font-size:15px;font-weight:600}.menu-row .desc{font-size:12px;color:var(--ink-soft);margin-top:2px}.menu-row .price{font-family:var(--font-ticket);font-size:13.5px;color:var(--ink-soft);margin-top:4px}.option-hint{display:inline-block;margin-top:5px;font-size:11.5px;color:var(--lacquer);border:1px solid #d7aaa5;padding:2px 6px;border-radius:10px}.sold-out-tag{font-size:12px;color:var(--lacquer);font-weight:700;border:1px solid var(--lacquer);padding:5px 10px;border-radius:3px}.qty-stepper{display:flex;align-items:center}.qty-stepper button{width:32px;height:32px;border:1px solid var(--line);background:var(--white);font-size:17px;color:var(--lacquer);font-weight:700;border-radius:3px}.qty-stepper .n{width:28px;text-align:center;font-family:var(--font-ticket);font-size:14px}.add-option-btn{background:var(--white);border:1px solid var(--lacquer);color:var(--lacquer);font-weight:700;font-size:12px;padding:8px 10px;border-radius:4px;min-width:78px}.add-option-btn .mini-count{display:block;font-family:var(--font-ticket);font-size:10px;margin-top:2px;color:var(--ink-soft)}.cart-bar{position:fixed;left:0;right:0;bottom:0;z-index:20;max-width:560px;margin:0 auto;background:var(--ink);color:var(--white);padding:14px 18px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 -6px 20px rgba(0,0,0,.18)}.cart-bar .count{font-family:var(--font-ticket);font-size:12px;background:var(--gold);color:var(--ink);padding:2px 7px;border-radius:10px;margin-right:8px}.cart-bar .total{font-weight:700}.cart-bar .go{background:var(--lacquer);color:var(--white);font-weight:700;font-size:14px;padding:11px 18px;border-radius:3px}.review-wrap{padding:18px 20px 40px}.review-wrap h2{font-family:var(--font-display);font-size:20px}.review-line{display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px dashed var(--line);font-size:14px}.review-option{font-size:12px;color:var(--lacquer-deep);margin-top:3px}.review-total{display:flex;justify-content:space-between;font-weight:700;font-size:17px;padding:16px 0 4px}.confirm-wrap{padding:60px 24px;text-align:center;max-width:420px;margin:0 auto}.confirm-ticket{background:var(--white);border:1px solid var(--line);padding:28px 20px;margin-top:20px}.confirm-ticket .num{font-family:var(--font-ticket);font-size:34px;color:var(--lacquer)}.confirm-ticket .label{font-size:12px;color:var(--ink-soft);margin-top:4px}.option-overlay{position:fixed;inset:0;background:rgba(43,36,29,.55);z-index:80;display:flex;align-items:flex-end;justify-content:center}.option-card{width:100%;max-width:560px;background:var(--white);border-radius:16px 16px 0 0;padding:20px;max-height:88vh;overflow:auto}.option-card h2{font-family:var(--font-display);font-size:19px;margin:0 0 4px}.option-card .op-price{color:var(--ink-soft);font-size:13px;margin-bottom:16px}.option-group{margin:16px 0}.option-group-title{font-weight:700;font-size:13.5px;margin-bottom:8px}.option-choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.option-choice{position:relative}.option-choice input{position:absolute;opacity:0}.option-choice span{display:block;text-align:center;border:1px solid var(--line);background:var(--paper);padding:10px 8px;border-radius:4px;font-size:13px}.option-choice input:checked+span{border-color:var(--lacquer);background:#fff2ef;color:var(--lacquer-deep);font-weight:700}.option-note{width:100%;border:1px solid var(--line);border-radius:4px;padding:10px;resize:none;font-size:13px}.option-actions{display:flex;gap:10px;margin-top:16px}.option-actions button{flex:1}.btn-secondary{background:var(--paper-deep);color:var(--ink);font-weight:700;font-size:14px;padding:13px;border-radius:4px}
+
+/* ===== 福林楼 v3: 写真・昼夜メニュー ===== */
+body{background:radial-gradient(circle at 20% 0%,rgba(201,151,43,.10),transparent 28%),linear-gradient(180deg,#fbf5e9 0%,#f8efe0 100%)}
+.cust-header{position:relative;overflow:hidden;padding:26px 20px 22px;background:linear-gradient(135deg,rgba(124,39,31,.98),rgba(168,54,43,.95));border-bottom:4px solid var(--gold)}
+.cust-header:before,.cust-header:after{content:"";position:absolute;width:140px;height:140px;border:1px solid rgba(255,255,255,.14);transform:rotate(45deg)}
+.cust-header:before{right:-60px;top:-80px}.cust-header:after{right:12px;top:-105px}
+.brand-kicker{font-size:11px;letter-spacing:.28em;opacity:.78;margin-bottom:3px}
+.cust-header h1{font-size:32px;letter-spacing:.09em;text-shadow:0 1px 0 rgba(0,0,0,.15)}
+.brand-seal{position:absolute;right:20px;bottom:18px;width:44px;height:44px;border:2px solid var(--gold);color:#ffe8a3;display:grid;place-items:center;font-family:var(--font-display);font-weight:900;font-size:22px;transform:rotate(-4deg);border-radius:4px}
+.service-banner{margin-top:14px;display:inline-flex;align-items:center;gap:8px;background:rgba(255,253,248,.13);border:1px solid rgba(255,255,255,.28);padding:7px 10px;border-radius:999px;font-size:12px}
+.service-dot{width:7px;height:7px;border-radius:50%;background:#ffe28a;box-shadow:0 0 0 3px rgba(255,226,138,.15)}
+.service-note{font-size:11px;opacity:.76;margin-top:7px}
+.menu-section{padding:8px 14px 12px}.menu-section>div{scroll-margin-top:62px}
+.section-head{margin:24px 6px 8px}.section-head h3{font-size:18px;margin:0;color:var(--lacquer-deep);display:flex;align-items:center;gap:8px}
+.section-head h3:before{content:"";width:5px;height:22px;background:var(--gold);border-radius:2px}
+.section-note{font-size:11.5px;line-height:1.55;color:var(--ink-soft);margin:7px 0 0 13px}
+.availability-chip{display:inline-block;font-size:10.5px;padding:2px 7px;border-radius:999px;border:1px solid var(--line);color:var(--ink-soft);background:var(--white);margin-left:6px;vertical-align:2px}
+.menu-row{background:rgba(255,253,248,.9);border:1px solid #e6dac2;border-radius:10px;padding:10px;margin:8px 0;box-shadow:0 2px 10px rgba(76,53,31,.045);gap:11px;align-items:center}
+.dish-photo-wrap{width:96px;height:78px;flex:0 0 96px;position:relative;border-radius:7px;overflow:hidden;background:var(--paper-deep);border:1px solid #e2d4ba}
+.dish-photo{width:100%;height:100%;display:block;object-fit:cover}
+.image-badge{position:absolute;left:4px;bottom:4px;font-size:9px;line-height:1;background:rgba(43,36,29,.72);color:white;padding:3px 5px;border-radius:3px}
+.image-badge.exact{background:rgba(75,99,80,.88)}
+.menu-row .name{font-family:var(--font-display);font-weight:700;font-size:14.5px}.menu-row .desc{line-height:1.45}.menu-row .price{font-size:14px;color:var(--lacquer-deep);font-weight:600}
+.option-hint{background:#fff5f1;border-color:#e5bdb7}.special-top .section-head h3{color:#8b221b}
+.cat-tab[data-special="1"]{border-color:#d8b062;color:#8b5c00}.cat-tab[data-special="1"].active{background:#9c2f25;color:white;border-color:#9c2f25}
+.option-choice span small{display:block;font-size:10px;color:var(--lacquer);margin-top:2px}.option-price-preview{font-family:var(--font-ticket);font-weight:700;color:var(--lacquer-deep);margin:8px 0 4px}
+@media(max-width:390px){.dish-photo-wrap{width:82px;height:70px;flex-basis:82px}.menu-row{gap:8px;padding:8px}.add-option-btn{min-width:70px;padding:7px 6px}.qty-stepper button{width:30px;height:30px}}
+
+</style>
+</head>
+<body>
+<div id="app">
+</div>
+<script src="https://www.gstatic.com/firebasejs/12.18.0/firebase-app-compat.js">
+</script>
+<script src="https://www.gstatic.com/firebasejs/12.18.0/firebase-database-compat.js">
+</script>
+<script src="https://www.gstatic.com/firebasejs/12.18.0/firebase-auth-compat.js">
+</script>
+<script>
+(function(){
+  "use strict";
+  const firebaseConfig = {
+    apiKey: "AIzaSyAApHFA3XF7Y0JrgbZDe69MLn2mKySF0oY",
+    authDomain: "fukurinro-daa7f.firebaseapp.com",
+    databaseURL: "https://fukurinro-daa7f-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "fukurinro-daa7f",
+    storageBucket: "fukurinro-daa7f.firebasestorage.app",
+    messagingSenderId: "856076945918",
+    appId: "1:856076945918:web:02b83f4ea883bb305198af",
+    measurementId: "G-N38XSVPJ34"
+  };
+  firebase.initializeApp(firebaseConfig); const db=firebase.database(); const auth=firebase.auth();
+  const DEFAULT_MENU = [
+    { cat:"面食類", items:[
+      {id:"menshoku_yakigyoza8", name:"焼き餃子", desc:"8個", price:780, soldOut:false},
+      {id:"menshoku_xiaolongbao6", name:"自家製小籠包", desc:"6個", price:780, soldOut:false},
+      {id:"menshoku_suigyoza8", name:"水餃子", desc:"8個", price:780, soldOut:false},
+      {id:"menshoku_harumaki", name:"自家製春巻き", desc:"", price:600, soldOut:false},
+      {id:"menshoku_niramanju3", name:"ニラ饅頭", desc:"3個", price:600, soldOut:false},
+      {id:"menshoku_mushiset6", name:"蒸しセット", desc:"蒸し餃子・焼売・小籠包／6個", price:780, soldOut:false},
+      {id:"menshoku_mushigyoza6", name:"蒸し餃子", desc:"6個", price:780, soldOut:false},
+      {id:"menshoku_usuyakimochi", name:"自家製薄焼き餠", desc:"", price:400, soldOut:false},
+      {id:"menshoku_ebiboharumaki", name:"エビ棒春巻き", desc:"1本", price:300, soldOut:false},
+    ]},
+    { cat:"前菜類", items:[
+      {id:"zensai_kurage", name:"クラゲの中華酢和え", desc:"", price:980, soldOut:false},
+      {id:"zensai_pitan", name:"ピータン", desc:"", price:380, soldOut:false},
+      {id:"zensai_pitantofu", name:"ピータンと豆腐の和え物", desc:"", price:700, soldOut:false},
+      {id:"zensai_charshu", name:"自家製チャーシュー", desc:"", price:700, soldOut:false},
+      {id:"zensai_kamosmoke", name:"鴨のスモーク", desc:"", price:700, soldOut:false},
+      {id:"zensai_zasai", name:"ザーサイ", desc:"", price:380, soldOut:false},
+      {id:"zensai_yasaisalad", name:"野菜サラダ", desc:"", price:700, soldOut:false},
+      {id:"zensai_nankotsu", name:"鶏軟骨唐揚げ", desc:"", price:680, soldOut:false},
+      {id:"zensai_edamame", name:"枝豆", desc:"", price:450, soldOut:false},
+      {id:"zensai_tatakikyuri", name:"ニンニク入り中華風たたききゅうり", desc:"", price:380, soldOut:false},
+      {id:"zensai_friedpotato", name:"フライドポテト", desc:"", price:450, soldOut:false},
+      {id:"zensai_geso", name:"下足の醤油かけ サクサク揚げ", desc:"", price:750, soldOut:false},
+      {id:"zensai_guangzhouchicken", name:"自家製広州風味鶏肉チャーシュー", desc:"", price:700, soldOut:false},
+      {id:"zensai_roastchicken", name:"中華風ローストチキン", desc:"", price:680, soldOut:false},
+      {id:"zensai_bangbangji", name:"棒棒鶏", desc:"鶏肉のゴマダレ和え物", price:700, soldOut:false},
+      {id:"zensai_koika", name:"甲イカお湯引きネギ油ソース", desc:"", price:750, soldOut:false},
+      {id:"zensai_niratamago", name:"塩味ニラ玉子焼き", desc:"", price:750, soldOut:false},
+      {id:"zensai_koushuiji", name:"口水鷄", desc:"鶏肉の四川風和え物", price:720, soldOut:false},
+    ]},
+    { cat:"主菜①", items:[
+      {id:"main1_ikatoubanjan", name:"イカと野菜の豆板醤炒め", desc:"", price:1380, soldOut:false},
+      {id:"main1_ebichili", name:"エビのチリソース炒め", desc:"通常サイズ", price:1300, soldOut:false},
+      {id:"main1_ebichili_small", name:"エビのチリソース炒め（小）", desc:"小サイズ", price:1000, soldOut:false},
+      {id:"main1_hoikoro", name:"回鍋肉", desc:"豚の辛味噌炒め", price:1100, soldOut:false},
+      {id:"main1_subuta", name:"酢豚", desc:"通常サイズ", price:1100, soldOut:false},
+      {id:"main1_subuta_small", name:"酢豚（小）", desc:"小サイズ", price:800, soldOut:false},
+      {id:"main1_happosai", name:"海鮮八宝菜", desc:"ハッボウ菜", price:1000, soldOut:false},
+      {id:"main1_porkpepper", name:"ピーマンと豚肉の炒め", desc:"", price:1000, soldOut:false},
+      {id:"main1_beefpepper", name:"ピーマンと牛肉の炒め", desc:"", price:1100, soldOut:false},
+      {id:"main1_yurinchi", name:"油淋鶏", desc:"揚げ鶏肉のねぎ醤油かけ／通常サイズ", price:980, soldOut:false},
+      {id:"main1_yurinchi_small", name:"油淋鶏（小）", desc:"小サイズ", price:780, soldOut:false},
+      {id:"main1_tomatotamago", name:"トマトと玉子炒め", desc:"通常サイズ", price:1000, soldOut:false},
+      {id:"main1_tomatotamago_small", name:"トマトと玉子炒め（小）", desc:"小サイズ", price:800, soldOut:false},
+      {id:"main1_karaage5", name:"若鶏の唐揚げ", desc:"5個", price:700, soldOut:false},
+      {id:"main1_malanabe", name:"豚肉入りマーラー鍋", desc:"", price:1200, soldOut:false},
+      {id:"main1_mapotofu", name:"マーボー豆腐", desc:"", price:980, soldOut:false},
+      {id:"main1_kurozusubuta", name:"黒酢酢豚", desc:"店長おすすめ", price:1280, soldOut:false},
+      {id:"main1_gomokutamago", name:"五目と玉子炒め", desc:"", price:1000, soldOut:false},
+      {id:"main1_ebiten", name:"エビの天ぷら", desc:"通常サイズ", price:1300, soldOut:false},
+      {id:"main1_ebiten_small", name:"エビの天ぷら（小）", desc:"小サイズ", price:1000, soldOut:false},
+      {id:"main1_ebimayo", name:"エビのマヨネーズ炒め", desc:"", price:1300, soldOut:false},
+    ]},
+    { cat:"主菜②", items:[
+      {id:"main2_porkspicy", name:"豚肉の辛味煮込み", desc:"", price:1300, soldOut:false},
+      {id:"main2_shengcaibao", name:"生菜包", desc:"エビと豚肉のミンチ・生レタス包み", price:1300, soldOut:false},
+      {id:"main2_tebasaki", name:"揚げ手羽先", desc:"", price:800, soldOut:false},
+      {id:"main2_sanshochicken", name:"鶏肉と山椒のピリ辛炒め", desc:"", price:900, soldOut:false},
+      {id:"main2_cashewnut", name:"若鶏とカシューナッツの炒め", desc:"", price:900, soldOut:false},
+      {id:"main2_porkfillet", name:"豚ヒレの天ぷら", desc:"", price:800, soldOut:false},
+      {id:"main2_beefoyster", name:"牛肉とオイスターソース炒め", desc:"", price:1300, soldOut:false},
+      {id:"main2_yuxiangrousi", name:"ユウシャンロウス（魚香肉絲）", desc:"薬味付豚肉炒め", price:1100, soldOut:false},
+      {id:"main2_hotate", name:"北海道産ホタテ炒め", desc:"", price:1700, soldOut:false},
+      {id:"main2_fukahiretamago", name:"フカヒレ玉のあんかけ", desc:"", price:1200, soldOut:false},
+      {id:"main2_sichuanebi", name:"四川風エビの野菜炒め", desc:"", price:1480, soldOut:false},
+      {id:"main2_mushipan", name:"蒸しパン", desc:"1個・豚の角煮と一緒にどうぞ", price:100, soldOut:false},
+      {id:"main2_kakuni", name:"豚の角煮", desc:"", price:1500, soldOut:false},
+      {id:"main2_nirareba", name:"ニラと豚レバーの炒め", desc:"", price:900, soldOut:false},
+      {id:"main2_kaisen3", name:"海鮮三種炒め", desc:"", price:1500, soldOut:false},
+      {id:"main2_okoge", name:"海鮮おこげ", desc:"", price:1380, soldOut:false},
+    ]},
+    { cat:"野菜", items:[
+      {id:"veg_maponasu", name:"マーボーナス", desc:"", price:900, soldOut:false},
+      {id:"veg_mapoharusame", name:"マーボー春雨", desc:"", price:800, soldOut:false},
+      {id:"veg_chingensai", name:"チンゲン菜とクコシの炒め", desc:"", price:800, soldOut:false},
+      {id:"veg_moyashipork", name:"究極のもやしと豚肉強火炒め", desc:"", price:800, soldOut:false},
+      {id:"veg_lettuceoyster", name:"レタスとオイスターソース炒め", desc:"", price:800, soldOut:false},
+      {id:"veg_jagaimo", name:"千切じゃがいもの炒め", desc:"", price:980, soldOut:false},
+    ]},
+    { cat:"スープ", items:[
+      {id:"soup_fukahire", name:"フカヒレスープ", desc:"通常サイズ", price:1600, soldOut:false},
+      {id:"soup_fukahire_small", name:"フカヒレスープ（小）", desc:"小サイズ", price:900, soldOut:false},
+      {id:"soup_suuratan", name:"スーラータン", desc:"豆腐と色々酸味スープ／通常サイズ", price:800, soldOut:false},
+      {id:"soup_suuratan_small", name:"スーラータン（小）", desc:"小サイズ", price:600, soldOut:false},
+      {id:"soup_tamago", name:"玉子スープ", desc:"通常サイズ", price:800, soldOut:false},
+      {id:"soup_tamago_small", name:"玉子スープ（小）", desc:"小サイズ", price:600, soldOut:false},
+      {id:"soup_harusame", name:"春雨スープ", desc:"通常サイズ", price:800, soldOut:false},
+      {id:"soup_harusame_small", name:"春雨スープ（小）", desc:"小サイズ", price:600, soldOut:false},
+      {id:"soup_corn", name:"コンスープ", desc:"通常サイズ", price:800, soldOut:false},
+      {id:"soup_corn_small", name:"コンスープ（小）", desc:"小サイズ", price:600, soldOut:false},
+    ]},
+    { cat:"デザート", items:[
+      {id:"dessert_kurogomaice", name:"黒ごまアイス", desc:"", price:400, soldOut:false},
+      {id:"dessert_daigakumochi", name:"大学もち", desc:"", price:980, soldOut:false},
+      {id:"dessert_daigakuimo", name:"大学いも", desc:"", price:800, soldOut:false},
+      {id:"dessert_gomadango3", name:"ごま団子", desc:"3個", price:450, soldOut:false},
+      {id:"dessert_mangopudding", name:"マンゴープリン", desc:"", price:400, soldOut:false},
+    ]},
+  ];
+
+
+  const V3 = window.FUKURIN_MENU_V3 || {schedule:{lunchStart:"11:00",lunchEnd:"15:00",dinnerStart:"17:00"},specialSections:[],itemImageMap:{},categoryFallback:{}};
+  const SCHEDULE = V3.schedule || {};
+  function cloneJson(v){ return JSON.parse(JSON.stringify(v)); }
+  function mergeMenuV3(base){
+    const menu=cloneJson(base&&base.length?base:DEFAULT_MENU);
+    const bySectionId=new Map(menu.filter(s=>s.sectionId).map(s=>[s.sectionId,s]));
+    (V3.specialSections||[]).forEach(src=>{
+      const sid=src.sectionId || ("special:"+src.cat);
+      let target=bySectionId.get(sid);
+      if(!target){target=cloneJson(src);target.sectionId=sid;menu.push(target);bySectionId.set(sid,target);}
+      else{
+        if(!target.availability) target.availability=src.availability;
+        if(!target.note) target.note=src.note;
+        const ids=new Set((target.items||[]).map(i=>i.id));
+        (src.items||[]).forEach(it=>{if(!ids.has(it.id))target.items.push(cloneJson(it));});
+      }
+    });
+    menu.forEach(sec=>(sec.items||[]).forEach(it=>{
+      const explicit=(V3.itemImageMap||{})[it.id];
+      const fallback=(V3.categoryFallback||{})[sec.cat]||{src:"assets/chinese_placeholder.webp",exact:false};
+      const img=explicit||fallback;
+      if(!it.image)it.image=img.src;
+      if(typeof it.imageExact==="undefined")it.imageExact=!!img.exact;
+    }));
+    return menu;
+  }
+  function hmToMinutes(v,fallback){if(!v||!/^\d{1,2}:\d{2}$/.test(v))return fallback;const [h,m]=v.split(":").map(Number);return h*60+m}
+  function japanMinutesNow(){const parts=new Intl.DateTimeFormat("en-GB",{timeZone:"Asia/Tokyo",hour:"2-digit",minute:"2-digit",hour12:false}).formatToParts(new Date());const h=Number(parts.find(p=>p.type==="hour")?.value||0),m=Number(parts.find(p=>p.type==="minute")?.value||0);return h*60+m}
+  function currentServiceMode(){const now=japanMinutesNow(),ls=hmToMinutes(SCHEDULE.lunchStart,660),le=hmToMinutes(SCHEDULE.lunchEnd,900),ds=hmToMinutes(SCHEDULE.dinnerStart,1020);if(now>=ls&&now<le)return"lunch";if(now>=ds)return"dinner";return"regular"}
+  function serviceText(){const mode=currentServiceMode();if(mode==="lunch")return{label:"昼メニュー販売中",note:`${SCHEDULE.lunchStart||"11:00"}〜${SCHEDULE.lunchEnd||"15:00"}は昼限定メニューを表示しています。`};if(mode==="dinner")return{label:"夜メニュー販売中",note:`${SCHEDULE.dinnerStart||"17:00"}以降は夜限定メニューを表示しています。`};return{label:"通常メニュー",note:`昼限定は${SCHEDULE.lunchStart||"11:00"}〜${SCHEDULE.lunchEnd||"15:00"}、夜限定は${SCHEDULE.dinnerStart||"17:00"}〜です。`}}
+  function visibleSections(){const mode=currentServiceMode();const allowed=state.menu.filter(sec=>!sec.availability||sec.availability===mode);return[...allowed.filter(sec=>sec.availability===mode),...allowed.filter(sec=>!sec.availability)]}
+  function normalizedChoice(ch){return typeof ch==="string"?{label:ch,delta:0}:{label:String(ch.label??""),delta:Number(ch.delta||0)}}
+  function deltaText(n){return n>0?`+¥${n.toLocaleString()}`:n<0?`-¥${Math.abs(n).toLocaleString()}`:""}
+  function optionMinDelta(opts){return (opts||[]).reduce((sum,op)=>{const ds=(op.choices||[]).map(ch=>normalizedChoice(ch).delta);return sum+(ds.length?Math.min(...ds):0)},0)}
+
+  const OPTION_PRESETS = {
+    zensai_koushuiji:[{name:"辛さ",choices:["控えめ","普通","辛め","激辛"],default:"普通"}],
+    main1_ikatoubanjan:[{name:"辛さ",choices:["控えめ","普通","辛め","激辛"],default:"普通"}],
+    main1_hoikoro:[{name:"辛さ",choices:["控えめ","普通","辛め"],default:"普通"}],
+    main1_malanabe:[{name:"辛さ",choices:["控えめ","普通","辛め","激辛"],default:"普通"}],
+    main1_mapotofu:[{name:"辛さ",choices:["控えめ","普通","辛め","激辛"],default:"普通"}],
+    main2_porkspicy:[{name:"辛さ",choices:["控えめ","普通","辛め","激辛"],default:"普通"}],
+    main2_sanshochicken:[{name:"辛さ",choices:["控えめ","普通","辛め","激辛"],default:"普通"}],
+    main2_yuxiangrousi:[{name:"辛さ",choices:["控えめ","普通","辛め"],default:"普通"}],
+    main2_sichuanebi:[{name:"辛さ",choices:["控えめ","普通","辛め","激辛"],default:"普通"}],
+    veg_maponasu:[{name:"辛さ",choices:["控えめ","普通","辛め","激辛"],default:"普通"}],
+    veg_mapoharusame:[{name:"辛さ",choices:["控えめ","普通","辛め","激辛"],default:"普通"}],
+    soup_suuratan:[{name:"辛さ",choices:["控えめ","普通","辛め"],default:"普通"}],
+    soup_suuratan_small:[{name:"辛さ",choices:["控えめ","普通","辛め"],default:"普通"}]
+  };
+  function itemOptions(it){ return [...(it.options||[]), ...(OPTION_PRESETS[it.id]||[])]; }
+  function optionText(selections,note){
+    const parts=Object.entries(selections||{}).map(([k,v])=>`${k}：${v}`);
+    if(note) parts.push(`要望：${note}`);
+    return parts.join(" / ");
+  }
+
+  let MENU_INDEX={}; function rebuildIndex(menu){ MENU_INDEX={}; menu.forEach(sec=>sec.items.forEach(it=>MENU_INDEX[it.id]=it)); }
+  const state={menu:[],activeCat:"",cart:{},screen:"menu",lastOrderId:null,serviceMode:""}; const app=document.getElementById("app");
+  function lineKey(id,selections,note){return id+"::"+JSON.stringify(selections||{})+"::"+(note||"");}
+  function cartLines(){return Object.values(state.cart)}
+  function cartCount(){return cartLines().reduce((s,l)=>s+l.qty,0)}
+  function cartTotal(){return cartLines().reduce((s,l)=>s+l.price*l.qty,0)}
+  function itemCartQty(id){return cartLines().filter(l=>l.id===id).reduce((s,l)=>s+l.qty,0)}
+  function addCartLine(it,selections={},note="",priceDelta=0){const key=lineKey(it.id,selections,note);const unitPrice=Math.max(0,Number(it.price||0)+Number(priceDelta||0));if(!state.cart[key])state.cart[key]={id:it.id,name:it.name,price:unitPrice,qty:0,selections:{...selections},note:note||"",optionText:optionText(selections,note)};state.cart[key].qty++;renderCustomer();}
+  function addSimple(it){addCartLine(it,{},"")}
+  function removeSimple(it){const key=lineKey(it.id,{},""); if(!state.cart[key])return; state.cart[key].qty--; if(state.cart[key].qty<=0)delete state.cart[key]; renderCustomer();}
+  async function loadMenu(){try{const snap=await db.ref("menu").once("value");if(snap.exists())return mergeMenuV3(snap.val());}catch(e){console.error(e)}return mergeMenuV3(DEFAULT_MENU);}
+  async function createOrder(order){try{await db.ref(`orders/${order.id}`).set(order);return true}catch(e){console.error(e);return false}}
+  function renderCustomer(){const w=document.createElement("div");w.className="cust-wrap";if(state.screen==="confirmed"){w.appendChild(renderConfirm());app.replaceChildren(w);return}if(state.screen==="review"){w.appendChild(renderHeader());w.appendChild(renderReview());app.replaceChildren(w);return}w.appendChild(renderHeader());w.appendChild(renderTabs());w.appendChild(renderMenu());app.replaceChildren(w);if(cartCount()>0)app.appendChild(renderCartBar());}
+  function renderHeader(){const d=document.createElement("div");d.className="cust-header";const st=serviceText();d.innerHTML=`<div class="brand-kicker">中国料理</div>
+<h1>福林楼</h1>
+<div class="sub">お好きな料理を選んでご注文ください</div>
+<div class="service-banner">
+<span class="service-dot">
+</span>
+<strong>${st.label}</strong>
+</div>
+<div class="service-note">${st.note}</div>
+<div class="brand-seal">福</div>`;return d}
+  function renderTabs(){const secs=visibleSections();if(!secs.some(x=>x.cat===state.activeCat))state.activeCat=secs[0]?.cat||"";const d=document.createElement("div");d.className="cat-tabs";d.innerHTML=secs.map(sec=>`<button class="cat-tab ${sec.cat===state.activeCat?'active':''}" data-special="${sec.availability?1:0}" data-cat="${sec.cat}">${sec.cat}</button>`).join("");d.querySelectorAll(".cat-tab").forEach(b=>b.onclick=()=>{state.activeCat=b.dataset.cat;document.getElementById(`sec-${b.dataset.cat}`)?.scrollIntoView({behavior:"smooth",block:"start"})});return d}
+  function renderMenu(){const secs=visibleSections();const d=document.createElement("div");d.className="menu-section";d.innerHTML=secs.map(sec=>`<div id="sec-${sec.cat}" class="${sec.availability?'special-top':''}">
+<div class="section-head">
+<h3>${escapeHtml(sec.cat)}${sec.availability?`<span class="availability-chip">${sec.availability==='lunch'?'昼限定':'夜限定'}</span>`:""}</h3>${sec.note?`<div class="section-note">${escapeHtml(sec.note)}</div>`:""}</div>${(sec.items||[]).map(it=>{const opts=itemOptions(it),q=itemCartQty(it.id),img=it.image||"assets/chinese_placeholder.webp",hasDelta=opts.some(op=>(op.choices||[]).some(ch=>normalizedChoice(ch).delta!==0)),shownPrice=Math.max(0,Number(it.price)+optionMinDelta(opts));return `<div class="menu-row ${it.soldOut?'sold-out':''}">
+<div class="dish-photo-wrap">
+<img class="dish-photo" src="${escapeHtml(img)}" alt="${escapeHtml(it.name)}" loading="lazy" onerror="this.onerror=null;this.src='assets/chinese_placeholder.webp'">
+<span class="image-badge ${it.imageExact?'exact':''}">${it.imageExact?'店内写真':'イメージ'}</span>
+</div>
+<div class="info">
+<div class="name">${escapeHtml(it.name)}</div>${it.desc?`<div class="desc">${escapeHtml(it.desc)}</div>`:""}<div class="price">&yen;${shownPrice.toLocaleString()}${hasDelta?'〜':""}</div>${opts.length?`<span class="option-hint">辛さ・サイズなどを選べます</span>`:""}</div>${it.soldOut?`<div class="sold-out-tag">売り切れ</div>`:opts.length?`<button class="add-option-btn" data-opt="${it.id}">選んで追加<span class="mini-count">選択中 ${q}点</span>
+</button>`:`<div class="qty-stepper">
+<button data-minus="${it.id}">−</button>
+<div class="n">${q}</div>
+<button data-plus="${it.id}">+</button>
+</div>`}</div>`}).join("")}</div>`).join("");d.querySelectorAll("[data-plus]").forEach(b=>b.onclick=()=>addSimple(MENU_INDEX[b.dataset.plus]));d.querySelectorAll("[data-minus]").forEach(b=>b.onclick=()=>removeSimple(MENU_INDEX[b.dataset.minus]));d.querySelectorAll("[data-opt]").forEach(b=>b.onclick=()=>openOptionDialog(MENU_INDEX[b.dataset.opt]));return d}
+  function openOptionDialog(it){const opts=itemOptions(it),ov=document.createElement("div");ov.className="option-overlay";const groups=opts.map((op,oi)=>{const choices=(op.choices||[]).map(normalizedChoice),def=op.default||choices[0]?.label||"";return `<div class="option-group">
+<div class="option-group-title">${escapeHtml(op.name)}</div>
+<div class="option-choices">${choices.map((ch,ci)=>`<label class="option-choice">
+<input type="radio" name="op${oi}" value="${ci}" ${ch.label===def?'checked':''}>
+<span>${escapeHtml(ch.label)}${ch.delta?`<small>${deltaText(ch.delta)}</small>`:""}</span>
+</label>`).join("")}</div>
+</div>`}).join("");ov.innerHTML=`<div class="option-card">
+<h2>${escapeHtml(it.name)}</h2>
+<div class="op-price">基本価格 &yen;${Number(it.price).toLocaleString()}</div>${groups}<div class="option-price-preview" id="pricePreview">
+</div>
+<div class="option-group">
+<div class="option-group-title">その他のご要望（任意）</div>
+<textarea id="optionNote" class="option-note" maxlength="60" rows="2" placeholder="例：ねぎ少なめ（対応できる範囲）">
+</textarea>
+</div>
+<div class="option-actions">
+<button class="btn-secondary" id="cancelOption">キャンセル</button>
+<button class="btn-primary" id="addOption">この内容で追加</button>
+</div>
+</div>`;document.body.appendChild(ov);const calc=()=>{let delta=0;opts.forEach((op,oi)=>{const checked=ov.querySelector(`input[name="op${oi}"]:checked`),idx=checked?Number(checked.value):0;delta+=normalizedChoice((op.choices||[])[idx]).delta});ov.querySelector("#pricePreview").textContent=`選択後：¥${Math.max(0,Number(it.price)+delta).toLocaleString()}`;return delta};ov.querySelectorAll('input[type="radio"]').forEach(x=>x.onchange=calc);calc();ov.querySelector("#cancelOption").onclick=()=>ov.remove();ov.onclick=e=>{if(e.target===ov)ov.remove()};ov.querySelector("#addOption").onclick=()=>{const selections={};let totalDelta=0;opts.forEach((op,oi)=>{const checked=ov.querySelector(`input[name="op${oi}"]:checked`),idx=checked?Number(checked.value):0,ch=normalizedChoice((op.choices||[])[idx]);totalDelta+=ch.delta;selections[op.name]=ch.delta?`${ch.label}（${deltaText(ch.delta)}）`:ch.label});const note=ov.querySelector("#optionNote").value.trim();ov.remove();addCartLine(it,selections,note,totalDelta)}}
+  function renderCartBar(){const d=document.createElement("div");d.className="cart-bar";d.innerHTML=`<div>
+<span class="count">${cartCount()}</span>
+<span class="total">&yen;${cartTotal().toLocaleString()}</span>
+</div>
+<button class="go">注文内容を確認</button>`;d.querySelector(".go").onclick=()=>{state.screen="review";renderCustomer()};return d}
+  function renderReview(){const d=document.createElement("div");d.className="review-wrap";d.innerHTML=`<h2>ご注文内容の確認</h2>${cartLines().map(l=>`<div class="review-line">
+<div>
+<div>${escapeHtml(l.name)} × ${l.qty}</div>${l.optionText?`<div class="review-option">${escapeHtml(l.optionText)}</div>`:""}</div>
+<div>&yen;${(l.price*l.qty).toLocaleString()}</div>
+</div>`).join("")}<div class="review-total">
+<span>合計</span>
+<span>&yen;${cartTotal().toLocaleString()}</span>
+</div>
+<div id="orderError" style="display:none;color:var(--lacquer);font-size:13px;margin-top:10px">送信できませんでした。通信状態をご確認ください。</div>
+<button class="btn-primary" id="submitOrder" style="width:100%;margin-top:18px">この内容で注文する</button>
+<button class="btn-ghost" id="backToMenu" style="display:block;margin:12px auto">メニューに戻って直す</button>`;d.querySelector("#backToMenu").onclick=()=>{state.screen="menu";renderCustomer()};d.querySelector("#submitOrder").onclick=async e=>{const btn=e.currentTarget;btn.disabled=true;btn.textContent="送信中…";const id="o"+Date.now().toString(36)+Math.random().toString(36).slice(2,5);const items=cartLines().map(l=>({id:l.id,name:l.name,qty:l.qty,price:l.price,options:l.selections||{},note:l.note||"",optionText:l.optionText||""}));const order={id,items,total:cartTotal(),status:"new",paid:false,createdAt:Date.now()};if(await createOrder(order)){state.lastOrderId=id;state.cart={};state.screen="confirmed";renderCustomer()}else{d.querySelector("#orderError").style.display="block";btn.disabled=false;btn.textContent="この内容で注文する"}};return d}
+  function renderConfirm(){const d=document.createElement("div");d.className="confirm-wrap";const n=state.lastOrderId?state.lastOrderId.slice(-4).toUpperCase():"----";d.innerHTML=`<div style="font-family:var(--font-display);font-size:19px">ご注文を承りました</div>
+<div class="confirm-ticket">
+<div class="num">No. ${n}</div>
+<div class="label">厨房に送信しました</div>
+</div>
+<button class="btn-ghost" id="more" style="margin-top:20px">追加で注文する</button>`;d.querySelector("#more").onclick=()=>{state.screen="menu";renderCustomer()};return d}
+  function escapeHtml(s){return String(s??"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;")}
+  async function init(){app.innerHTML='<div class="loading">メニューを読み込み中…</div>';try{let user=await new Promise(r=>{const u=auth.onAuthStateChanged(x=>{u();r(x)})});if(!user)await auth.signInAnonymously();state.menu=await loadMenu();rebuildIndex(state.menu);state.serviceMode=currentServiceMode();state.activeCat=visibleSections()[0]?.cat||"";renderCustomer();db.ref("menu").on("value",snap=>{if(snap.exists()){state.menu=mergeMenuV3(snap.val());rebuildIndex(state.menu);if(state.screen==="menu")renderCustomer()}});setInterval(()=>{const m=currentServiceMode();if(m!==state.serviceMode){state.serviceMode=m;if(state.screen==="menu")renderCustomer()}},60000)}catch(e){console.error(e);app.innerHTML='<div class="loading">接続に失敗しました。ページを再読み込みしてください。</div>'}}
+  init();
+})();
+</script>
+<script src="price-visibility.js"></script>
+<script src="menu-view.js"></script>
+</body>
+</html>
