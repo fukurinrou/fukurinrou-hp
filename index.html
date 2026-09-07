@@ -1,4 +1,4 @@
-<!-- 2026-09-08 00:20 変更済み -->
+<!-- 2026-09-08 00:55 変更済み -->
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -122,11 +122,30 @@
 
   /* hero */
   .hero{
-    padding: 64px 0 48px;
-    text-align:center;
+    padding: 0;
     background:
       radial-gradient(ellipse at 50% -10%, rgba(143,43,27,0.10), transparent 60%),
       var(--ivory);
+    overflow:hidden;
+  }
+  .hero-grid{
+    display:grid; grid-template-columns:minmax(0,1fr) minmax(360px,.92fr);
+    min-height:530px; align-items:stretch;
+  }
+  .hero-copy{
+    display:flex; flex-direction:column; justify-content:center; align-items:center;
+    text-align:center; padding:64px 34px 48px;
+  }
+  .hero-photo{
+    min-height:360px; position:relative; overflow:hidden; background:var(--ink);
+  }
+  .hero-photo img{
+    width:100%; height:100%; object-fit:cover; object-position:center;
+  }
+  .hero-photo::after{
+    content:"店内の様子"; position:absolute; right:16px; bottom:13px;
+    color:var(--ivory); background:rgba(33,28,22,.68); padding:4px 9px;
+    font-size:.72rem; letter-spacing:.08em;
   }
   .hero .kicker{
     font-size: 0.78rem; letter-spacing: 0.3em; color: var(--lacquer); margin-bottom: 18px;
@@ -158,6 +177,11 @@
   .hero-facts{
     margin-top: 40px; display:flex; justify-content:center; gap: 34px;
     flex-wrap:wrap; font-size: 0.85rem; color: var(--ink); opacity:0.75;
+  }
+  @media(max-width:760px){
+    .hero-grid{grid-template-columns:1fr;min-height:0}
+    .hero-copy{padding:52px 24px 42px}
+    .hero-photo{min-height:300px;max-height:420px}
   }
 
   /* sections */
@@ -227,8 +251,9 @@
   .category-item{ padding:17px; border:1px solid var(--line); background:#fbf7ef; }
   .category-item h3{ font-size:1rem; }
   .category-item p{ margin:4px 0 0; font-size:.82rem; opacity:.75; }
-  .gallery-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
-  @media (max-width:720px){ .gallery-grid{ grid-template-columns:1fr; } }
+  .gallery-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:18px; }
+  @media (max-width:880px){ .gallery-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:520px){ .gallery-grid{ grid-template-columns:1fr; } }
   .gallery-card{ margin:0; background:#fbf7ef; border:1px solid var(--line); overflow:hidden; }
   .gallery-card img{ width:100%; aspect-ratio:4/3; object-fit:cover; }
   .gallery-card figcaption{ padding:15px 16px 17px; }
@@ -318,7 +343,7 @@
       <ul id="navList">
         <li><a href="#limited">限定商品</a></li>
         <li><a href="#menu">お料理</a></li>
-        <li><a href="#gallery">料理写真</a></li>
+        <li><a href="#gallery">店内・料理写真</a></li>
         <li><a href="#reservation">ご予約</a></li>
         <li><a href="#access">店舗案内</a></li>
         <li><a data-link="instagram" href="#">Instagram</a></li>
@@ -332,19 +357,22 @@
   <div class="notice-bar"><div class="wrap">季節のお知らせ・新商品は <a data-link="instagram" href="#">Instagram</a> で発信しています。</div></div>
 
   <section class="hero" aria-labelledby="hero-title">
-    <div class="wrap">
-      <div class="kicker">博多駅南 · 山東料理 · 町中華</div>
-      <h1 id="hero-title">中国料理 福林楼<span class="yomi">フクリンロウ</span></h1>
-      <p class="copy">30年以上の経験を持つ中国人シェフがつくる、親しみのある本格中国料理。普段のお食事からご宴会、おせち・オードブルまで、心を込めてご用意します。</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="tel:0924811369">お電話で予約・お問い合わせ</a>
-        <a class="btn btn-line" href="#reservation">予約方法を見る</a>
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <div class="kicker">博多駅南 · 山東料理 · 町中華</div>
+        <h1 id="hero-title">中国料理 福林楼<span class="yomi">フクリンロウ</span></h1>
+        <p class="copy">30年以上の経験を持つ中国人シェフがつくる、親しみのある本格中国料理。普段のお食事からご宴会、おせち・オードブルまで、心を込めてご用意します。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="tel:0924811369">お電話で予約・お問い合わせ</a>
+          <a class="btn btn-line" href="#reservation">予約方法を見る</a>
+        </div>
+        <div class="hero-facts">
+          <span>昼 11:30〜14:30（月〜土）</span>
+          <span>夜 17:30〜23:00</span>
+          <span>1名様〜45名様までご予約受付</span>
+        </div>
       </div>
-      <div class="hero-facts">
-        <span>昼 11:30〜14:30（月〜土）</span>
-        <span>夜 17:30〜23:00</span>
-        <span>日曜は夜のみ営業</span>
-      </div>
+      <div class="hero-photo"><img src="assets/store-interior.jpg" alt="中国料理 福林楼の店内" fetchpriority="high"></div>
     </div>
   </section>
 
@@ -383,8 +411,8 @@
         <div class="category-item"><h3>麺・飯・スープ</h3><p>しっかり食べたい方に</p></div>
         <div class="category-item"><h3>点心・デザート・ドリンク</h3><p>お食事の最後まで</p></div>
       </div>
-      <p class="menu-note">価格・料理写真を含む全メニューは、メニューページを準備後にこちらからご覧いただけます。</p>
-      <p><a class="btn btn-line" data-link="fullMenu" href="#">全メニューを見る</a></p>
+      <p class="menu-note">店内メニューをすべて掲載しています。こちらは閲覧専用で、ご注文はできません。</p>
+      <p><a class="btn btn-line" href="./menu.html">全メニューを見る</a></p>
     </div>
   </section>
 
@@ -392,11 +420,15 @@
     <div class="wrap">
       <div class="section-head">
         <div class="label">FOOD GALLERY</div>
-        <h2>福林楼の一皿</h2>
-        <p>定番料理の写真を掲載しています。季節の料理や新しい写真も、順次追加します。</p>
+        <h2>店内・福林楼の一皿</h2>
+        <p>店内の雰囲気と、定番料理の写真を掲載しています。季節の料理や新しい写真も、順次追加します。</p>
       </div>
       <!-- 写真を追加するときは、このgallery-cardを複製して画像・料理名・説明を差し替えます。 -->
       <div class="gallery-grid">
+        <figure class="gallery-card">
+          <img src="assets/store-interior.jpg" alt="福林楼の店内" loading="lazy">
+          <figcaption><h3>店内</h3><p>ご家族でのお食事からご宴会まで、ゆっくりお過ごしいただけます。</p></figcaption>
+        </figure>
         <figure class="gallery-card">
           <img src="assets/subuta.jpg" alt="福林楼の酢豚" loading="lazy">
           <figcaption><h3>酢豚</h3><p>甘酢あんが香る、人気の定番料理です。</p></figcaption>
@@ -417,12 +449,12 @@
     <div class="wrap">
       <div class="section-head">
         <div class="label">RESERVATION</div>
-        <h2>ご予約・お問い合わせ</h2>
-        <p>用途に合わせて、下のボタンからお進みください。</p>
+        <h2>ご予約</h2>
+        <p>店内のお席は1名様から45名様までご予約を受け付けています。用途に合わせて、下のボタンからお進みください。</p>
       </div>
       <div class="link-grid">
         <a class="link-card primary" href="tel:0924811369">
-          <div><div class="eyebrow">TABLE / COURSE</div><h3>店内・コースを予約</h3><p>日時・人数・ご希望をお電話でお伝えください。ご宴会のご相談も承ります。</p></div>
+          <div><div class="eyebrow">TABLE / COURSE</div><h3>店内・コースを予約</h3><p>1名様〜45名様まで受付しています。日時・人数・ご希望をお電話でお伝えください。</p></div>
           <div class="card-arrow">092-481-1369 →</div>
         </a>
         <a class="link-card" data-link="horsDOeuvreReservation" href="#">
@@ -477,18 +509,16 @@
   <div class="wrap">
     <div><div class="brand">福林楼<small>CHINESE RESTAURANT · HAKATA</small></div></div>
     <div class="foot-links">
-      <a href="#limited">限定商品</a><a href="#menu">メニュー</a><a href="#gallery">料理写真</a><a href="#reservation">ご予約</a><a href="#access">店舗案内</a><a data-link="instagram" href="#">Instagram</a>
+      <a href="#limited">限定商品</a><a href="#menu">メニュー</a><a href="#gallery">店内・料理写真</a><a href="#reservation">ご予約</a><a href="#access">店舗案内</a><a data-link="instagram" href="#">Instagram</a>
     </div>
   </div>
   <div class="wrap copyright">&copy; 中国料理 福林楼</div>
 </footer>
 
 <script>
-  /* メニューはQR注文システムに「閲覧専用画面」を追加後、そのURLを設定します。 */
   const siteLinks = {
     instagram: 'https://www.instagram.com/fukurinrou?stkn=aWtmb2x6bGxxd2Jv',
-    horsDOeuvreReservation: 'https://fukurinrou-osechi.yangshiyuan2004.workers.dev/',
-    fullMenu: './menu.html?view=menu'
+    horsDOeuvreReservation: 'https://fukurinrou-osechi.yangshiyuan2004.workers.dev/'
   };
 
   document.querySelectorAll('[data-link]').forEach(function(link){

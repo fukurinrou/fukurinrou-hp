@@ -1,0 +1,33 @@
+福林楼ホームページ　更新方法
+2026-09-08 00:58 更新
+
+■ 価格を表示・非表示にする（いちばん簡単な修正）
+
+1. 「menu.html」をVS Codeで開きます。
+2. ファイル内で「const SHOW_PRICES = true;」を探します。
+3. 価格を表示したいときは、このままにします。
+
+   const SHOW_PRICES = true;
+
+4. 価格を非表示にしたいときは、true を false に変えます。
+
+   const SHOW_PRICES = false;
+
+5. 保存して、GitHubへCommit・Pushします。
+
+※ 料理名・料理写真はそのまま表示され、金額だけが隠れます。
+※ 価格の数字自体を変更する場合は、元のメニュー資料を修正してから、
+  新しいメニュー画像を作り直す必要があります。
+
+■ ホームページの上の店内写真を変える
+
+「assets/store-interior.jpg」を、同じ名前の新しい写真で置き換えます。
+写真は横長がおすすめです。
+
+■ このフォルダをGitHubへ入れるとき
+
+ZIPを解凍して、中に入っている index.html、menu.html、編集方法.txt、
+assetsフォルダを、GitHubの fukurinrou-hp の一番上の階層へ入れてください。
+
+古いQR注文用の menu-view.js と price-visibility.js は、このホームページでは使いません。
+スタッフ管理画面は削除しないでください。
