@@ -1,16 +1,17 @@
+<!-- 2026-09-07 23:00 変更済み -->
 <!DOCTYPE html>
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>福林楼(フクリンロウ)| 博多・中国料理 コース・宴会・オードブル予約</title>
-<meta name="description" content="福林楼は福岡県福岡市博多区博多駅南にある中国料理店です。定食・麻婆豆腐・炒め物などの日常メニューから、宴会・お祝い事向けのコース、オードブル・おせちのご予約まで承っております。電話 092-481-1369。">
-<meta name="keywords" content="福林楼,フクリンロウ,博多,中国料理,中華料理,コース料理,宴会,オードブル,おせち,博多駅南">
+<title>中国料理 福林楼 | 博多駅南・山東料理・町中華</title>
+<meta name="description" content="福岡市博多区博多駅南の中国料理 福林楼。30年以上の経験を持つ中国人シェフによる山東料理・町中華です。店内予約、オードブル予約、メニュー、Instagramはこちらから。電話 092-481-1369。">
+<meta name="keywords" content="福林楼,フクリンロウ,博多,博多駅南,中国料理,中華料理,山東料理,町中華,オードブル,テイクアウト,宴会">
 <link rel="canonical" href="https://fukurinrou.github.io/fukurinrou-hp/">
 
 <meta property="og:type" content="restaurant">
-<meta property="og:title" content="福林楼(フクリンロウ)| 博多・中国料理">
-<meta property="og:description" content="博多駅南の中国料理店。定食からコース・宴会・オードブル・おせちのご予約まで。">
+<meta property="og:title" content="中国料理 福林楼 | 博多駅南・山東料理・町中華">
+<meta property="og:description" content="店内予約・オードブル予約・メニュー・店舗情報はこちら。">
 <meta property="og:locale" content="ja_JP">
 
 <script type="application/ld+json">
@@ -31,11 +32,8 @@
     "addressCountry": "JP"
   },
   "openingHoursSpecification": [
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
-      "opens": "11:30"
-    }
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "11:30", "closes": "14:30"},
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "17:30", "closes": "23:00"}
   ],
   "menu": "#menu",
   "acceptsReservations": "True"
@@ -190,6 +188,53 @@
     font-size: 0.88rem; opacity: 0.75;
   }
 
+  /* quick links and seasonal information */
+  .notice-bar{
+    background: var(--lacquer); color: var(--ivory); padding: 10px 0;
+    font-size: 0.86rem; text-align:center;
+  }
+  .notice-bar a{ color:inherit; font-weight:700; text-underline-offset:3px; }
+  .link-grid{
+    display:grid; grid-template-columns:repeat(2, 1fr); gap:16px;
+  }
+  @media (max-width: 640px){ .link-grid{ grid-template-columns:1fr; } }
+  .link-card{
+    min-height:174px; padding:26px 24px; border:1px solid var(--line);
+    background:rgba(255,255,255,0.18); text-decoration:none; display:flex;
+    flex-direction:column; justify-content:space-between; transition:0.16s ease;
+  }
+  .link-card:hover{ transform:translateY(-3px); border-color:var(--brass); box-shadow:0 10px 24px rgba(33,28,22,.08); }
+  .link-card.primary{ background:var(--lacquer); color:var(--ivory); border-color:var(--lacquer); }
+  .link-card.primary h3,.link-card.primary .card-arrow{ color:var(--ivory); }
+  .link-card .eyebrow{ color:var(--jade); font-size:.72rem; font-weight:700; letter-spacing:.14em; }
+  .link-card.primary .eyebrow{ color:#f3d99e; }
+  .link-card h3{ font-size:1.28rem; margin-top:10px; }
+  .link-card p{ margin:7px 0 0; font-size:.87rem; opacity:.8; }
+  .card-arrow{ margin-top:16px; color:var(--lacquer); font-size:.88rem; font-weight:700; }
+  .link-card.is-disabled{ opacity:.58; cursor:not-allowed; }
+  .link-card.is-disabled:hover{ transform:none; box-shadow:none; border-color:var(--line); }
+  .seasonal-box{
+    display:grid; grid-template-columns:auto 1fr; gap:22px; align-items:center;
+    padding:28px; background:var(--ivory-deep); border:1px solid var(--line);
+  }
+  @media (max-width:540px){ .seasonal-box{ grid-template-columns:1fr; gap:14px; } }
+  .seasonal-badge{ align-self:start; display:inline-block; padding:5px 10px; background:var(--lacquer); color:var(--ivory); font-size:.75rem; letter-spacing:.08em; }
+  .seasonal-box h3{ font-size:1.25rem; }
+  .seasonal-box p{ margin:6px 0 0; font-size:.9rem; opacity:.82; }
+  .seasonal-period{ font-size:.82rem!important; color:var(--jade); font-weight:700; }
+  .category-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+  @media (max-width:720px){ .category-grid{ grid-template-columns:repeat(2,1fr); } }
+  .category-item{ padding:17px; border:1px solid var(--line); background:#fbf7ef; }
+  .category-item h3{ font-size:1rem; }
+  .category-item p{ margin:4px 0 0; font-size:.82rem; opacity:.75; }
+  .history-text{ max-width:42em; margin:0; }
+  .contact-box{ background:var(--ink); color:var(--ivory); padding:34px 32px; }
+  .contact-box h2{ color:var(--ivory); font-size:1.65rem; }
+  .contact-box p{ max-width:38em; margin:8px 0 20px; font-size:.9rem; opacity:.83; }
+  .contact-box .btn-line{ color:var(--ivory); border-color:rgba(246,239,225,.7); }
+  .contact-box .btn-line:hover{ background:var(--ivory); color:var(--ink); }
+  .map-link{ display:inline-block; margin-top:18px; color:var(--lacquer); font-size:.9rem; font-weight:700; }
+
   /* course list */
   .course-list{ display:flex; flex-direction:column; }
   .course-item{
@@ -260,240 +305,198 @@
 
 <header>
   <div class="wrap nav-row">
-    <div class="brand">福林楼<small>HAKATA CHINESE DINING</small></div>
-    <button class="nav-toggle" id="navToggle" aria-label="メニューを開く">☰</button>
+    <a class="brand" href="#top" aria-label="福林楼 トップへ">福林楼<small>CHINESE RESTAURANT · HAKATA</small></a>
+    <button class="nav-toggle" id="navToggle" aria-label="メニューを開く" aria-expanded="false">☰</button>
     <nav>
       <ul id="navList">
-        <li><a href="#menu">メニュー</a></li>
-        <li><a href="#course">コース</a></li>
-        <li><a href="#reserve">ご予約</a></li>
-        <li><a href="#access">アクセス</a></li>
-        <li><a href="#contact">お問い合わせ</a></li>
+        <li><a href="#limited">限定商品</a></li>
+        <li><a href="#menu">お料理</a></li>
+        <li><a href="#reservation">ご予約</a></li>
+        <li><a href="#access">店舗案内</a></li>
+        <li><a data-link="instagram" href="#">Instagram</a></li>
       </ul>
     </nav>
   </div>
   <div class="key-pattern"></div>
 </header>
 
-<section class="hero">
-  <div class="wrap">
-    <div class="kicker">博多駅南 · 中国料理</div>
-    <h1>福林楼<span class="yomi">フクリンロウ</span></h1>
-    <p class="copy">
-      昔ながらの町中華の味を、博多の街で。
-      定食から本格コース、ご宴会・お祝い事のオードブルまで、
-      日々の食事から特別な一日まで温かい一皿をお届けします。
-    </p>
-    <div class="hero-actions">
-      <a class="btn btn-primary" href="tel:0924811369">電話で問い合わせる</a>
-      <a class="btn btn-line" href="#reserve">コース・オードブルの予約</a>
-    </div>
-    <div class="hero-facts">
-      <span>営業時間 11:30〜(月〜土)</span>
-      <span>092-481-1369</span>
-      <span>博多駅より徒歩約22分・車4分</span>
-    </div>
-  </div>
-</section>
+<main id="top">
+  <div class="notice-bar"><div class="wrap">季節のお知らせ・新商品は <a data-link="instagram" href="#">Instagram</a> で発信しています。</div></div>
 
-<section id="menu">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="label">MENU</div>
-      <h2>人気メニュー</h2>
-      <p>定食は毎日の食事にちょうどよい、ご飯・スープ付きの一皿。単品でのご注文も承っております。</p>
-    </div>
-    <div class="menu-grid">
-      <div class="menu-card">
-        <figure>
-          <img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?q=80&w=800&auto=format&fit=crop" alt="野菜炒め定食">
-        </figure>
-        <h3>野菜炒め定食</h3>
-        <div class="price">¥850</div>
-        <p>季節野菜をたっぷり使った看板定食。ご飯・スープ・小鉢付き。</p>
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap">
+      <div class="kicker">博多駅南 · 山東料理 · 町中華</div>
+      <h1 id="hero-title">中国料理 福林楼<span class="yomi">フクリンロウ</span></h1>
+      <p class="copy">30年以上の経験を持つ中国人シェフがつくる、親しみのある本格中国料理。<br>普段のお食事からご宴会、オードブルまで、心を込めてご用意します。</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="tel:0924811369">お電話で予約・お問い合わせ</a>
+        <a class="btn btn-line" href="#reservation">予約方法を見る</a>
       </div>
-      <div class="menu-card">
-        <figure>
-          <img src="https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?q=80&w=800&auto=format&fit=crop" alt="麻婆豆腐定食">
-        </figure>
-        <h3>麻婆豆腐定食</h3>
-        <div class="price">¥900</div>
-        <p>豆板醤の効いたコクのある自家製麻婆豆腐。辛さの調整も可能です。</p>
-      </div>
-      <div class="menu-card">
-        <figure>
-          <img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?q=80&w=800&auto=format&fit=crop" alt="五目あんかけ麺">
-        </figure>
-        <h3>五目あんかけ麺</h3>
-        <div class="price">¥950</div>
-        <p>魚介と野菜の出汁がしみる、とろみあんの効いた一杯。</p>
+      <div class="hero-facts">
+        <span>昼 11:30〜14:30（月〜土）</span>
+        <span>夜 17:30〜23:00</span>
+        <span>日曜は夜のみ営業</span>
       </div>
     </div>
-    <p class="menu-note">
-      ※ 掲載価格・写真は準備中のものを含みます。実際のメニュー内容は店頭またはお電話でご確認ください。
-    </p>
-  </div>
-</section>
+  </section>
 
-<section id="course">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="label">COURSE</div>
-      <h2>コースのご案内</h2>
-      <p>ご宴会・接待・お祝い事に合わせて、品数と内容をご相談いただけます。ご予算に応じたコースもお作りします。</p>
-    </div>
-    <div class="course-list">
-      <div class="course-item">
+  <section id="limited">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="label">SEASONAL NEWS</div>
+        <h2>期間限定・お知らせ</h2>
+        <p>季節の商品や予約受付のお知らせを掲載します。</p>
+      </div>
+      <!-- 期間限定品を更新するときは、このseasonal-box内だけを差し替えます。 -->
+      <div class="seasonal-box">
+        <div class="seasonal-badge">最新情報</div>
         <div>
-          <h3>季節のお任せコース</h3>
-          <div class="desc">前菜・メイン数品・炒め物・点心・スープ・デザートの全7品。少人数のお食事会に。</div>
+          <h3>最新のお知らせはInstagramでご案内しています</h3>
+          <p class="seasonal-period">季節のおすすめ・限定商品の情報は随時更新</p>
+          <p>新しい料理や期間限定商品の内容・価格・販売期間は、公式Instagramをご確認ください。</p>
+          <a class="map-link" data-link="instagram" href="#">Instagramを見る →</a>
         </div>
-        <div class="price">¥4,000〜</div>
       </div>
-      <div class="course-item">
+    </div>
+  </section>
+
+  <section id="menu">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="label">FOOD MENU</div>
+        <h2>お料理メニュー</h2>
+        <p>定食・一品料理・前菜・麺飯・点心・デザート・お酒／ドリンクをそろえています。</p>
+      </div>
+      <div class="category-grid">
+        <div class="category-item"><h3>定食・一品料理</h3><p>毎日のお食事に</p></div>
+        <div class="category-item"><h3>前菜・海鮮料理</h3><p>おつまみから本格料理まで</p></div>
+        <div class="category-item"><h3>肉料理</h3><p>山東料理の味わい</p></div>
+        <div class="category-item"><h3>野菜・豆腐料理</h3><p>定番の炒め物・麻婆豆腐</p></div>
+        <div class="category-item"><h3>麺・飯・スープ</h3><p>しっかり食べたい方に</p></div>
+        <div class="category-item"><h3>点心・デザート・ドリンク</h3><p>お食事の最後まで</p></div>
+      </div>
+      <p class="menu-note">価格・料理写真を含む全メニューは、メニューページを準備後にこちらからご覧いただけます。</p>
+      <p><a class="btn btn-line" data-link="fullMenu" href="#">全メニューを見る</a></p>
+    </div>
+  </section>
+
+  <section id="reservation">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="label">RESERVATION</div>
+        <h2>ご予約・お問い合わせ</h2>
+        <p>用途に合わせて、下のボタンからお進みください。</p>
+      </div>
+      <div class="link-grid">
+        <a class="link-card primary" href="tel:0924811369">
+          <div><div class="eyebrow">TABLE / COURSE</div><h3>店内・コースを予約</h3><p>日時・人数・ご希望をお電話でお伝えください。ご宴会のご相談も承ります。</p></div>
+          <div class="card-arrow">092-481-1369 →</div>
+        </a>
+        <a class="link-card" data-link="horsDOeuvreReservation" href="#">
+          <div><div class="eyebrow">TAKEOUT</div><h3>オードブルを予約</h3><p>お持ち帰り用オードブルの内容・受取日時を、専用の予約ページからお申し込みいただけます。</p></div>
+          <div class="card-arrow">予約ページへ →</div>
+        </a>
+        <a class="link-card" data-link="instagram" href="#">
+          <div><div class="eyebrow">FOLLOW US</div><h3>Instagram</h3><p>おすすめ料理、期間限定商品、営業に関するお知らせを発信しています。</p></div>
+          <div class="card-arrow">Instagramを見る →</div>
+        </a>
+        <a class="link-card" data-link="contactPage" href="#">
+          <div><div class="eyebrow">ONLINE CONTACT</div><h3>お問い合わせフォーム</h3><p>オードブル予約に関するお問い合わせ、その他のご質問はこちらからお送りください。</p></div>
+          <div class="card-arrow">お問い合わせへ →</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="label">ABOUT FUKURINROU</div>
+        <h2>福林楼について</h2>
+      </div>
+      <p class="history-text">博多駅南で、気軽に本格的な中国料理を楽しんでいただけるお店です。中国・山東省の味を大切にしながら、定食、一品料理、コース料理をお作りしています。ご家族でのお食事、仕事帰りの一杯、ご宴会など、さまざまな場面でご利用ください。</p>
+    </div>
+  </section>
+
+  <section id="access">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="label">ACCESS</div>
+        <h2>店舗案内</h2>
+      </div>
+      <div class="access-grid">
         <div>
-          <h3>宴会コース</h3>
-          <div class="desc">大皿料理を中心にボリュームを重視した全8品。歓送迎会・忘新年会に。</div>
+          <dl>
+            <div class="info-row"><dt>店名</dt><dd>中国料理 福林楼</dd></div>
+            <div class="info-row"><dt>住所</dt><dd>〒812-0016<br>福岡県福岡市博多区博多駅南3丁目7-14 岡元ビル</dd></div>
+            <div class="info-row"><dt>電話</dt><dd><a href="tel:0924811369">092-481-1369</a></dd></div>
+            <div class="info-row"><dt>営業時間</dt><dd>月〜土　11:30〜14:30／17:30〜23:00<br>日　17:30〜23:00</dd></div>
+            <div class="info-row"><dt>アクセス</dt><dd>博多駅より徒歩約22分・お車で約4分</dd></div>
+          </dl>
+          <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=%E7%A6%8F%E5%B2%A1%E7%9C%8C%E7%A6%8F%E5%B2%A1%E5%B8%82%E5%8D%9A%E5%A4%9A%E5%8C%BA%E5%8D%9A%E5%A4%9A%E9%A7%85%E5%8D%973%E4%B8%81%E7%9B%AE7-14" target="_blank" rel="noopener">Google マップで開く →</a>
         </div>
-        <div class="price">¥5,000〜</div>
-      </div>
-      <div class="course-item">
-        <div>
-          <h3>特別祝い膳コース</h3>
-          <div class="desc">高級食材を使用した全9品。誕生日・記念日など特別な日に。</div>
+        <div class="map-frame">
+          <iframe src="https://www.google.com/maps?q=%E7%A6%8F%E5%B2%A1%E7%9C%8C%E7%A6%8F%E5%B2%A1%E5%B8%82%E5%8D%9A%E5%A4%9A%E5%8C%BA%E5%8D%9A%E5%A4%9A%E9%A7%85%E5%8D%973%E4%B8%81%E7%9B%AE7-14&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="中国料理 福林楼 地図"></iframe>
         </div>
-        <div class="price">¥7,000〜</div>
       </div>
     </div>
-    <p class="menu-note">※ コース内容・金額は目安です。人数やご要望に応じて調整いたしますので、お気軽にご相談ください。</p>
-  </div>
-</section>
+  </section>
 
-<section id="reserve">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="label">RESERVATION</div>
-      <h2>コース・オードブル・おせちのご予約</h2>
-      <p>ご宴会コース、お持ち帰りオードブル、年末のおせちのご予約を承っております。</p>
-    </div>
-    <div class="reserve-panel">
-      <div class="reserve-grid">
-        <div class="reserve-block">
-          <h3>コース・宴会のご予約</h3>
-          <p>日時・人数・ご予算をお知らせください。個室のご相談も可能です。</p>
-          <ol class="reserve-steps">
-            <li>お電話または下記フォームでご連絡</li>
-            <li>日時・人数・ご希望コースをお伝えください</li>
-            <li>内容確定後、ご予約確定のご連絡をいたします</li>
-          </ol>
-        </div>
-        <div class="reserve-block">
-          <h3>オードブル・おせちのご予約</h3>
-          <p>ご宴会やご家庭でのお祝い用オードブル、年末のおせちを承っております(数量限定・要予約)。</p>
-          <ol class="reserve-steps">
-            <li>お早めに(おせちは特に12月上旬までを推奨)お問い合わせください</li>
-            <li>内容・数量・お受け取り日をご相談</li>
-            <li>店頭またはご自宅近くでのお渡し方法をご案内</li>
-          </ol>
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact-box">
+        <h2>お気軽にお問い合わせください</h2>
+        <p>店内予約・コースのご相談は、お電話が一番確実です。オードブルに関するご質問は、専用お問い合わせフォームもご利用いただけます。</p>
+        <div class="hero-actions" style="justify-content:flex-start; margin-top:0;">
+          <a class="btn btn-primary" href="tel:0924811369">電話する：092-481-1369</a>
+          <a class="btn btn-line" data-link="contactPage" href="#">お問い合わせフォーム</a>
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-<section id="access">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="label">ACCESS</div>
-      <h2>アクセス・営業情報</h2>
-    </div>
-    <div class="access-grid">
-      <div>
-        <dl>
-          <div class="info-row"><dt>住所</dt><dd>〒812-0016 福岡県福岡市博多区博多駅南3丁目7-14 岡元ビル</dd></div>
-          <div class="info-row"><dt>電話</dt><dd><a href="tel:0924811369">092-481-1369</a></dd></div>
-          <div class="info-row"><dt>営業時間</dt><dd>11:30〜(詳細は店舗までお問い合わせください)</dd></div>
-          <div class="info-row"><dt>アクセス</dt><dd>博多駅より徒歩約22分・お車で約4分</dd></div>
-          <div class="info-row"><dt>お支払い</dt><dd>現金・その他各種決済に対応(詳細は店舗までご確認ください)</dd></div>
-        </dl>
-      </div>
-      <div class="map-frame">
-        <iframe
-          src="https://www.google.com/maps?q=%E7%A6%8F%E5%B2%A1%E7%9C%8C%E7%A6%8F%E5%B2%A1%E5%B8%82%E5%8D%9A%E5%A4%9A%E5%8C%BA%E5%8D%9A%E5%A4%9A%E9%A7%85%E5%8D%97%EF%BC%93%E4%B8%81%E7%9B%AE7-14&output=embed"
-          loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="福林楼 地図">
-        </iframe>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="contact">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="label">CONTACT</div>
-      <h2>お問い合わせ</h2>
-      <p>ご予約・お問い合わせは、お電話またはこちらのフォームからお気軽にどうぞ。</p>
-    </div>
-    <form id="contactForm">
-      <div class="field-row">
-        <div class="field">
-          <label for="name">お名前</label>
-          <input id="name" name="name" type="text" required>
-        </div>
-        <div class="field">
-          <label for="tel">電話番号</label>
-          <input id="tel" name="tel" type="tel" required>
-        </div>
-      </div>
-      <div class="field">
-        <label for="type">お問い合わせ内容</label>
-        <select id="type" name="type">
-          <option>コースのご予約</option>
-          <option>オードブルのご予約</option>
-          <option>おせちのご予約</option>
-          <option>その他のお問い合わせ</option>
-        </select>
-      </div>
-      <div class="field">
-        <label for="message">詳細・ご希望日時など</label>
-        <textarea id="message" name="message"></textarea>
-      </div>
-      <button class="btn btn-primary" type="submit">送信する</button>
-      <p class="form-note" id="formNote">
-        ※ このフォームは見本です。実際に送信を受け付けるには、フォーム送信サービス(Googleフォーム等)またはメール送信の設定が必要です。
-      </p>
-    </form>
-  </div>
-</section>
+  </section>
+</main>
 
 <footer>
   <div class="wrap">
-    <div>
-      <div class="brand">福林楼<small>HAKATA CHINESE DINING</small></div>
-    </div>
+    <div><div class="brand">福林楼<small>CHINESE RESTAURANT · HAKATA</small></div></div>
     <div class="foot-links">
-      <a href="#menu">メニュー</a>
-      <a href="#course">コース</a>
-      <a href="#reserve">ご予約</a>
-      <a href="#access">アクセス</a>
-      <a href="#contact">お問い合わせ</a>
+      <a href="#limited">限定商品</a><a href="#menu">メニュー</a><a href="#reservation">ご予約</a><a href="#access">店舗案内</a><a data-link="instagram" href="#">Instagram</a>
     </div>
   </div>
-  <div class="wrap copyright">&copy; 福林楼</div>
+  <div class="wrap copyright">&copy; 中国料理 福林楼</div>
 </footer>
 
 <script>
+  /* URLを受け取った後は、この4行だけを本物のURLに差し替えます。 */
+  const siteLinks = {
+    instagram: '',
+    horsDOeuvreReservation: '',
+    contactPage: '',
+    fullMenu: ''
+  };
+
+  document.querySelectorAll('[data-link]').forEach(function(link){
+    const url = siteLinks[link.dataset.link];
+    if (url) {
+      link.href = url;
+      if (/^https?:/i.test(url)) { link.target = '_blank'; link.rel = 'noopener'; }
+    } else {
+      link.classList.add('is-disabled');
+      link.addEventListener('click', function(event){ event.preventDefault(); });
+      link.setAttribute('aria-disabled', 'true');
+    }
+  });
+
   document.getElementById('navToggle').addEventListener('click', function(){
-    document.getElementById('navList').classList.toggle('open');
+    const navList = document.getElementById('navList');
+    navList.classList.toggle('open');
+    this.setAttribute('aria-expanded', navList.classList.contains('open'));
   });
-  document.querySelectorAll('#navList a').forEach(function(a){
-    a.addEventListener('click', function(){
+  document.querySelectorAll('#navList a').forEach(function(link){
+    link.addEventListener('click', function(){
       document.getElementById('navList').classList.remove('open');
+      document.getElementById('navToggle').setAttribute('aria-expanded', 'false');
     });
-  });
-  document.getElementById('contactForm').addEventListener('submit', function(e){
-    e.preventDefault();
-    document.getElementById('formNote').textContent = '送信を受け付けました(見本表示です。実際の送信設定は別途必要です)。';
   });
 </script>
 
