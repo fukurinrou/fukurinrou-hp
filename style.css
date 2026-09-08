@@ -1,0 +1,4 @@
+/* 2026-09-08 02:00 変更済み */
+:root{--ivory:#f6efe1;--ivory-deep:#ede2cc;--ink:#211c16;--lacquer:#8f2b1b;--lacquer-deep:#6e2013;--brass:#a9822c;--jade:#435f49;--line:rgba(33,28,22,.16)}
+html{scroll-behavior:smooth}body{background:var(--ivory);color:var(--ink)}
+:focus-visible{outline:3px solid var(--brass);outline-offset:3px}

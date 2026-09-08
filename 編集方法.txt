@@ -3,15 +3,15 @@
 
 ■ 価格を表示・非表示にする（いちばん簡単な修正）
 
-1. 「menu.html」をVS Codeで開きます。
-2. ファイル内で「const SHOW_PRICES = true;」を探します。
+1. 「config.js」をVS Codeで開きます。
+2. 「showPrices: true」を探します。
 3. 価格を表示したいときは、このままにします。
 
-   const SHOW_PRICES = true;
+   showPrices: true
 
 4. 価格を非表示にしたいときは、true を false に変えます。
 
-   const SHOW_PRICES = false;
+   showPrices: false
 
 5. 保存して、GitHubへCommit・Pushします。
 
@@ -22,7 +22,8 @@
 ■ ホームページの上の店内写真を変える
 
 「assets/store-interior.jpg」を、同じ名前の新しい写真で置き換えます。
-写真は横長がおすすめです。
+横1200px程度・500KB以下（最大2MB）、横長のJPEGがおすすめです。
+反映されないときは、画像名を変更してindex.htmlの画像名も同じように変更します。
 
 ■ このフォルダをGitHubへ入れるとき
 
