@@ -1,4 +1,4 @@
-<!-- 2026-09-09 12:03 変更済み -->
+<!-- 2026-09-09 13:38 変更済み -->
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -165,6 +165,7 @@
   .hero-actions{
     display:flex; gap: 14px; justify-content:center; margin-top: 34px; flex-wrap: wrap;
   }
+  .hero-actions .btn{ width:260px; text-align:center; }
   .btn{
     display:inline-block; padding: 13px 30px; text-decoration:none;
     font-size: 0.92rem; letter-spacing: 0.04em; border-radius: 2px;
@@ -176,13 +177,18 @@
   .btn-line:hover{ background: var(--ink); color: var(--ivory); }
 
   .hero-facts{
-    margin-top: 40px; display:flex; justify-content:center; gap: 34px;
+    margin-top: 34px; display:flex; justify-content:center; gap: 10px 26px;
     flex-wrap:wrap; font-size: 0.85rem; color: var(--ink); opacity:0.75;
   }
   @media(max-width:760px){
     .hero-grid{grid-template-columns:1fr;min-height:0}
     .hero-copy{padding:52px 24px 42px}
     .hero-photo{min-height:300px;max-height:420px}
+  }
+  @media(max-width:540px){
+    .hero-actions{width:100%;gap:10px;margin-top:28px}
+    .hero-actions .btn{width:100%}
+    .hero-facts{margin-top:26px;gap:6px 16px;line-height:1.6}
   }
 
   /* sections */
@@ -249,13 +255,19 @@
   .link-card.is-disabled{ opacity:.58; cursor:not-allowed; }
   .link-card.is-disabled:hover{ transform:none; box-shadow:none; border-color:var(--line); }
   .seasonal-box{
-    display:grid; grid-template-columns:auto 1fr; gap:22px; align-items:center;
-    padding:30px; background:#fffaf0; border:1px solid var(--brass); border-radius:6px;
+    display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:26px; align-items:center;
+    padding:18px; background:#fffaf0; border:1px solid var(--brass); border-radius:6px;
     box-shadow:0 10px 22px rgba(33,28,22,.06);
   }
-  @media (max-width:540px){ .seasonal-box{ grid-template-columns:1fr; gap:14px; } }
+  .seasonal-image{ margin:0; overflow:hidden; border:1px solid rgba(169,130,44,.55); background:var(--ivory); }
+  .seasonal-image img{ width:100%; aspect-ratio:1200/849; object-fit:contain; }
+  .seasonal-content{ padding:8px 10px 8px 2px; }
+  @media (max-width:640px){
+    .seasonal-box{ grid-template-columns:1fr; gap:18px; padding:14px; }
+    .seasonal-content{ padding:0 6px 8px; }
+  }
   .seasonal-badge{ align-self:start; display:inline-block; padding:5px 10px; background:var(--lacquer); color:var(--ivory); font-size:.75rem; letter-spacing:.08em; white-space:nowrap; }
-  .seasonal-box h3{ font-size:1.28rem; line-height:1.5; }
+  .seasonal-box h3{ font-size:1.38rem; line-height:1.5; margin-top:14px; }
   .seasonal-box p{ margin:8px 0 0; font-size:.9rem; opacity:.82; overflow-wrap:anywhere; }
   .seasonal-period{ font-size:.82rem!important; color:var(--jade); font-weight:700; }
   .category-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
@@ -376,7 +388,7 @@
         <p class="copy">30年以上の経験を持つ中国人シェフがつくる、親しみのある本格中国料理です。普段のお食事からご宴会、おせち・オードブルまで、心を込めてご用意します。</p>
         <div class="hero-actions">
           <a class="btn btn-primary" data-link="seatCourseReservation" href="#">席・コースをネット予約</a>
-          <a class="btn btn-line" href="#reservation">予約方法を見る</a>
+          <a class="btn btn-line" data-link="horsDOeuvreReservation" href="#">おせち・オードブルを予約</a>
         </div>
         <div class="hero-facts">
           <span>昼 11:30〜14:00</span>
@@ -401,7 +413,7 @@
           <div class="card-arrow">予約ページへ →</div>
         </a>
         <a class="link-card accent" data-link="horsDOeuvreReservation" href="#">
-          <div><div class="eyebrow">OSECHI / TAKEOUT</div><h3>おせち・オードブルを予約</h3><p>おせち・お持ち帰り用オードブルの内容と受取日時を、専用ページからお申し込みいただけます。</p></div>
+          <div><div class="eyebrow">OSECHI / TAKEOUT</div><h3>おせち・オードブルを予約</h3><p>おせち・オードブルの内容と受取日時を、専用ページからお申し込みいただけます。</p></div>
           <div class="card-arrow">お申し込みページへ →</div>
         </a>
         <a class="link-card social" data-link="instagram" href="#">
@@ -418,15 +430,18 @@
       <div class="section-head">
         <div class="label">SEASONAL NEWS</div>
         <h2>期間限定・お知らせ</h2>
-        <p>季節限定の商品、販売期間、予約受付のお知らせを掲載します。</p>
+        <p>今月の期間限定商品と、販売期間・価格をご案内します。</p>
       </div>
       <!-- 期間限定品を更新するときは、このseasonal-box内だけを差し替えます。 -->
       <div class="seasonal-box">
-        <div class="seasonal-badge">COMING SOON</div>
-        <div>
-          <h3>次回の期間限定商品を準備しています</h3>
-          <p class="seasonal-period">販売開始・価格・ご予約のご案内は、決まり次第こちらに掲載します。</p>
-          <p>最新情報は公式Instagramでもお知らせします。季節のおすすめを、ぜひお楽しみにお待ちください。</p>
+        <figure class="seasonal-image">
+          <img src="assets/september-limited-renkon.jpg" alt="9月限定 中華風 蓮根の豚肉はさみ揚げ 3個入り680円" loading="lazy">
+        </figure>
+        <div class="seasonal-content">
+          <div class="seasonal-badge">9月限定</div>
+          <h3>中華風 蓮根の豚肉はさみ揚げ</h3>
+          <p class="seasonal-period">3個入り　680円</p>
+          <p>2種類の具を楽しめる、お酒にも合う中華のおかずです。期間限定で復活しました。</p>
           <a class="map-link" data-link="instagram" href="#">Instagramを見る →</a>
         </div>
       </div>
