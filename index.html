@@ -1,4 +1,4 @@
-<!-- 2026-09-08 02:00 変更済み -->
+<!-- 2026-09-09 00:20 変更済み -->
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -365,7 +365,7 @@
         <h1 id="hero-title">中国料理 福林楼<span class="yomi">フクリンロウ</span></h1>
         <p class="copy">30年以上の経験を持つ中国人シェフがつくる、親しみのある本格中国料理。普段のお食事からご宴会、おせち・オードブルまで、心を込めてご用意します。</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="tel:0924811369">お電話で予約・お問い合わせ</a>
+          <a class="btn btn-primary" data-link="seatCourseReservation" href="#">席・コースをネット予約</a>
           <a class="btn btn-line" href="#reservation">予約方法を見る</a>
         </div>
         <div class="hero-facts">
@@ -452,12 +452,12 @@
       <div class="section-head">
         <div class="label">RESERVATION</div>
         <h2>ご予約</h2>
-        <p>店内のお席は1名様から45名様までご予約を受け付けています。<br>用途に合わせて、下のボタンからお進みください。</p>
+        <p>店内のお席は1名様から45名様までご予約を受け付けています。<br>お席のみ・コース料理を、ネットでご予約いただけます。</p>
       </div>
       <div class="link-grid">
-        <a class="link-card primary" href="tel:0924811369">
-          <div><div class="eyebrow">TABLE / COURSE</div><h3>店内・コースを予約</h3><p>1名様〜45名様まで受付。<br>コースのネット予約は準備中です。</p></div>
-          <div class="card-arrow">092-481-1369 →</div>
+        <a class="link-card primary" data-link="seatCourseReservation" href="#">
+          <div><div class="eyebrow">TABLE / COURSE</div><h3>席・コースをネット予約</h3><p>1名様〜45名様まで受付。<br>お席のみ・コース料理を選んで予約できます。</p></div>
+          <div class="card-arrow">予約ページへ →</div>
         </a>
         <a class="link-card" data-link="horsDOeuvreReservation" href="#">
           <div><div class="eyebrow">OSECHI / TAKEOUT</div><h3>おせち・オードブルを予約</h3><p>おせち・お持ち帰り用オードブルの内容・受取日時を、専用の予約ページからお申し込みいただけます。</p></div>
@@ -520,7 +520,8 @@
 <script>
   const siteLinks = {
     instagram: 'https://www.instagram.com/fukurinrou?stkn=aWtmb2x6bGxxd2Jv',
-    horsDOeuvreReservation: 'https://fukurinrou-osechi.yangshiyuan2004.workers.dev/'
+    horsDOeuvreReservation: 'https://fukurinrou-osechi.yangshiyuan2004.workers.dev/',
+    seatCourseReservation: 'https://fukurinrou-reserve.yangshiyuan2004.workers.dev/'
   };
 
   document.querySelectorAll('[data-link]').forEach(function(link){

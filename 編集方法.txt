@@ -30,5 +30,10 @@
 ZIPを解凍して、中に入っている index.html、menu.html、編集方法.txt、
 assetsフォルダを、GitHubの fukurinrou-hp の一番上の階層へ入れてください。
 
+■ 席・コース予約
+
+ホームページの「席・コースをネット予約」は、次の予約サイトへつながっています。
+https://fukurinrou-reserve.yangshiyuan2004.workers.dev/
+
 古いQR注文用の menu-view.js と price-visibility.js は、このホームページでは使いません。
 スタッフ管理画面は削除しないでください。
