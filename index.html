@@ -1,4 +1,4 @@
-<!-- 2026-09-09 00:20 変更済み -->
+<!-- 2026-09-09 12:03 変更済み -->
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -33,8 +33,8 @@
     "addressCountry": "JP"
   },
   "openingHoursSpecification": [
-    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "11:30", "closes": "14:30"},
-    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "17:30", "closes": "23:00"}
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "11:30", "closes": "14:00"},
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "17:30", "closes": "22:00"}
   ],
   "menu": "https://fukurinrou.github.io/fukurinrou-hp/menu.html",
   "acceptsReservations": "True"
@@ -186,9 +186,9 @@
   }
 
   /* sections */
-  section{ padding: 52px 0; }
+  section{ padding: 48px 0; }
   section + section{ border-top: 1px solid var(--line); }
-  .section-head{ margin-bottom: 26px; }
+  .section-head{ margin-bottom: 22px; }
   .section-head .label{
     font-size: 0.74rem; color: var(--jade); letter-spacing: 0.22em; margin-bottom: 8px;
   }
@@ -219,33 +219,44 @@
     font-size: 0.86rem; text-align:center;
   }
   .notice-bar a{ color:inherit; font-weight:700; text-underline-offset:3px; }
+  .quick-actions{ background:linear-gradient(180deg, #fbf7ef 0%, var(--ivory-deep) 100%); }
+  .quick-actions .section-head{ text-align:center; max-width:42em; margin:0 auto 26px; }
+  .quick-actions .section-head p{ margin-left:auto; margin-right:auto; }
   .link-grid{
     display:grid; grid-template-columns:repeat(3, 1fr); gap:16px;
   }
   @media (max-width: 640px){ .link-grid{ grid-template-columns:1fr; } }
   .link-card{
-    min-height:174px; padding:26px 24px; border:1px solid var(--line);
-    background:rgba(255,255,255,0.18); text-decoration:none; display:flex;
+    min-height:224px; padding:27px 24px 24px; border:1px solid var(--line);
+    background:#fffaf0; text-decoration:none; display:flex;
     flex-direction:column; justify-content:space-between; transition:0.16s ease;
+    border-radius:6px;
   }
-  .link-card:hover{ transform:translateY(-3px); border-color:var(--brass); box-shadow:0 10px 24px rgba(33,28,22,.08); }
+  .link-card:hover{ transform:translateY(-4px); border-color:var(--brass); box-shadow:0 14px 28px rgba(33,28,22,.12); }
   .link-card.primary{ background:var(--lacquer); color:var(--ivory); border-color:var(--lacquer); }
   .link-card.primary h3,.link-card.primary .card-arrow{ color:var(--ivory); }
+  .link-card.accent{ background:#fff5dd; border-color:rgba(169,130,44,.5); }
+  .link-card.social{ background:#edf3ed; border-color:rgba(67,95,73,.4); }
   .link-card .eyebrow{ color:var(--jade); font-size:.72rem; font-weight:700; letter-spacing:.14em; }
   .link-card.primary .eyebrow{ color:#f3d99e; }
-  .link-card h3{ font-size:1.28rem; margin-top:10px; }
-  .link-card p{ margin:7px 0 0; font-size:.87rem; opacity:.8; }
+  .link-card h3{ font-size:1.25rem; margin-top:10px; line-height:1.45; }
+  .link-card p{ margin:8px 0 0; font-size:.87rem; opacity:.84; line-height:1.75; overflow-wrap:anywhere; }
   .card-arrow{ margin-top:16px; color:var(--lacquer); font-size:.88rem; font-weight:700; }
+  .link-card.accent .card-arrow{ color:#866316; }
+  .link-card.social .card-arrow{ color:var(--jade); }
+  .cancel-note{ margin:18px 0 0; text-align:center; font-size:.84rem; color:var(--ink); }
+  .cancel-note a{ color:var(--lacquer); font-weight:700; text-underline-offset:3px; }
   .link-card.is-disabled{ opacity:.58; cursor:not-allowed; }
   .link-card.is-disabled:hover{ transform:none; box-shadow:none; border-color:var(--line); }
   .seasonal-box{
     display:grid; grid-template-columns:auto 1fr; gap:22px; align-items:center;
-    padding:28px; background:var(--ivory-deep); border:1px solid var(--line);
+    padding:30px; background:#fffaf0; border:1px solid var(--brass); border-radius:6px;
+    box-shadow:0 10px 22px rgba(33,28,22,.06);
   }
   @media (max-width:540px){ .seasonal-box{ grid-template-columns:1fr; gap:14px; } }
-  .seasonal-badge{ align-self:start; display:inline-block; padding:5px 10px; background:var(--lacquer); color:var(--ivory); font-size:.75rem; letter-spacing:.08em; }
-  .seasonal-box h3{ font-size:1.25rem; }
-  .seasonal-box p{ margin:6px 0 0; font-size:.9rem; opacity:.82; }
+  .seasonal-badge{ align-self:start; display:inline-block; padding:5px 10px; background:var(--lacquer); color:var(--ivory); font-size:.75rem; letter-spacing:.08em; white-space:nowrap; }
+  .seasonal-box h3{ font-size:1.28rem; line-height:1.5; }
+  .seasonal-box p{ margin:8px 0 0; font-size:.9rem; opacity:.82; overflow-wrap:anywhere; }
   .seasonal-period{ font-size:.82rem!important; color:var(--jade); font-weight:700; }
   .category-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
   @media (max-width:720px){ .category-grid{ grid-template-columns:repeat(2,1fr); } }
@@ -253,9 +264,8 @@
   a.category-item:hover{border-color:var(--brass);transform:translateY(-2px);box-shadow:0 8px 18px rgba(33,28,22,.08)}
   .category-item h3{ font-size:1rem; }
   .category-item p{ margin:4px 0 0; font-size:.82rem; opacity:.75; }
-  .gallery-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:18px; }
-  @media (max-width:880px){ .gallery-grid{ grid-template-columns:repeat(2,1fr); } }
-  @media (max-width:520px){ .gallery-grid{ grid-template-columns:1fr; } }
+  .gallery-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:18px; }
+  @media (max-width:560px){ .gallery-grid{ grid-template-columns:1fr; } }
   .gallery-card{ margin:0; background:#fbf7ef; border:1px solid var(--line); overflow:hidden; }
   .gallery-card img{ width:100%; aspect-ratio:4/3; object-fit:cover; }
   .gallery-card figcaption{ padding:15px 16px 17px; }
@@ -346,7 +356,7 @@
         <li><a href="#limited">限定商品</a></li>
         <li><a href="#menu">お料理</a></li>
         <li><a href="#gallery">店内・料理写真</a></li>
-        <li><a href="#reservation">ご予約</a></li>
+        <li><a href="#reservation">ご予約・SNS</a></li>
         <li><a href="#access">店舗案内</a></li>
         <li><a data-link="instagram" href="#">Instagram</a></li>
       </ul>
@@ -363,18 +373,43 @@
       <div class="hero-copy">
         <div class="kicker">博多駅南 · 山東料理 · 町中華</div>
         <h1 id="hero-title">中国料理 福林楼<span class="yomi">フクリンロウ</span></h1>
-        <p class="copy">30年以上の経験を持つ中国人シェフがつくる、親しみのある本格中国料理。普段のお食事からご宴会、おせち・オードブルまで、心を込めてご用意します。</p>
+        <p class="copy">30年以上の経験を持つ中国人シェフがつくる、親しみのある本格中国料理です。普段のお食事からご宴会、おせち・オードブルまで、心を込めてご用意します。</p>
         <div class="hero-actions">
           <a class="btn btn-primary" data-link="seatCourseReservation" href="#">席・コースをネット予約</a>
           <a class="btn btn-line" href="#reservation">予約方法を見る</a>
         </div>
         <div class="hero-facts">
-          <span>昼 11:30〜14:30（月〜土）</span>
-          <span>夜 17:30〜23:00</span>
+          <span>昼 11:30〜14:00</span>
+          <span>夜 17:30〜22:00</span>
           <span>1名様〜45名様までご予約受付</span>
         </div>
       </div>
       <div class="hero-photo"><img src="assets/store-interior.jpg" alt="中国料理 福林楼の店内" fetchpriority="high"></div>
+    </div>
+  </section>
+
+  <section id="reservation" class="quick-actions">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="label">RESERVATION / FOLLOW US</div>
+        <h2>ご予約・最新情報</h2>
+        <p>お席・コース、おせち・オードブルのご予約、最新情報の確認はこちらからお進みください。</p>
+      </div>
+      <div class="link-grid">
+        <a class="link-card primary" data-link="seatCourseReservation" href="#">
+          <div><div class="eyebrow">ONLINE RESERVATION</div><h3>お席・コースを予約</h3><p>1名様〜45名様まで受付。お席のみ・コース料理を選んで、ネットでご予約いただけます。</p></div>
+          <div class="card-arrow">予約ページへ →</div>
+        </a>
+        <a class="link-card accent" data-link="horsDOeuvreReservation" href="#">
+          <div><div class="eyebrow">OSECHI / TAKEOUT</div><h3>おせち・オードブルを予約</h3><p>おせち・お持ち帰り用オードブルの内容と受取日時を、専用ページからお申し込みいただけます。</p></div>
+          <div class="card-arrow">お申し込みページへ →</div>
+        </a>
+        <a class="link-card social" data-link="instagram" href="#">
+          <div><div class="eyebrow">FOLLOW US</div><h3>Instagram</h3><p>おすすめ料理、期間限定商品、営業に関するお知らせを発信しています。</p></div>
+          <div class="card-arrow">Instagramを見る →</div>
+        </a>
+      </div>
+      <p class="cancel-note">ご予約をキャンセルされる場合は、<a data-link="reservationCancel" href="#">予約キャンセルページ</a>をご利用ください。</p>
     </div>
   </section>
 
@@ -383,15 +418,15 @@
       <div class="section-head">
         <div class="label">SEASONAL NEWS</div>
         <h2>期間限定・お知らせ</h2>
-        <p>季節の商品や予約受付のお知らせを掲載します。</p>
+        <p>季節限定の商品、販売期間、予約受付のお知らせを掲載します。</p>
       </div>
       <!-- 期間限定品を更新するときは、このseasonal-box内だけを差し替えます。 -->
       <div class="seasonal-box">
-        <div class="seasonal-badge">最新情報</div>
+        <div class="seasonal-badge">COMING SOON</div>
         <div>
-          <h3>最新のお知らせはInstagramでご案内しています</h3>
-          <p class="seasonal-period">季節のおすすめ・限定商品の情報は随時更新</p>
-          <p>新しい料理や期間限定商品の内容・価格・販売期間は、公式Instagramをご確認ください。</p>
+          <h3>次回の期間限定商品を準備しています</h3>
+          <p class="seasonal-period">販売開始・価格・ご予約のご案内は、決まり次第こちらに掲載します。</p>
+          <p>最新情報は公式Instagramでもお知らせします。季節のおすすめを、ぜひお楽しみにお待ちください。</p>
           <a class="map-link" data-link="instagram" href="#">Instagramを見る →</a>
         </div>
       </div>
@@ -403,7 +438,7 @@
       <div class="section-head">
         <div class="label">FOOD MENU</div>
         <h2>お料理メニュー</h2>
-        <p>定食・一品料理・前菜・麺飯・点心・デザート・お酒／ドリンクをそろえています。</p>
+        <p>一品料理・前菜・麺飯・点心・デザート・お酒／ドリンクをそろえています。</p>
       </div>
       <div class="category-grid">
         <a class="category-item" href="./menu.html#main-1"><h3>一品料理</h3><p>海鮮・肉料理</p></a>
@@ -447,37 +482,13 @@
     </div>
   </section>
 
-  <section id="reservation">
-    <div class="wrap">
-      <div class="section-head">
-        <div class="label">RESERVATION</div>
-        <h2>ご予約</h2>
-        <p>店内のお席は1名様から45名様までご予約を受け付けています。<br>お席のみ・コース料理を、ネットでご予約いただけます。</p>
-      </div>
-      <div class="link-grid">
-        <a class="link-card primary" data-link="seatCourseReservation" href="#">
-          <div><div class="eyebrow">TABLE / COURSE</div><h3>席・コースをネット予約</h3><p>1名様〜45名様まで受付。<br>お席のみ・コース料理を選んで予約できます。</p></div>
-          <div class="card-arrow">予約ページへ →</div>
-        </a>
-        <a class="link-card" data-link="horsDOeuvreReservation" href="#">
-          <div><div class="eyebrow">OSECHI / TAKEOUT</div><h3>おせち・オードブルを予約</h3><p>おせち・お持ち帰り用オードブルの内容・受取日時を、専用の予約ページからお申し込みいただけます。</p></div>
-          <div class="card-arrow">予約ページへ →</div>
-        </a>
-        <a class="link-card" data-link="instagram" href="#">
-          <div><div class="eyebrow">FOLLOW US</div><h3>Instagram</h3><p>おすすめ料理、期間限定商品、営業に関するお知らせを発信しています。</p></div>
-          <div class="card-arrow">Instagramを見る →</div>
-        </a>
-      </div>
-    </div>
-  </section>
-
   <section id="about">
     <div class="wrap">
       <div class="section-head">
         <div class="label">ABOUT FUKURINROU</div>
         <h2>福林楼について</h2>
       </div>
-      <p class="history-text">博多駅南で、気軽に本格的な中国料理を楽しんでいただけるお店です。中国・山東省の味を大切にしながら、定食、一品料理、コース料理をお作りしています。ご家族でのお食事、仕事帰りの一杯、ご宴会など、さまざまな場面でご利用ください。</p>
+      <p class="history-text">博多駅南で、気軽に本格的な中国料理を楽しんでいただけるお店です。中国・山東省の味を大切にしながら、一品料理、麺飯、コース料理をご用意しています。ご家族でのお食事、仕事帰りの一杯、ご宴会など、さまざまな場面でご利用ください。</p>
     </div>
   </section>
 
@@ -493,8 +504,8 @@
             <div class="info-row"><dt>店名</dt><dd>中国料理 福林楼</dd></div>
             <div class="info-row"><dt>住所</dt><dd>〒812-0016<br>福岡県福岡市博多区博多駅南3丁目7-14 岡元ビル</dd></div>
             <div class="info-row"><dt>電話</dt><dd><a href="tel:0924811369">092-481-1369</a></dd></div>
-            <div class="info-row"><dt>営業時間</dt><dd>月〜土　11:30〜14:30／17:30〜23:00<br>日　17:30〜23:00</dd></div>
-            <div class="info-row"><dt>アクセス</dt><dd>博多駅より徒歩約22分・お車で約4分</dd></div>
+            <div class="info-row"><dt>営業時間</dt><dd>月〜土　11:30〜14:00／17:30〜22:00<br>日　17:30〜22:00</dd></div>
+            <div class="info-row"><dt>アクセス</dt><dd>博多駅より徒歩約10分</dd></div>
           </dl>
           <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=%E7%A6%8F%E5%B2%A1%E7%9C%8C%E7%A6%8F%E5%B2%A1%E5%B8%82%E5%8D%9A%E5%A4%9A%E5%8C%BA%E5%8D%9A%E5%A4%9A%E9%A7%85%E5%8D%973%E4%B8%81%E7%9B%AE7-14" target="_blank" rel="noopener">Google マップで開く →</a>
         </div>
@@ -521,7 +532,8 @@
   const siteLinks = {
     instagram: 'https://www.instagram.com/fukurinrou?stkn=aWtmb2x6bGxxd2Jv',
     horsDOeuvreReservation: 'https://fukurinrou-osechi.yangshiyuan2004.workers.dev/',
-    seatCourseReservation: 'https://fukurinrou-reserve.yangshiyuan2004.workers.dev/'
+    seatCourseReservation: 'https://fukurinrou-reserve.yangshiyuan2004.workers.dev/',
+    reservationCancel: 'https://fukurinrou-reserve.yangshiyuan2004.workers.dev/cancel.html'
   };
 
   document.querySelectorAll('[data-link]').forEach(function(link){
