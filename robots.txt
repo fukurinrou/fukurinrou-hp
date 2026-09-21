@@ -1,0 +1,5 @@
+# 2026-09-21 変更済み
+User-agent: *
+Allow: /
+
+Sitemap: https://fukurinrou.github.io/fukurinrou-hp/sitemap.xml
