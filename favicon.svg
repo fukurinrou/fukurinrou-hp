@@ -1,0 +1,16 @@
+<!-- 2026-09-21 変更済み -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">中国料理 福林楼</title>
+  <desc id="desc">深い赤と金色で描いた中華楼閣の印章風アイコン</desc>
+  <rect width="512" height="512" rx="104" fill="#7B1E23"/>
+  <rect x="30" y="30" width="452" height="452" rx="78" fill="none" stroke="#E6B34A" stroke-width="18"/>
+  <path d="M99 186 256 96l157 90-28 18H127Z" fill="#F3CF73"/>
+  <path d="M135 204h242l-31 25H166Z" fill="#D89B2B"/>
+  <path d="M145 269 256 207l111 62-25 17H170Z" fill="#F3CF73"/>
+  <path d="M174 287h164l-26 23H200Z" fill="#D89B2B"/>
+  <path d="M194 348 256 310l62 38-20 14H214Z" fill="#F3CF73"/>
+  <path d="M224 363h64v67h-64Z" fill="#F3CF73"/>
+  <path d="M161 225h28v187h-28zm162 0h28v187h-28z" fill="#F3CF73"/>
+  <path d="M215 225h22v75h-22zm60 0h22v75h-22z" fill="#F3CF73"/>
+  <circle cx="256" cy="154" r="17" fill="#7B1E23" stroke="#F3CF73" stroke-width="10"/>
+</svg>
