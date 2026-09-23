@@ -275,10 +275,46 @@
   .seasonal-period{ font-size:.82rem!important; color:var(--jade); font-weight:700; }
   .category-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
   @media (max-width:720px){ .category-grid{ grid-template-columns:repeat(2,1fr); } }
-  .category-item{ padding:17px; border:1px solid var(--line); background:#fbf7ef; text-decoration:none; transition:.15s ease; }
-  a.category-item:hover{border-color:var(--brass);transform:translateY(-2px);box-shadow:0 8px 18px rgba(33,28,22,.08)}
-  .category-item h3{ font-size:1rem; }
-  .category-item p{ margin:4px 0 0; font-size:.82rem; opacity:.75; }
+  @media (max-width:440px){ .category-grid{ grid-template-columns:1fr; } }
+  .category-item{
+    position:relative; min-height:146px; padding:19px 18px 16px 22px; overflow:hidden;
+    border:1px solid var(--line); background:#fffaf0; text-decoration:none; transition:.15s ease;
+    display:flex; flex-direction:column;
+  }
+  .category-item::before{
+    content:""; position:absolute; left:0; top:0; bottom:0; width:4px; background:var(--brass);
+  }
+  a.category-item:hover,
+  a.category-item:focus-visible{ border-color:var(--brass); transform:translateY(-3px); box-shadow:0 10px 20px rgba(33,28,22,.10); outline:none; }
+  .category-no{ color:var(--jade); font-family:'Noto Serif JP',serif; font-size:.72rem; letter-spacing:.14em; }
+  .category-item h3{ font-size:1.06rem; margin-top:7px; line-height:1.45; }
+  .category-item p{ margin:5px 0 0; font-size:.83rem; opacity:.76; line-height:1.65; }
+  .category-arrow{ margin-top:auto; padding-top:12px; color:var(--lacquer); font-size:.76rem; font-weight:700; letter-spacing:.04em; }
+
+  /* course menu */
+  .course-section{ background:linear-gradient(180deg, #fbf7ef 0%, var(--ivory) 100%); }
+  .course-intro{
+    margin:0 0 22px; padding:12px 15px; border-left:4px solid var(--lacquer);
+    background:#fffaf0; font-size:.9rem;
+  }
+  .course-intro strong{ color:var(--lacquer); }
+  .course-grid{ display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:18px; }
+  .course-card{ border:1px solid var(--line); background:#fffdf8; padding:22px 20px 20px; box-shadow:0 7px 16px rgba(33,28,22,.045); }
+  .course-card.family{ grid-column:1 / -1; }
+  .course-card-head{ display:flex; align-items:flex-start; justify-content:space-between; gap:12px; padding-bottom:14px; border-bottom:1px solid var(--line); }
+  .course-card h3{ font-size:1.3rem; line-height:1.4; }
+  .course-price{ margin:4px 0 0; color:var(--lacquer); font-family:'Noto Serif JP',serif; font-size:1.02rem; font-weight:700; line-height:1.5; }
+  .course-badge{ display:inline-block; flex-shrink:0; padding:4px 8px; background:var(--lacquer); color:var(--ivory); font-size:.72rem; font-weight:700; letter-spacing:.07em; white-space:nowrap; }
+  .course-badge.family-badge{ background:var(--jade); }
+  .course-dishes{ list-style:none; display:grid; gap:7px; margin:16px 0 0; padding:0; font-size:.86rem; line-height:1.6; }
+  .course-card.family .course-dishes{ grid-template-columns:repeat(2, minmax(0,1fr)); column-gap:28px; }
+  .course-dishes li{ position:relative; padding-left:1.55em; }
+  .course-dishes li::before{ content:counter(list-item, decimal-leading-zero); position:absolute; left:0; top:0; color:var(--jade); font-family:'Noto Serif JP',serif; font-size:.72rem; font-weight:700; }
+  @media (max-width:640px){
+    .course-grid{ grid-template-columns:1fr; }
+    .course-card.family{ grid-column:auto; }
+    .course-card.family .course-dishes{ grid-template-columns:1fr; }
+  }
   .gallery-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:18px; }
   @media (max-width:560px){ .gallery-grid{ grid-template-columns:1fr; } }
   .gallery-card{ margin:0; background:#fbf7ef; border:1px solid var(--line); overflow:hidden; }
@@ -370,6 +406,7 @@
       <ul id="navList">
         <li><a href="#limited">限定商品</a></li>
         <li><a href="#menu">お料理</a></li>
+        <li><a href="#course">コース料理</a></li>
         <li><a href="#gallery">店内・料理写真</a></li>
         <li><a href="#reservation">ご予約・SNS</a></li>
         <li><a href="#access">店舗案内</a></li>
@@ -459,15 +496,55 @@
         <p>一品料理・前菜・麺飯・点心・デザート・お酒／ドリンクをそろえています。</p>
       </div>
       <div class="category-grid">
-        <a class="category-item" href="./menu.html#main-1"><h3>一品料理</h3><p>海鮮・肉料理</p></a>
-        <a class="category-item" href="./menu.html#appetizers"><h3>前菜類</h3><p>おつまみから本格料理まで</p></a>
-        <a class="category-item" href="./menu.html#main-2"><h3>肉・海鮮料理</h3><p>山東料理の味わい</p></a>
-        <a class="category-item" href="./menu.html#vegetables"><h3>野菜・スープ・デザート</h3><p>定番の炒め物・甘味</p></a>
-        <a class="category-item" href="./menu.html#dim-sum"><h3>点心</h3><p>自家製の味</p></a>
-        <a class="category-item" href="./menu.html#drinks"><h3>お酒・ドリンク</h3><p>お食事と一緒に</p></a>
+        <a class="category-item" href="./menu.html#main-1"><span class="category-no">01</span><h3>一品料理</h3><p>海鮮・肉料理</p><span class="category-arrow" aria-hidden="true">メニューを見る →</span></a>
+        <a class="category-item" href="./menu.html#appetizers"><span class="category-no">02</span><h3>前菜類</h3><p>おつまみから本格料理まで</p><span class="category-arrow" aria-hidden="true">メニューを見る →</span></a>
+        <a class="category-item" href="./menu.html#main-2"><span class="category-no">03</span><h3>肉・海鮮料理</h3><p>山東料理の味わい</p><span class="category-arrow" aria-hidden="true">メニューを見る →</span></a>
+        <a class="category-item" href="./menu.html#vegetables"><span class="category-no">04</span><h3>野菜・スープ・デザート</h3><p>定番の炒め物・甘味</p><span class="category-arrow" aria-hidden="true">メニューを見る →</span></a>
+        <a class="category-item" href="./menu.html#dim-sum"><span class="category-no">05</span><h3>点心</h3><p>自家製の味</p><span class="category-arrow" aria-hidden="true">メニューを見る →</span></a>
+        <a class="category-item" href="./menu.html#drinks"><span class="category-no">06</span><h3>お酒・ドリンク</h3><p>お食事と一緒に</p><span class="category-arrow" aria-hidden="true">メニューを見る →</span></a>
       </div>
       <p class="menu-note">店内メニューをすべて掲載しています。こちらは閲覧専用で、ご注文はできません。</p>
       <p><a class="btn btn-line" href="./menu.html">全メニューを見る</a></p>
+    </div>
+  </section>
+
+  <section id="course" class="course-section">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="label">COURSE MENU</div>
+        <h2>コース料理</h2>
+        <p>ご宴会やご家族でのお食事に。料理内容をすべてご案内しています。</p>
+      </div>
+      <p class="course-intro"><strong>各コース2名様から承ります。</strong> ご希望のコースを選んでご予約ください。</p>
+      <div class="course-grid">
+        <article class="course-card">
+          <div class="course-card-head">
+            <div><h3>福林コース</h3><p class="course-price">お一人様 3,000円（税込）</p></div>
+          </div>
+          <ol class="course-dishes">
+            <li>前菜4種</li><li>エビチリソース</li><li>我が家の酢豚</li><li>揚げ物2種（鶏唐揚げ・春巻き）</li><li>手作り焼き餃子</li><li>麻婆豆腐</li><li>チャーハン</li><li>玉子スープ</li><li>日替わりデザート</li>
+          </ol>
+        </article>
+        <article class="course-card">
+          <div class="course-card-head">
+            <div><h3>招福コース</h3><p class="course-price">お一人様 3,500円（税込）</p></div>
+            <span class="course-badge">おすすめ</span>
+          </div>
+          <ol class="course-dishes">
+            <li>前菜5種</li><li>大きなエビチリソース</li><li>我が家の酢豚</li><li>揚げ物2種（鶏唐揚げ・春巻き）</li><li>手作り焼き餃子</li><li>海鮮三種炒め</li><li>ピーマンと牛肉の炒め</li><li>チャーハン</li><li>フカヒレスープ</li><li>日替わりデザート</li>
+          </ol>
+        </article>
+        <article class="course-card family">
+          <div class="course-card-head">
+            <div><h3>家族コース</h3><p class="course-price">2〜4名様　合計 5,800円（税込）</p></div>
+            <span class="course-badge family-badge">ご家族向け</span>
+          </div>
+          <ol class="course-dishes">
+            <li>前菜3種</li><li>油淋鶏（揚げ鶏肉のネギ醤油かけ）</li><li>チャーハン</li><li>麻婆豆腐</li><li>エビのチリソース炒め</li><li>焼き餃子</li><li>玉子スープ</li>
+          </ol>
+        </article>
+      </div>
+      <p><a class="btn btn-primary" data-link="seatCourseReservation" href="#">コース料理を予約する</a></p>
     </div>
   </section>
 
@@ -540,7 +617,7 @@
   <div class="wrap">
     <div><div class="brand">福林楼<small>CHINESE RESTAURANT · HAKATA</small></div></div>
     <div class="foot-links">
-      <a href="#limited">限定商品</a><a href="#menu">メニュー</a><a href="#gallery">店内・料理写真</a><a href="#reservation">ご予約</a><a href="#access">店舗案内</a><a data-link="instagram" href="#">Instagram</a>
+      <a href="#limited">限定商品</a><a href="#menu">メニュー</a><a href="#course">コース料理</a><a href="#gallery">店内・料理写真</a><a href="#reservation">ご予約</a><a href="#access">店舗案内</a><a data-link="instagram" href="#">Instagram</a>
     </div>
   </div>
   <div class="wrap copyright">&copy; 中国料理 福林楼</div>
