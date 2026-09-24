@@ -1,5 +1,5 @@
-# 2026-09-21 変更済み
+# 2026-09-24 独自ドメイン用更新
 User-agent: *
 Allow: /
 
-Sitemap: https://fukurinrou.github.io/fukurinrou-hp/sitemap.xml
+Sitemap: https://fukurinrou.jp/sitemap.xml

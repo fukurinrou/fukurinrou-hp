@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- 2026-09-21 変更済み -->
+<!-- 2026-09-24 独自ドメイン用更新 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://fukurinrou.github.io/fukurinrou-hp/</loc>
+    <loc>https://fukurinrou.jp/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://fukurinrou.github.io/fukurinrou-hp/menu.html</loc>
+    <loc>https://fukurinrou.jp/menu.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
