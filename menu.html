@@ -1,6 +1,25 @@
-<!-- 2026-09-08 02:00 変更済み -->
-<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>お料理メニュー｜中国料理 福林楼</title><meta name="description" content="中国料理 福林楼の点心、前菜、主菜、野菜、スープ、デザート、お酒、コース料理の一覧です。"><link rel="stylesheet" href="./style.css"><style>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap');*{box-sizing:border-box}body{margin:0;font-family:"Noto Sans JP",sans-serif;background:radial-gradient(#b68d4b12 1px,transparent 1px),var(--ivory);background-size:8px 8px}.wrap{width:min(900px,calc(100% - 28px));margin:auto}.top{background:var(--lacquer);color:white}.top .wrap{min-height:66px;display:flex;justify-content:space-between;align-items:center}.brand{font:700 1.35rem "Noto Serif JP";color:white;text-decoration:none}.seal{border:2px solid #f5d58b;color:#f5d58b;padding:3px 6px;transform:rotate(-5deg);font-weight:bold}.intro{padding:32px 0 20px}.intro h1{font:700 clamp(1.8rem,5vw,2.6rem) "Noto Serif JP";margin:4px 0}.tag{color:var(--lacquer);font-size:.72rem;letter-spacing:.2em}.intro p{margin:0;color:#685b4f;font-size:.9rem}.tabs{position:sticky;top:0;background:#fffaf1ed;backdrop-filter:blur(8px);border-block:1px solid var(--line);z-index:2}.tabs:after{content:"";position:absolute;right:0;top:0;width:34px;height:100%;background:linear-gradient(90deg,transparent,var(--ivory));pointer-events:none}.tabs .wrap{display:flex;gap:8px;overflow:auto;padding:10px 0}.tabs a{white-space:nowrap;border:1px solid var(--line);border-radius:999px;background:white;padding:6px 12px;text-decoration:none;font-size:.8rem}.tabs a:hover{color:var(--lacquer);border-color:var(--lacquer)}main{padding:22px 0 55px}.section{scroll-margin-top:72px;background:#fffdf8;border:1px solid var(--line);padding:16px 18px;margin:14px 0}.section h2{font:700 1.35rem "Noto Serif JP";margin:0 0 8px;border-left:5px solid var(--brass);padding-left:10px}.item{padding:12px 0;border-bottom:1px dotted var(--line)}.item:last-child{border:0}.line{display:grid;grid-template-columns:auto 1fr auto;gap:8px;align-items:baseline}.name{font-weight:700}.dots{border-bottom:1px dotted #a99a86;transform:translateY(-4px)}.price{font-family:"Noto Serif JP";color:var(--lacquer);font-weight:700;white-space:nowrap}.desc{margin:3px 0 0;font-size:.78rem;color:#756658}.badge{font-size:.68rem;border:1px solid #d6a94c;color:#895c09;border-radius:99px;padding:2px 6px;margin-right:6px}.hidden-note{display:none;background:#fff8e8;border:1px solid #dcc177;padding:10px;font-size:.82rem;margin-bottom:14px}.prices-hidden .price{display:none}.prices-hidden .hidden-note{display:block}@media print{.top,.tabs,.hidden-note{display:none}.section{break-inside:avoid;box-shadow:none;margin:0;border:0;padding:10px 0}body{background:white}.wrap{width:100%}}@media(max-width:520px){.section{padding:14px}.line{gap:6px}.name{font-size:.92rem}}
-</style></head><body><header class="top"><div class="wrap"><a href="./index.html" class="brand">福林楼</a><span class="seal">福</span></div></header><section class="intro"><div class="wrap"><div class="tag">FOOD MENU</div><h1>お料理メニュー</h1><p>閲覧専用です。ご予約・お問い合わせは <a href="tel:0924811369">092-481-1369</a> へ。</p></div></section><nav class="tabs"><div class="wrap" id="tabs"></div></nav><main class="wrap"><noscript>メニューを表示するにはJavaScriptを有効にしてください。お問い合わせ：092-481-1369</noscript><div class="hidden-note">現在、価格は掲載していません。内容・ご予算は店舗へお問い合わせください。</div><div id="app"></div></main><script src="./config.js"></script><script src="./menu-data.js"></script><script>
-if(!SITE_CONFIG.showPrices)document.body.classList.add('prices-hidden');const app=document.querySelector('#app'),tabs=document.querySelector('#tabs');MENU_DATA.forEach(c=>{let a=document.createElement('a');a.href='#'+c.id;a.textContent=c.title;tabs.append(a);let s=document.createElement('section');s.id=c.id;s.className='section';s.innerHTML='<h2>'+c.title+'</h2>';c.items.forEach(i=>{let d=document.createElement('div');d.className='item';d.innerHTML='<div class="line"><span>'+(i.badge?'<b class="badge">'+i.badge+'</b>':'')+'<span class="name">'+i.name+'</span></span><i class="dots"></i><span class="price">¥'+Number(i.price).toLocaleString()+'</span></div>'+(i.desc?'<p class="desc">'+i.desc+'</p>':'');s.append(d)});app.append(s)});
-</script></body></html>
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>コース料理・お料理メニュー｜中国料理 福林楼</title>
+  <meta name="description" content="中国料理 福林楼の料理メニュー。コース料理、一品料理、前菜、点心など、種類を選んでご覧いただけます。各コース2名様から承ります。">
+  <link rel="icon" href="./favicon.ico" sizes="any">
+  <link rel="stylesheet" href="./menu.css?v=20260924">
+</head>
+<body>
+  <header class="menu-top"><div class="menu-wrap"><a class="menu-brand" href="./index.html">福林楼</a><a class="home-link" href="./index.html#menu">ホームへ戻る</a></div></header>
+  <main class="menu-wrap">
+    <div class="menu-intro"><div class="menu-eyebrow">FUKURINROU · FOOD MENU</div><h1>お料理メニュー</h1><p>お好きな種類をお選びください。選んだメニューだけを表示します。</p></div>
+    <nav class="menu-tabs" id="menuTabs" aria-label="料理の種類"></nav>
+    <p class="hidden-note" id="hiddenNote" hidden>現在、価格は掲載していません。内容・ご予算は店舗へお問い合わせください。</p>
+    <div id="menuPanel" aria-live="polite" aria-atomic="true"></div>
+    <noscript>メニューを見るにはJavaScriptを有効にしてください。お電話でもご案内します：<a href="tel:0924811369">092-481-1369</a></noscript>
+  </main>
+  <footer class="menu-bottom"><div class="menu-wrap"><p>閲覧専用のメニューです。ご予約・お問い合わせ：<a href="tel:0924811369">092-481-1369</a></p><a href="./index.html#menu">← ホームページに戻る</a></div></footer>
+  <script src="./config.js?v=20260924"></script>
+  <script src="./menu-data.js?v=20260924"></script>
+  <script src="./menu.js?v=20260924"></script>
+</body>
+</html>

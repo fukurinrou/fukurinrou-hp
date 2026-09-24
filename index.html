@@ -6,7 +6,7 @@
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>中国料理 福林楼 | 博多駅南・山東料理・町中華</title>
 <meta name="description" content="福岡市博多区博多駅南の中国料理 福林楼。30年以上の経験を持つ中国人シェフによる山東料理・町中華です。店内予約、オードブル予約、メニュー、Instagramはこちらから。電話 092-481-1369。">
 <meta name="keywords" content="福林楼,フクリンロウ,博多,博多駅南,中国料理,中華料理,山東料理,町中華,オードブル,テイクアウト,宴会">
@@ -395,18 +395,19 @@
   footer .foot-links a:hover{ opacity:1; }
   .copyright{ margin-top: 30px; font-size: 0.76rem; opacity: 0.55; }
 </style>
+<link rel="stylesheet" href="./homepage.css?v=20260924">
 </head>
 <body>
 
 <header>
   <div class="wrap nav-row">
     <a class="brand" href="#top" aria-label="福林楼 トップへ">福林楼<small>CHINESE RESTAURANT · HAKATA</small></a>
-    <button class="nav-toggle" id="navToggle" aria-label="メニューを開く" aria-expanded="false">☰</button>
+    <button class="nav-toggle" id="navToggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="navList">☰</button>
     <nav>
       <ul id="navList">
         <li><a href="#limited">限定商品</a></li>
         <li><a href="#menu">お料理</a></li>
-        <li><a href="#course">コース料理</a></li>
+        <li><a href="./menu.html#course">コース料理</a></li>
         <li><a href="#gallery">店内・料理写真</a></li>
         <li><a href="#reservation">ご予約・SNS</a></li>
         <li><a href="#access">店舗案内</a></li>
@@ -465,6 +466,28 @@
     </div>
   </section>
 
+  <section id="menu">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="label">FOOD MENU</div>
+        <h2>お料理メニュー</h2>
+        <p>種類を選んでタップすると、そのメニューだけをご覧いただけます。</p>
+      </div>
+      <div class="category-grid">
+        <a class="category-item course-category" href="./menu.html#course"><span class="category-no">01</span><h3>コース料理</h3><p>福林・招福・家族コース／2名様から</p><span class="category-arrow" aria-hidden="true">詳しく見る →</span></a>
+        <a class="category-item" href="./menu.html#main-1"><span class="category-no">02</span><h3>一品料理</h3><p>定番の中華料理を一皿から</p><span class="category-arrow" aria-hidden="true">詳しく見る →</span></a>
+        <a class="category-item" href="./menu.html#appetizers"><span class="category-no">03</span><h3>前菜類</h3><p>お食事のはじめに、おつまみに</p><span class="category-arrow" aria-hidden="true">詳しく見る →</span></a>
+        <a class="category-item" href="./menu.html#main-2"><span class="category-no">04</span><h3>肉・海鮮料理</h3><p>肉と海鮮のうまみを楽しむ</p><span class="category-arrow" aria-hidden="true">詳しく見る →</span></a>
+        <a class="category-item" href="./menu.html#dim-sum"><span class="category-no">05</span><h3>点心</h3><p>手作りの餃子・小籠包など</p><span class="category-arrow" aria-hidden="true">詳しく見る →</span></a>
+        <a class="category-item" href="./menu.html#vegetables"><span class="category-no">06</span><h3>野菜料理</h3><p>野菜を味わう炒め料理</p><span class="category-arrow" aria-hidden="true">詳しく見る →</span></a>
+        <a class="category-item" href="./menu.html#soup"><span class="category-no">07</span><h3>スープ</h3><p>温かいスープでほっと一息</p><span class="category-arrow" aria-hidden="true">詳しく見る →</span></a>
+        <a class="category-item" href="./menu.html#dessert"><span class="category-no">08</span><h3>デザート</h3><p>お食事のしめくくりに</p><span class="category-arrow" aria-hidden="true">詳しく見る →</span></a>
+        <a class="category-item" href="./menu.html#drinks"><span class="category-no">09</span><h3>お酒・ドリンク</h3><p>お料理に合わせた一杯を</p><span class="category-arrow" aria-hidden="true">詳しく見る →</span></a>
+      </div>
+      <p class="menu-note">お料理の内容・価格をご覧いただけます。コースは2名様から承ります。</p>
+    </div>
+  </section>
+
   <section id="limited">
     <div class="wrap">
       <div class="section-head">
@@ -472,81 +495,12 @@
         <h2>期間限定・お知らせ</h2>
         <p>今月の期間限定商品と、販売期間・価格をご案内します。</p>
       </div>
-      <!-- 期間限定品を更新するときは、このseasonal-box内だけを差し替えます。 -->
-      <div class="seasonal-box">
-        <figure class="seasonal-image">
-          <img src="assets/september-limited-renkon.jpg" alt="9月限定 中華風 蓮根の豚肉はさみ揚げ 3個入り680円" loading="lazy">
-        </figure>
-        <div class="seasonal-content">
-          <div class="seasonal-badge">9月限定</div>
-          <h3>中華風 蓮根の豚肉はさみ揚げ</h3>
-          <p class="seasonal-period">3個入り　680円</p>
-          <p>2種類の具を楽しめる、お酒にも合う中華のおかずです。期間限定で復活しました。</p>
-          <a class="map-link" data-link="instagram" href="#">Instagramを見る →</a>
-        </div>
-      </div>
+      <div id="seasonalItems"><p class="seasonal-empty">最新の期間限定商品は、お電話またはInstagramでご案内しています。</p></div>
+      <noscript><p>最新情報：<a href="tel:0924811369">092-481-1369</a></p></noscript>
     </div>
   </section>
 
-  <section id="menu">
-    <div class="wrap">
-      <div class="section-head">
-        <div class="label">FOOD MENU</div>
-        <h2>お料理メニュー</h2>
-        <p>一品料理・前菜・麺飯・点心・デザート・お酒／ドリンクをそろえています。</p>
-      </div>
-      <div class="category-grid">
-        <a class="category-item" href="./menu.html#main-1"><span class="category-no">01</span><h3>一品料理</h3><p>海鮮・肉料理</p><span class="category-arrow" aria-hidden="true">メニューを見る →</span></a>
-        <a class="category-item" href="./menu.html#appetizers"><span class="category-no">02</span><h3>前菜類</h3><p>おつまみから本格料理まで</p><span class="category-arrow" aria-hidden="true">メニューを見る →</span></a>
-        <a class="category-item" href="./menu.html#main-2"><span class="category-no">03</span><h3>肉・海鮮料理</h3><p>山東料理の味わい</p><span class="category-arrow" aria-hidden="true">メニューを見る →</span></a>
-        <a class="category-item" href="./menu.html#vegetables"><span class="category-no">04</span><h3>野菜・スープ・デザート</h3><p>定番の炒め物・甘味</p><span class="category-arrow" aria-hidden="true">メニューを見る →</span></a>
-        <a class="category-item" href="./menu.html#dim-sum"><span class="category-no">05</span><h3>点心</h3><p>自家製の味</p><span class="category-arrow" aria-hidden="true">メニューを見る →</span></a>
-        <a class="category-item" href="./menu.html#drinks"><span class="category-no">06</span><h3>お酒・ドリンク</h3><p>お食事と一緒に</p><span class="category-arrow" aria-hidden="true">メニューを見る →</span></a>
-      </div>
-      <p class="menu-note">店内メニューをすべて掲載しています。こちらは閲覧専用で、ご注文はできません。</p>
-      <p><a class="btn btn-line" href="./menu.html">全メニューを見る</a></p>
-    </div>
-  </section>
 
-  <section id="course" class="course-section">
-    <div class="wrap">
-      <div class="section-head">
-        <div class="label">COURSE MENU</div>
-        <h2>コース料理</h2>
-        <p>ご宴会やご家族でのお食事に。料理内容をすべてご案内しています。</p>
-      </div>
-      <p class="course-intro"><strong>各コース2名様から承ります。</strong> ご希望のコースを選んでご予約ください。</p>
-      <div class="course-grid">
-        <article class="course-card">
-          <div class="course-card-head">
-            <div><h3>福林コース</h3><p class="course-price">お一人様 3,000円（税込）</p></div>
-          </div>
-          <ol class="course-dishes">
-            <li>前菜4種</li><li>エビチリソース</li><li>我が家の酢豚</li><li>揚げ物2種（鶏唐揚げ・春巻き）</li><li>手作り焼き餃子</li><li>麻婆豆腐</li><li>チャーハン</li><li>玉子スープ</li><li>日替わりデザート</li>
-          </ol>
-        </article>
-        <article class="course-card">
-          <div class="course-card-head">
-            <div><h3>招福コース</h3><p class="course-price">お一人様 3,500円（税込）</p></div>
-            <span class="course-badge">おすすめ</span>
-          </div>
-          <ol class="course-dishes">
-            <li>前菜5種</li><li>大きなエビチリソース</li><li>我が家の酢豚</li><li>揚げ物2種（鶏唐揚げ・春巻き）</li><li>手作り焼き餃子</li><li>海鮮三種炒め</li><li>ピーマンと牛肉の炒め</li><li>チャーハン</li><li>フカヒレスープ</li><li>日替わりデザート</li>
-          </ol>
-        </article>
-        <article class="course-card family">
-          <div class="course-card-head">
-            <div><h3>家族コース</h3><p class="course-price">2〜4名様　合計 5,800円（税込）</p></div>
-            <span class="course-badge family-badge">ご家族向け</span>
-          </div>
-          <ol class="course-dishes">
-            <li>前菜3種</li><li>油淋鶏（揚げ鶏肉のネギ醤油かけ）</li><li>チャーハン</li><li>麻婆豆腐</li><li>エビのチリソース炒め</li><li>焼き餃子</li><li>玉子スープ</li>
-          </ol>
-        </article>
-      </div>
-      <p><a class="btn btn-primary" data-link="seatCourseReservation" href="#">コース料理を予約する</a></p>
-    </div>
-  </section>
 
   <section id="gallery">
     <div class="wrap">
@@ -617,7 +571,7 @@
   <div class="wrap">
     <div><div class="brand">福林楼<small>CHINESE RESTAURANT · HAKATA</small></div></div>
     <div class="foot-links">
-      <a href="#limited">限定商品</a><a href="#menu">メニュー</a><a href="#course">コース料理</a><a href="#gallery">店内・料理写真</a><a href="#reservation">ご予約</a><a href="#access">店舗案内</a><a data-link="instagram" href="#">Instagram</a>
+      <a href="#limited">限定商品</a><a href="#menu">メニュー</a><a href="./menu.html#course">コース料理</a><a href="#gallery">店内・料理写真</a><a href="#reservation">ご予約</a><a href="#access">店舗案内</a><a data-link="instagram" href="#">Instagram</a>
     </div>
   </div>
   <div class="wrap copyright">&copy; 中国料理 福林楼</div>
@@ -647,14 +601,27 @@
     const navList = document.getElementById('navList');
     navList.classList.toggle('open');
     this.setAttribute('aria-expanded', navList.classList.contains('open'));
+    this.setAttribute('aria-label', navList.classList.contains('open') ? 'メニューを閉じる' : 'メニューを開く');
   });
   document.querySelectorAll('#navList a').forEach(function(link){
     link.addEventListener('click', function(){
       document.getElementById('navList').classList.remove('open');
       document.getElementById('navToggle').setAttribute('aria-expanded', 'false');
+      document.getElementById('navToggle').setAttribute('aria-label', 'メニューを開く');
     });
+  });
+  document.addEventListener('keydown', function(event){
+    if (event.key === 'Escape' && document.getElementById('navList').classList.contains('open')) {
+      document.getElementById('navList').classList.remove('open');
+      const button = document.getElementById('navToggle');
+      button.setAttribute('aria-expanded', 'false');
+      button.setAttribute('aria-label', 'メニューを開く');
+      button.focus();
+    }
   });
 </script>
 
+<script src="./config.js?v=20260924"></script>
+<script src="./seasonal.js?v=20260924"></script>
 </body>
 </html>

@@ -1,210 +1,70 @@
-// 2026-09-08 02:00 変更済み
-// 料理を追加・修正するときは、このファイルのMENU_DATAだけを編集します。
+// 2026-09-24 カテゴリ別メニュー
 const MENU_DATA = [
   {
-    "id": "dim-sum",
-    "title": "面食類",
+    "id": "course",
+    "title": "コース料理",
     "items": [
       {
-        "id": "menshoku_yakigyoza8",
-        "name": "焼き餃子",
-        "desc": "8個",
-        "price": 780,
-        "badge": ""
-      },
-      {
-        "id": "menshoku_xiaolongbao6",
-        "name": "自家製小籠包",
-        "desc": "6個",
-        "price": 780,
-        "badge": ""
-      },
-      {
-        "id": "menshoku_suigyoza8",
-        "name": "水餃子",
-        "desc": "8個",
-        "price": 780,
-        "badge": ""
-      },
-      {
-        "id": "menshoku_harumaki",
-        "name": "自家製春巻き",
+        "id": "course-fukurin",
+        "name": "福林コース",
         "desc": "",
-        "price": 600,
-        "badge": ""
+        "price": 3000,
+        "badge": "おすすめ",
+        "dishes": [
+          "前菜4種",
+          "エビチリソース",
+          "我が家の酢豚",
+          "揚げ物2種（鶏唐揚げ・春巻き）",
+          "手作り焼き餃子",
+          "麻婆豆腐",
+          "チャーハン",
+          "玉子スープ",
+          "日替わりデザート"
+        ],
+        "minPeople": 2
       },
       {
-        "id": "menshoku_niramanju3",
-        "name": "ニラ饅頭",
-        "desc": "3個",
-        "price": 600,
-        "badge": ""
-      },
-      {
-        "id": "menshoku_mushiset6",
-        "name": "蒸しセット",
-        "desc": "蒸し餃子・焼売・小籠包／6個",
-        "price": 780,
-        "badge": ""
-      },
-      {
-        "id": "menshoku_mushigyoza6",
-        "name": "蒸し餃子",
-        "desc": "6個",
-        "price": 780,
-        "badge": ""
-      },
-      {
-        "id": "menshoku_usuyakimochi",
-        "name": "自家製薄焼き餠",
+        "id": "course-shofuku",
+        "name": "招福コース",
         "desc": "",
-        "price": 400,
-        "badge": ""
+        "price": 3500,
+        "badge": "",
+        "dishes": [
+          "前菜5種",
+          "大きなエビチリソース",
+          "我が家の酢豚",
+          "揚げ物2種（鶏唐揚げ・春巻き）",
+          "手作り焼き餃子",
+          "海鮮三種炒め",
+          "ピーマンと牛肉の炒め",
+          "チャーハン",
+          "フカヒレスープ",
+          "日替わりデザート"
+        ],
+        "minPeople": 2
       },
       {
-        "id": "menshoku_ebiboharumaki",
-        "name": "エビ棒春巻き",
-        "desc": "1本",
-        "price": 300,
-        "badge": ""
-      }
-    ]
-  },
-  {
-    "id": "appetizers",
-    "title": "前菜類",
-    "items": [
-      {
-        "id": "zensai_kurage",
-        "name": "クラゲの中華酢和え",
+        "id": "course-family",
+        "name": "家族コース",
         "desc": "",
-        "price": 980,
-        "badge": ""
-      },
-      {
-        "id": "zensai_pitan",
-        "name": "ピータン",
-        "desc": "",
-        "price": 380,
-        "badge": ""
-      },
-      {
-        "id": "zensai_pitantofu",
-        "name": "ピータンと豆腐の和え物",
-        "desc": "",
-        "price": 700,
-        "badge": ""
-      },
-      {
-        "id": "zensai_charshu",
-        "name": "自家製チャーシュー",
-        "desc": "",
-        "price": 700,
-        "badge": ""
-      },
-      {
-        "id": "zensai_kamosmoke",
-        "name": "鴨のスモーク",
-        "desc": "",
-        "price": 700,
-        "badge": ""
-      },
-      {
-        "id": "zensai_zasai",
-        "name": "ザーサイ",
-        "desc": "",
-        "price": 380,
-        "badge": ""
-      },
-      {
-        "id": "zensai_yasaisalad",
-        "name": "野菜サラダ",
-        "desc": "",
-        "price": 700,
-        "badge": ""
-      },
-      {
-        "id": "zensai_nankotsu",
-        "name": "鶏軟骨唐揚げ",
-        "desc": "",
-        "price": 680,
-        "badge": ""
-      },
-      {
-        "id": "zensai_edamame",
-        "name": "枝豆",
-        "desc": "",
-        "price": 450,
-        "badge": ""
-      },
-      {
-        "id": "zensai_tatakikyuri",
-        "name": "ニンニク入り中華風たたききゅうり",
-        "desc": "",
-        "price": 380,
-        "badge": ""
-      },
-      {
-        "id": "zensai_friedpotato",
-        "name": "フライドポテト",
-        "desc": "",
-        "price": 450,
-        "badge": ""
-      },
-      {
-        "id": "zensai_geso",
-        "name": "下足の醤油かけ サクサク揚げ",
-        "desc": "",
-        "price": 750,
-        "badge": ""
-      },
-      {
-        "id": "zensai_guangzhouchicken",
-        "name": "自家製広州風味鶏肉チャーシュー",
-        "desc": "",
-        "price": 700,
-        "badge": ""
-      },
-      {
-        "id": "zensai_roastchicken",
-        "name": "中華風ローストチキン",
-        "desc": "",
-        "price": 680,
-        "badge": ""
-      },
-      {
-        "id": "zensai_bangbangji",
-        "name": "棒棒鶏",
-        "desc": "鶏肉のゴマダレ和え物",
-        "price": 700,
-        "badge": ""
-      },
-      {
-        "id": "zensai_koika",
-        "name": "甲イカお湯引きネギ油ソース",
-        "desc": "",
-        "price": 750,
-        "badge": ""
-      },
-      {
-        "id": "zensai_niratamago",
-        "name": "塩味ニラ玉子焼き",
-        "desc": "",
-        "price": 750,
-        "badge": ""
-      },
-      {
-        "id": "zensai_koushuiji",
-        "name": "口水鷄",
-        "desc": "鶏肉の四川風和え物",
-        "price": 720,
-        "badge": ""
+        "price": 5800,
+        "badge": "ご家族向け",
+        "dishes": [
+          "前菜3種",
+          "油淋鶏（揚げ鶏肉のネギ醤油かけ）",
+          "チャーハン",
+          "麻婆豆腐",
+          "エビのチリソース炒め",
+          "焼き餃子",
+          "玉子スープ"
+        ],
+        "minPeople": 2
       }
     ]
   },
   {
     "id": "main-1",
-    "title": "主菜①",
+    "title": "一品料理",
     "items": [
       {
         "id": "main1_ikatoubanjan",
@@ -356,8 +216,140 @@ const MENU_DATA = [
     ]
   },
   {
+    "id": "appetizers",
+    "title": "前菜類",
+    "items": [
+      {
+        "id": "zensai_kurage",
+        "name": "クラゲの中華酢和え",
+        "desc": "",
+        "price": 980,
+        "badge": ""
+      },
+      {
+        "id": "zensai_pitan",
+        "name": "ピータン",
+        "desc": "",
+        "price": 380,
+        "badge": ""
+      },
+      {
+        "id": "zensai_pitantofu",
+        "name": "ピータンと豆腐の和え物",
+        "desc": "",
+        "price": 700,
+        "badge": ""
+      },
+      {
+        "id": "zensai_charshu",
+        "name": "自家製チャーシュー",
+        "desc": "",
+        "price": 700,
+        "badge": ""
+      },
+      {
+        "id": "zensai_kamosmoke",
+        "name": "鴨のスモーク",
+        "desc": "",
+        "price": 700,
+        "badge": ""
+      },
+      {
+        "id": "zensai_zasai",
+        "name": "ザーサイ",
+        "desc": "",
+        "price": 380,
+        "badge": ""
+      },
+      {
+        "id": "zensai_yasaisalad",
+        "name": "野菜サラダ",
+        "desc": "",
+        "price": 700,
+        "badge": ""
+      },
+      {
+        "id": "zensai_nankotsu",
+        "name": "鶏軟骨唐揚げ",
+        "desc": "",
+        "price": 680,
+        "badge": ""
+      },
+      {
+        "id": "zensai_edamame",
+        "name": "枝豆",
+        "desc": "",
+        "price": 450,
+        "badge": ""
+      },
+      {
+        "id": "zensai_tatakikyuri",
+        "name": "ニンニク入り中華風たたききゅうり",
+        "desc": "",
+        "price": 380,
+        "badge": ""
+      },
+      {
+        "id": "zensai_friedpotato",
+        "name": "フライドポテト",
+        "desc": "",
+        "price": 450,
+        "badge": ""
+      },
+      {
+        "id": "zensai_geso",
+        "name": "下足の醤油かけ サクサク揚げ",
+        "desc": "",
+        "price": 750,
+        "badge": ""
+      },
+      {
+        "id": "zensai_guangzhouchicken",
+        "name": "自家製広州風味鶏肉チャーシュー",
+        "desc": "",
+        "price": 700,
+        "badge": ""
+      },
+      {
+        "id": "zensai_roastchicken",
+        "name": "中華風ローストチキン",
+        "desc": "",
+        "price": 680,
+        "badge": ""
+      },
+      {
+        "id": "zensai_bangbangji",
+        "name": "棒棒鶏",
+        "desc": "鶏肉のゴマダレ和え物",
+        "price": 700,
+        "badge": ""
+      },
+      {
+        "id": "zensai_koika",
+        "name": "甲イカお湯引きネギ油ソース",
+        "desc": "",
+        "price": 750,
+        "badge": ""
+      },
+      {
+        "id": "zensai_niratamago",
+        "name": "塩味ニラ玉子焼き",
+        "desc": "",
+        "price": 750,
+        "badge": ""
+      },
+      {
+        "id": "zensai_koushuiji",
+        "name": "口水鷄",
+        "desc": "鶏肉の四川風和え物",
+        "price": 720,
+        "badge": ""
+      }
+    ]
+  },
+  {
     "id": "main-2",
-    "title": "主菜②",
+    "title": "肉・海鮮料理",
     "items": [
       {
         "id": "main2_porkspicy",
@@ -474,8 +466,77 @@ const MENU_DATA = [
     ]
   },
   {
+    "id": "dim-sum",
+    "title": "点心",
+    "items": [
+      {
+        "id": "menshoku_yakigyoza8",
+        "name": "焼き餃子",
+        "desc": "8個",
+        "price": 780,
+        "badge": ""
+      },
+      {
+        "id": "menshoku_xiaolongbao6",
+        "name": "自家製小籠包",
+        "desc": "6個",
+        "price": 780,
+        "badge": ""
+      },
+      {
+        "id": "menshoku_suigyoza8",
+        "name": "水餃子",
+        "desc": "8個",
+        "price": 780,
+        "badge": ""
+      },
+      {
+        "id": "menshoku_harumaki",
+        "name": "自家製春巻き",
+        "desc": "",
+        "price": 600,
+        "badge": ""
+      },
+      {
+        "id": "menshoku_niramanju3",
+        "name": "ニラ饅頭",
+        "desc": "3個",
+        "price": 600,
+        "badge": ""
+      },
+      {
+        "id": "menshoku_mushiset6",
+        "name": "蒸しセット",
+        "desc": "蒸し餃子・焼売・小籠包／6個",
+        "price": 780,
+        "badge": ""
+      },
+      {
+        "id": "menshoku_mushigyoza6",
+        "name": "蒸し餃子",
+        "desc": "6個",
+        "price": 780,
+        "badge": ""
+      },
+      {
+        "id": "menshoku_usuyakimochi",
+        "name": "自家製薄焼き餠",
+        "desc": "",
+        "price": 400,
+        "badge": ""
+      },
+      {
+        "id": "menshoku_ebiboharumaki",
+        "name": "エビ棒春巻き",
+        "desc": "1本",
+        "price": 300,
+        "badge": ""
+      }
+    ]
+  },
+  {
     "id": "vegetables",
-    "title": "野菜",
+    "title": "野菜料理",
     "items": [
       {
         "id": "veg_maponasu",
@@ -795,33 +856,6 @@ const MENU_DATA = [
         "desc": "ソフトドリンク",
         "price": 250,
         "badge": ""
-      }
-    ]
-  },
-  {
-    "id": "course",
-    "title": "コース料理",
-    "items": [
-      {
-        "id": "course-fukurin",
-        "name": "福林コース",
-        "desc": "前菜4種・エビチリ・我が家の酢豚・揚げ物2種・焼き餃子ほか／3名様から",
-        "price": 3000,
-        "badge": "おすすめ"
-      },
-      {
-        "id": "course-shofuku",
-        "name": "招福コース",
-        "desc": "前菜5種・大きなエビチリ・我が家の酢豚・海鮮三種炒めほか／3名様から",
-        "price": 3500,
-        "badge": ""
-      },
-      {
-        "id": "course-family",
-        "name": "家族コース",
-        "desc": "前菜三種・油淋鶏・チャーハン・マーボー豆腐・エビチリほか／3〜4名様",
-        "price": 5800,
-        "badge": "ご家族向け"
       }
     ]
   }
