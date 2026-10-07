@@ -145,11 +145,11 @@
   }
   .hero-grid{
     display:grid; grid-template-columns:minmax(0,1fr) minmax(360px,.92fr);
-    min-height:530px; align-items:stretch;
+    min-height:470px; align-items:stretch;
   }
   .hero-copy{
     display:flex; flex-direction:column; justify-content:center; align-items:center;
-    text-align:center; padding:64px 34px 48px;
+    text-align:center; padding:56px 42px;
   }
   .hero-photo{
     min-height:360px; position:relative; overflow:hidden; background:var(--ink);
@@ -163,46 +163,35 @@
     font-size:.72rem; letter-spacing:.08em;
   }
   .hero .kicker{
-    font-size: 0.78rem; letter-spacing: 0.3em; color: var(--lacquer); margin-bottom: 18px;
+    font-size: 0.82rem; letter-spacing: 0.18em; color: var(--lacquer); font-weight:700; margin-bottom: 22px;
+  }
+  .hero .kicker::after{
+    content:""; display:block; width:54px; height:2px; background:var(--brass); margin:14px auto 0;
   }
   .hero h1{
-    font-size: clamp(2.4rem, 7vw, 3.6rem);
-    letter-spacing: 0.05em;
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    letter-spacing: 0.035em; line-height:1.3; text-wrap:balance;
   }
   .hero .yomi{
     display:block; font-size: 0.95rem; letter-spacing: 0.25em; color: var(--ink);
     opacity: 0.6; margin-top: 10px; font-family: 'Noto Sans JP', sans-serif;
   }
   .hero p.copy{
-    max-width: 34em; margin: 26px auto 0; font-size: 1.02rem;
+    max-width: 32em; margin: 28px auto 0; font-size: 1.02rem; line-height:1.95;
   }
-  .hero-actions{
-    display:flex; gap: 14px; justify-content:center; margin-top: 34px; flex-wrap: wrap;
-  }
-  .hero-actions .btn{ width:260px; text-align:center; }
-  .btn{
-    display:inline-block; padding: 13px 30px; text-decoration:none;
-    font-size: 0.92rem; letter-spacing: 0.04em; border-radius: 2px;
-    transition: 0.15s ease;
-  }
-  .btn-primary{ background: var(--lacquer); color: var(--ivory); }
-  .btn-primary:hover{ background: var(--lacquer-deep); }
-  .btn-line{ border: 1px solid var(--ink); color: var(--ink); }
-  .btn-line:hover{ background: var(--ink); color: var(--ivory); }
-
   .hero-facts{
-    margin-top: 34px; display:flex; justify-content:center; gap: 10px 26px;
-    flex-wrap:wrap; font-size: 0.85rem; color: var(--ink); opacity:0.75;
+    margin-top: 30px; padding-top:18px; border-top:1px solid var(--line);
+    display:flex; justify-content:center; gap: 8px 22px;
+    flex-wrap:wrap; font-size: 0.85rem; color:var(--ink); opacity:0.82;
   }
   @media(max-width:760px){
     .hero-grid{grid-template-columns:1fr;min-height:0}
-    .hero-copy{padding:52px 24px 42px}
+    .hero-copy{padding:48px 30px 42px}
     .hero-photo{min-height:300px;max-height:420px}
   }
   @media(max-width:540px){
-    .hero-actions{width:100%;gap:10px;margin-top:28px}
-    .hero-actions .btn{width:100%}
-    .hero-facts{margin-top:26px;gap:6px 16px;line-height:1.6}
+    .hero-copy{padding:44px 22px 38px}
+    .hero-facts{margin-top:24px;gap:6px 16px;line-height:1.6}
   }
 
   /* sections */
@@ -284,6 +273,14 @@
   .seasonal-box h3{ font-size:1.38rem; line-height:1.5; margin-top:14px; }
   .seasonal-box p{ margin:8px 0 0; font-size:.9rem; opacity:.82; overflow-wrap:anywhere; }
   .seasonal-period{ font-size:.82rem!important; color:var(--jade); font-weight:700; }
+  .seasonal-cta{
+    display:inline-flex; align-items:center; justify-content:center; margin-top:20px;
+    padding:11px 18px; border-radius:4px; background:var(--jade); color:#fff;
+    font-size:.9rem; font-weight:700; line-height:1.5; text-decoration:none;
+    transition:background .15s ease, transform .15s ease;
+  }
+  .seasonal-cta:hover{ background:#2f4936; transform:translateY(-2px); }
+  .seasonal-empty a{ color:var(--jade); font-weight:700; text-underline-offset:3px; }
   .category-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
   @media (max-width:720px){ .category-grid{ grid-template-columns:repeat(2,1fr); } }
   @media (max-width:440px){ .category-grid{ grid-template-columns:1fr; } }
@@ -438,10 +435,6 @@
         <div class="kicker">博多駅南 · 山東料理 · 町中華</div>
         <h1 id="hero-title">中国料理 福林楼<span class="yomi">フクリンロウ</span></h1>
         <p class="copy">30年以上の経験を持つ中国人シェフがつくる、親しみのある本格中国料理です。普段のお食事からご宴会、おせち・オードブルまで、心を込めてご用意します。</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" data-link="seatCourseReservation" href="#">席・コースをネット予約</a>
-          <a class="btn btn-line" href="https://fukurinrou-osechi.yangshiyuan2004.workers.dev/" target="_blank" rel="noopener">おせち・オードブルを予約</a>
-        </div>
         <div class="hero-facts">
           <span>昼 11:30〜14:00</span>
           <span>夜 17:30〜22:00</span>
@@ -506,8 +499,8 @@
         <h2>期間限定・お知らせ</h2>
         <p>今月の期間限定商品と、販売期間・価格をご案内します。</p>
       </div>
-      <div id="seasonalItems"><p class="seasonal-empty">最新の期間限定商品は、お電話またはInstagramでご案内しています。</p></div>
-      <noscript><p>最新情報：<a href="tel:0924811369">092-481-1369</a></p></noscript>
+      <div id="seasonalItems"><p class="seasonal-empty">最新の期間限定商品は <a data-link="instagram" href="#">Instagram</a> でご案内しています。</p></div>
+      <noscript><p>最新情報は <a href="https://www.instagram.com/fukurinrou/">Instagram</a> でご確認ください。</p></noscript>
     </div>
   </section>
 
@@ -633,6 +626,6 @@
 </script>
 
 <script src="./config.js?v=20260924"></script>
-<script src="./seasonal.js?v=20260924"></script>
+<script src="./seasonal.js?v=20261007"></script>
 </body>
 </html>
