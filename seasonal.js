@@ -4,9 +4,21 @@
   if (!root) return;
   let requestedMonth = '';
   let inFlight = false;
+  const instagramUrl = 'https://www.instagram.com/fukurinrou/';
+  function instagramLink(label, className) {
+    const link = node('a', className, label);
+    link.href = instagramUrl;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    return link;
+  }
   function monthNow() { return new Intl.DateTimeFormat('sv-SE', { timeZone:'Asia/Tokyo', year:'numeric', month:'2-digit' }).format(new Date()); }
   function node(tag, cls, text) { const el = document.createElement(tag); el.className = cls; if (text) el.textContent = text; return el; }
-  function empty() { root.replaceChildren(node('p', 'seasonal-empty', '今月の期間限定商品は準備中です。最新情報はお電話（092-481-1369）またはInstagramでご確認ください。')); }
+  function empty() {
+    const message = node('p', 'seasonal-empty', '今月の期間限定商品は準備中です。最新情報は ');
+    message.append(instagramLink('Instagram', ''), ' でご確認ください。');
+    root.replaceChildren(message);
+  }
   async function refresh() {
     if (inFlight) return;
     inFlight = true;
@@ -32,13 +44,13 @@
         const content = node('div', 'seasonal-content');
         content.append(node('div', 'seasonal-badge', Number(month.slice(5)) + '月限定'), node('h3', '', item.title), node('p', 'seasonal-period', item.priceText));
         if (item.description) content.append(node('p', 'seasonal-description', item.description));
-        const phone = node('a', 'map-link', 'お電話でお問い合わせ →'); phone.href = 'tel:0924811369'; content.append(phone);
+        content.append(instagramLink('Instagramで限定商品をチェック →', 'seasonal-cta'));
         article.append(figure, content); return article;
       });
       if (cards.length) root.replaceChildren(...cards); else empty();
     } catch {
       // 通信失敗時も、期限切れの商品や未公開の商品で置き換えない。
-      if (!root.querySelector('.seasonal-box')) root.replaceChildren(node('p', 'seasonal-empty', '最新の期間限定商品は、お電話（092-481-1369）またはInstagramでご案内しています。'));
+      if (!root.querySelector('.seasonal-box')) empty();
     } finally { clearTimeout(timeout); inFlight = false; }
   }
   refresh();
