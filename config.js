@@ -3,5 +3,5 @@
 const SITE_CONFIG = {
   showPrices: true,
   imageVersion: '20260908',
-  seasonalApiUrl: 'https://fukurinrou-osechi.yangshiyuan2004.workers.dev/api/homepage-content'
+  seasonalApiUrl: 'https://osechi.fukurinrou.jp/api/homepage-content'
 };
