@@ -53,7 +53,7 @@
     section.append(list);
     if (category.id === 'course') {
       const link = element('a', 'course-book', 'コース料理を予約する →');
-      link.href = 'https://fukurinrou-reserve.yangshiyuan2004.workers.dev/';
+      link.href = 'https://reserve.fukurinrou.jp/';
       section.append(link);
     }
     panel.replaceChildren(section);
