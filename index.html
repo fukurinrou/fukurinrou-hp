@@ -404,7 +404,7 @@
   footer .foot-links a:hover{ opacity:1; }
   .copyright{ margin-top: 30px; font-size: 0.76rem; opacity: 0.55; }
 </style>
-<link rel="stylesheet" href="./homepage.css?v=20261027c">
+<link rel="stylesheet" href="./homepage.css?v=20261028a">
 </head>
 <body>
 
@@ -442,7 +442,7 @@
           <div class="hero-reservation-note">1〜45名様のご予約を承ります</div>
         </div>
       </div>
-      <div class="hero-photo"><img src="assets/store-interior.jpg" alt="中国料理 福林楼の店内" fetchpriority="high"></div>
+      <div class="hero-photo"><img src="assets/store-interior.jpg" alt="中国料理 福林楼の店内" fetchpriority="high"><div class="hero-signatures" aria-label="福林楼のこだわり"><span>山東料理</span><span>30年以上の経験</span></div></div>
     </div>
   </section>
 
@@ -512,25 +512,30 @@
       <div class="section-head">
         <div class="label">FOOD GALLERY</div>
         <h2>店内・福林楼の一皿</h2>
-        <p>店内の雰囲気と、定番料理の写真を掲載しています。季節の料理や新しい写真も、順次追加します。</p>
+        <p>店内の雰囲気と、定番料理の写真をご覧いただけます。写真をタップすると大きく表示します。</p>
       </div>
-      <!-- 写真を追加するときは、このgallery-cardを複製して画像・料理名・説明を差し替えます。 -->
+      <!-- 写真を追加するときは、gallery-cardを複製し画像・料理名・説明を差し替えます。 -->
       <div class="gallery-grid">
         <figure class="gallery-card">
           <img src="assets/store-interior.jpg" alt="福林楼の店内" loading="lazy">
           <figcaption><h3>店内</h3><p>ご家族でのお食事からご宴会まで、ゆっくりお過ごしいただけます。</p></figcaption>
+          <button class="gallery-open" type="button" aria-label="店内の写真を拡大"><span aria-hidden="true">↗</span></button>
         </figure>
         <figure class="gallery-card">
           <img src="assets/subuta.jpg" alt="福林楼の酢豚" loading="lazy">
           <figcaption><h3>酢豚</h3><p>甘酢あんが香る、人気の定番料理です。</p></figcaption>
+          <button class="gallery-open" type="button" aria-label="酢豚の写真を拡大"><span aria-hidden="true">↗</span></button>
         </figure>
         <figure class="gallery-card">
           <img src="assets/ebichili.jpg" alt="福林楼のエビのチリソース炒め" loading="lazy">
           <figcaption><h3>エビのチリソース炒め</h3><p>ぷりっとしたエビを、特製チリソースで。</p></figcaption>
+          <button class="gallery-open" type="button" aria-label="エビのチリソース炒めの写真を拡大"><span aria-hidden="true">↗</span></button>
         </figure>
         <figure class="gallery-card">
           <img src="assets/yakigyoza.jpg" alt="福林楼の焼き餃子" loading="lazy">
+          <span class="gallery-badge">手作り餃子</span>
           <figcaption><h3>焼き餃子</h3><p>外は香ばしく、中はジューシーに仕上げます。</p></figcaption>
+          <button class="gallery-open" type="button" aria-label="焼き餃子の写真を拡大"><span aria-hidden="true">↗</span></button>
         </figure>
       </div>
     </div>
@@ -572,6 +577,18 @@
   </section>
 
 </main>
+
+<dialog class="gallery-dialog" id="galleryDialog" aria-labelledby="galleryDialogTitle">
+  <div class="gallery-dialog-inner">
+    <button class="gallery-close" type="button" aria-label="写真を閉じる">×</button>
+    <img id="galleryDialogImage" alt="">
+    <div class="gallery-dialog-caption">
+      <button class="gallery-step" id="galleryPrev" type="button" aria-label="前の写真">‹</button>
+      <div class="gallery-dialog-text"><h3 id="galleryDialogTitle"></h3><p id="galleryDialogDescription"></p><span id="galleryCounter"></span></div>
+      <button class="gallery-step" id="galleryNext" type="button" aria-label="次の写真">›</button>
+    </div>
+  </div>
+</dialog>
 
 <a class="mobile-booking" data-link="seatCourseReservation" href="https://reserve.fukurinrou.jp/" target="_blank" rel="noopener noreferrer">お席・コースをネット予約 →</a>
 
@@ -656,6 +673,48 @@
       seasonal.querySelectorAll('.seasonal-box').forEach(watch);
     }
   }
+</script>
+<script>
+  (() => {
+    const dialog = document.getElementById('galleryDialog');
+    const cards = Array.from(document.querySelectorAll('#gallery .gallery-card'));
+    if (!dialog || typeof dialog.showModal !== 'function') return;
+
+    const viewerImage = document.getElementById('galleryDialogImage');
+    const title = document.getElementById('galleryDialogTitle');
+    const description = document.getElementById('galleryDialogDescription');
+    const counter = document.getElementById('galleryCounter');
+    let activeIndex = 0;
+    let trigger = null;
+
+    function display(index) {
+      activeIndex = (index + cards.length) % cards.length;
+      const card = cards[activeIndex];
+      const image = card.querySelector('img');
+      viewerImage.src = image.src;
+      viewerImage.alt = image.alt;
+      title.textContent = card.querySelector('h3').textContent;
+      description.textContent = card.querySelector('figcaption p').textContent;
+      counter.textContent = (activeIndex + 1) + ' / ' + cards.length;
+    }
+
+    cards.forEach((card, index) => {
+      card.querySelector('.gallery-open').addEventListener('click', (event) => {
+        trigger = event.currentTarget;
+        display(index);
+        dialog.showModal();
+      });
+    });
+    dialog.querySelector('.gallery-close').addEventListener('click', () => dialog.close());
+    document.getElementById('galleryPrev').addEventListener('click', () => display(activeIndex - 1));
+    document.getElementById('galleryNext').addEventListener('click', () => display(activeIndex + 1));
+    dialog.addEventListener('click', (event) => { if (event.target === dialog) dialog.close(); });
+    dialog.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowLeft') { event.preventDefault(); display(activeIndex - 1); }
+      if (event.key === 'ArrowRight') { event.preventDefault(); display(activeIndex + 1); }
+    });
+    dialog.addEventListener('close', () => { viewerImage.removeAttribute('src'); trigger?.focus(); });
+  })();
 </script>
 </body>
 </html>
