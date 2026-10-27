@@ -115,3 +115,15 @@ footer{background:#241a18;border-top:2px solid #ad8748}
 .hero-reservation-note{margin-top:5px;padding-top:13px;border-top:1px solid rgba(229,195,139,.25);text-align:center;color:#ead9bf;font-size:.8rem}
 @media(max-width:600px){.hero-title-type{font-size:.68em}.hero-title-name{font-size:1.1em}.hero .yomi{margin-top:12px}.hero p.copy{font-size:.9rem;line-height:1.9}.hero-facts{margin-top:27px;padding-top:18px;gap:9px;font-size:.79rem}.hero-time{grid-template-columns:5em minmax(0,1fr);gap:8px}.hero-time small{font-size:.7rem}}
 @media(max-width:340px){.hero-facts{font-size:.73rem}.hero-time{grid-template-columns:4.7em minmax(0,1fr);gap:6px}}
+
+/* 2026-10-27 · 来店と予約への導線 */
+#access{scroll-margin-top:110px}
+#access .info-row dd{min-width:0;overflow-wrap:anywhere}
+.map-button{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:10px 18px;border:1px solid #6f2b20;background:#72291f;color:#fff;text-decoration:none;box-shadow:0 8px 18px rgba(61,24,18,.16);transition:background .25s,transform .25s}
+.map-button:hover,.map-button:focus-visible{background:#4d1d18;color:#fff;transform:translateY(-2px)}
+.mobile-booking{display:none}
+@media(max-width:640px){
+  body{padding-bottom:calc(72px + env(safe-area-inset-bottom))}
+  .mobile-booking{position:fixed;z-index:30;left:12px;right:12px;bottom:max(10px,env(safe-area-inset-bottom));display:flex;min-height:52px;align-items:center;justify-content:center;padding:10px 16px;border:1px solid #dfbb79;background:#72291f;color:#fff;text-decoration:none;font-weight:700;letter-spacing:.03em;box-shadow:0 8px 28px rgba(29,15,12,.28)}
+}
+@media(prefers-reduced-motion:reduce){.map-button{transition:none}.map-button:hover{transform:none}}
