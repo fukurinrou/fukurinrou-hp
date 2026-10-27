@@ -99,3 +99,19 @@ footer{background:#241a18;border-top:2px solid #ad8748}
   @keyframes home-photo{from{opacity:.55;transform:scale(1.045)}to{opacity:1;transform:scale(1)}}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero-photo img,.seasonal-image img,.gallery-card img,.link-card,.category-item,.seasonal-cta,.card-arrow{animation:none!important;transition:none!important}.motion-ready .reveal-item{opacity:1!important;transform:none!important}}
+
+/* 店名と営業時間は意図した行で区切る */
+.hero h1{line-height:1.25;text-wrap:initial}
+.hero-title-type,.hero-title-name{display:block;white-space:nowrap}
+.hero-title-type{font-size:.7em;letter-spacing:.15em;line-height:1.5}
+.hero-title-name{font-size:1.12em;letter-spacing:.12em;line-height:1.22}
+.hero .yomi{margin-top:17px;font-size:.78rem;letter-spacing:.28em}
+.hero p.copy{max-width:31em;text-wrap:pretty;line-break:strict}
+.hero-facts{display:grid;gap:11px;width:min(100%,31em);text-align:left;margin-top:32px;padding-top:23px;font-size:.86rem}
+.hero-time{display:grid;grid-template-columns:5.5em minmax(0,1fr);gap:12px;line-height:1.65;font-variant-numeric:tabular-nums}
+.hero-time>span{white-space:nowrap}
+.hero-time strong{font-weight:700;color:#e1c18a;letter-spacing:.08em}
+.hero-time small{display:block;color:#d9c6a8;font-size:.76rem;line-height:1.5}
+.hero-reservation-note{margin-top:5px;padding-top:13px;border-top:1px solid rgba(229,195,139,.25);text-align:center;color:#ead9bf;font-size:.8rem}
+@media(max-width:600px){.hero-title-type{font-size:.68em}.hero-title-name{font-size:1.1em}.hero .yomi{margin-top:12px}.hero p.copy{font-size:.9rem;line-height:1.9}.hero-facts{margin-top:27px;padding-top:18px;gap:9px;font-size:.79rem}.hero-time{grid-template-columns:5em minmax(0,1fr);gap:8px}.hero-time small{font-size:.7rem}}
+@media(max-width:340px){.hero-facts{font-size:.73rem}.hero-time{grid-template-columns:4.7em minmax(0,1fr);gap:6px}}
