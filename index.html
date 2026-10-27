@@ -403,7 +403,7 @@
   footer .foot-links a:hover{ opacity:1; }
   .copyright{ margin-top: 30px; font-size: 0.76rem; opacity: 0.55; }
 </style>
-<link rel="stylesheet" href="./homepage.css?v=20260924">
+<link rel="stylesheet" href="./homepage.css?v=20261027">
 </head>
 <body>
 
@@ -627,5 +627,31 @@
 
 <script src="./config.js?v=20260924"></script>
 <script src="./seasonal.js?v=20261007"></script>
+<script>
+  // Scroll effects are progressive: content stays visible if motion is disabled or unavailable.
+  if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px 32px 0px' });
+    const watch = (element) => {
+      if (!element || element.classList.contains('reveal-item')) return;
+      element.classList.add('reveal-item');
+      observer.observe(element);
+    };
+    document.documentElement.classList.add('motion-ready');
+    document.querySelectorAll('main .section-head, .link-card, .category-item, .gallery-card').forEach(watch);
+    const seasonal = document.getElementById('seasonalItems');
+    if (seasonal) {
+      new MutationObserver(() => seasonal.querySelectorAll('.seasonal-box').forEach(watch))
+        .observe(seasonal, { childList: true });
+      seasonal.querySelectorAll('.seasonal-box').forEach(watch);
+    }
+  }
+</script>
 </body>
 </html>
