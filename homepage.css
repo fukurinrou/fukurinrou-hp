@@ -182,3 +182,25 @@ footer{background:#241a18;border-top:2px solid #ad8748}
   #gallery .gallery-card,#gallery .gallery-card img{transition:none!important}
   #gallery .gallery-card:hover,#gallery .gallery-card:hover img{transform:none!important}
 }
+
+/* 2026-10-28 · 季節情報、店舗地図と写真の閉じる操作 */
+.seasonal-fallback{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);align-items:center;gap:clamp(18px,4vw,48px);padding:clamp(18px,3vw,34px);border:1px solid #c9ad7f;background:linear-gradient(130deg,#fffaf1,#eee1cb);box-shadow:0 16px 35px rgba(53,31,22,.08)}
+.seasonal-fallback-copy h3{margin:15px 0 0;font-size:clamp(1.35rem,2.4vw,1.9rem);line-height:1.5}
+.seasonal-fallback-copy p{margin:12px 0 0;font-size:.9rem;line-height:1.9;color:#5d4d40}
+.seasonal-fallback-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.seasonal-fallback-card{position:relative;display:block;min-width:0;aspect-ratio:4/5;overflow:hidden;border-radius:6px;background:#38231b;color:#fff;text-decoration:none}
+.seasonal-fallback-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(28,13,10,.83) 100%);pointer-events:none}
+.seasonal-fallback-card img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.seasonal-fallback-card span{position:absolute;z-index:1;bottom:13px;left:14px;right:10px;display:grid;gap:2px;text-shadow:0 1px 5px rgba(0,0,0,.4)}
+.seasonal-fallback-card strong{font-family:'Noto Serif JP',serif;font-size:1.05rem}
+.seasonal-fallback-card small{font-size:.73rem;color:#f1d6a8}
+@media(hover:hover) and (pointer:fine){.seasonal-fallback-card:hover img{transform:scale(1.06)}}
+.map-panel h3{margin:0 0 12px;font-size:1.05rem;color:#533226}
+.map-panel .map-frame{aspect-ratio:4/3;min-height:300px;background:#eee7d9}
+.map-caption{margin:10px 0 0;font-size:.83rem;color:#604f42}
+.map-secondary{display:inline-block;margin-top:8px;color:#742317;font-size:.84rem;font-weight:700;text-underline-offset:3px}
+.gallery-close{top:8px;right:8px;width:auto;min-width:92px;height:46px;display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:0 12px;border-radius:999px;background:#281b18;color:#fff;font-size:.83rem;font-weight:700;box-shadow:0 5px 18px rgba(0,0,0,.4)}
+.gallery-close span{font-size:1.5rem;font-weight:400;line-height:1}
+@media(max-width:720px){.seasonal-fallback{grid-template-columns:1fr}}
+@media(max-width:600px){.seasonal-fallback{padding:18px}.seasonal-fallback-grid{gap:9px}.seasonal-fallback-card span{left:10px;bottom:10px}.seasonal-fallback-card strong{font-size:.94rem}.seasonal-fallback-card small{font-size:.66rem}.map-panel .map-frame{min-height:260px}.gallery-close{right:4px;top:4px;min-width:86px;height:44px}}
+@media(prefers-reduced-motion:reduce){.seasonal-fallback-card img{transition:none}.seasonal-fallback-card:hover img{transform:none}}
