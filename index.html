@@ -726,7 +726,7 @@
     dialog.querySelector('.gallery-close').addEventListener('click', () => dialog.close());
     document.getElementById('galleryPrev').addEventListener('click', () => display(activeIndex - 1));
     document.getElementById('galleryNext').addEventListener('click', () => display(activeIndex + 1));
-    dialog.addEventListener('click', (event) => { if (event.target === dialog) dialog.close(); });
+    dialog.addEventListener('click', (event) => { if (event.target === dialog || event.target === dialog.querySelector('.gallery-dialog-inner')) dialog.close(); });
     dialog.addEventListener('keydown', (event) => {
       if (event.key === 'ArrowLeft') { event.preventDefault(); display(activeIndex - 1); }
       if (event.key === 'ArrowRight') { event.preventDefault(); display(activeIndex + 1); }
