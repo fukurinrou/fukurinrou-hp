@@ -404,7 +404,7 @@
   footer .foot-links a:hover{ opacity:1; }
   .copyright{ margin-top: 30px; font-size: 0.76rem; opacity: 0.55; }
 </style>
-<link rel="stylesheet" href="./homepage.css?v=20261028a">
+<link rel="stylesheet" href="./homepage.css?v=20261028b">
 </head>
 <body>
 
@@ -498,9 +498,22 @@
       <div class="section-head">
         <div class="label">SEASONAL NEWS</div>
         <h2>期間限定・お知らせ</h2>
-        <p>今月の期間限定商品と、販売期間・価格をご案内します。</p>
+        <p>季節の料理のお知らせと、いつでも楽しめる定番の一皿をご紹介します。</p>
       </div>
-      <div id="seasonalItems"><p class="seasonal-empty">最新の期間限定商品は <a data-link="instagram" href="#">Instagram</a> でご案内しています。</p></div>
+      <div id="seasonalItems">
+        <div class="seasonal-fallback">
+          <div class="seasonal-fallback-copy">
+            <span class="seasonal-badge">福林楼の定番</span>
+            <h3>いつでも楽しめる、一皿を。</h3>
+            <p>季節の新着がない時期も、福林楼の料理をぜひご覧ください。最新の営業・限定情報はInstagramでご案内します。</p>
+            <a class="seasonal-cta" data-link="instagram" href="https://www.instagram.com/fukurinrou/">Instagramで最新情報を見る →</a>
+          </div>
+          <div class="seasonal-fallback-grid">
+            <a class="seasonal-fallback-card" href="./menu.html#main-1"><img src="assets/subuta.jpg" alt="福林楼の酢豚" loading="lazy"><span><strong>酢豚</strong><small>一品料理を見る →</small></span></a>
+            <a class="seasonal-fallback-card" href="./menu.html#dim-sum"><img src="assets/yakigyoza.jpg" alt="福林楼の焼き餃子" loading="lazy"><span><strong>焼き餃子</strong><small>点心を見る →</small></span></a>
+          </div>
+        </div>
+      </div>
       <noscript><p>最新情報は <a href="https://www.instagram.com/fukurinrou/">Instagram</a> でご確認ください。</p></noscript>
     </div>
   </section>
@@ -569,8 +582,13 @@
           </dl>
           <a class="map-link map-button" href="https://www.google.com/maps/dir/?api=1&destination=%E7%A6%8F%E5%B2%A1%E7%9C%8C%E7%A6%8F%E5%B2%A1%E5%B8%82%E5%8D%9A%E5%A4%9A%E5%8C%BA%E5%8D%9A%E5%A4%9A%E9%A7%85%E5%8D%973%E4%B8%81%E7%9B%AE7-14&travelmode=walking" target="_blank" rel="noopener noreferrer">Google マップで経路を見る →</a>
         </div>
-        <div class="map-frame">
-          <iframe src="https://www.google.com/maps?q=%E7%A6%8F%E5%B2%A1%E7%9C%8C%E7%A6%8F%E5%B2%A1%E5%B8%82%E5%8D%9A%E5%A4%9A%E5%8C%BA%E5%8D%9A%E5%A4%9A%E9%A7%85%E5%8D%973%E4%B8%81%E7%9B%AE7-14&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="中国料理 福林楼 地図"></iframe>
+        <div class="map-panel">
+          <h3>地図で場所を確認</h3>
+          <div class="map-frame">
+            <iframe src="https://www.google.com/maps?q=%E7%A6%8F%E5%B2%A1%E7%9C%8C%E7%A6%8F%E5%B2%A1%E5%B8%82%E5%8D%9A%E5%A4%9A%E5%8C%BA%E5%8D%9A%E5%A4%9A%E9%A7%85%E5%8D%973%E4%B8%81%E7%9B%AE7-14&output=embed" loading="eager" referrerpolicy="no-referrer-when-downgrade" title="中国料理 福林楼の周辺地図"></iframe>
+          </div>
+          <p class="map-caption">福林楼｜博多駅南3丁目7-14 岡元ビル</p>
+          <a class="map-secondary" href="https://www.google.com/maps/search/?api=1&query=%E7%A6%8F%E5%B2%A1%E7%9C%8C%E7%A6%8F%E5%B2%A1%E5%B8%82%E5%8D%9A%E5%A4%9A%E5%8C%BA%E5%8D%9A%E5%A4%9A%E9%A7%85%E5%8D%973%E4%B8%81%E7%9B%AE7-14" target="_blank" rel="noopener noreferrer">地図を大きく開く →</a>
         </div>
       </div>
     </div>
@@ -580,7 +598,7 @@
 
 <dialog class="gallery-dialog" id="galleryDialog" aria-labelledby="galleryDialogTitle">
   <div class="gallery-dialog-inner">
-    <button class="gallery-close" type="button" aria-label="写真を閉じる">×</button>
+    <button class="gallery-close" type="button" aria-label="写真を閉じる">閉じる <span aria-hidden="true">×</span></button>
     <img id="galleryDialogImage" alt="">
     <div class="gallery-dialog-caption">
       <button class="gallery-step" id="galleryPrev" type="button" aria-label="前の写真">‹</button>
@@ -590,7 +608,7 @@
   </div>
 </dialog>
 
-<a class="mobile-booking" data-link="seatCourseReservation" href="https://reserve.fukurinrou.jp/" target="_blank" rel="noopener noreferrer">お席・コースをネット予約 →</a>
+<a class="mobile-booking" data-link="seatCourseReservation" href="https://reserve.fukurinrou.jp/" target="_blank" rel="noopener noreferrer">ネット予約はこちら →</a>
 
 <footer>
   <div class="wrap">
@@ -647,7 +665,7 @@
 </script>
 
 <script src="./config.js?v=20261027"></script>
-<script src="./seasonal.js?v=20261007"></script>
+<script src="./seasonal.js?v=20261028"></script>
 <script>
   // Scroll effects are progressive: content stays visible if motion is disabled or unavailable.
   if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
