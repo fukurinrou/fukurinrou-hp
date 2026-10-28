@@ -4,6 +4,7 @@
   if (!root) return;
   let requestedMonth = '';
   let inFlight = false;
+  const fallback = root.cloneNode(true);
   const instagramUrl = 'https://www.instagram.com/fukurinrou/';
   function instagramLink(label, className) {
     const link = node('a', className, label);
@@ -15,9 +16,7 @@
   function monthNow() { return new Intl.DateTimeFormat('sv-SE', { timeZone:'Asia/Tokyo', year:'numeric', month:'2-digit' }).format(new Date()); }
   function node(tag, cls, text) { const el = document.createElement(tag); el.className = cls; if (text) el.textContent = text; return el; }
   function empty() {
-    const message = node('p', 'seasonal-empty', '今月の期間限定商品は準備中です。最新情報は ');
-    message.append(instagramLink('Instagram', ''), ' でご確認ください。');
-    root.replaceChildren(message);
+    root.replaceChildren(...fallback.cloneNode(true).childNodes);
   }
   async function refresh() {
     if (inFlight) return;
