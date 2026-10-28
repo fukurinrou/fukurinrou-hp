@@ -3,3 +3,11 @@
 @media(max-width:620px){.menu-wrap{width:calc(100% - 32px)}.menu-top .menu-wrap{min-height:68px}.menu-intro{padding-top:26px}.menu-tabs{grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.menu-tabs a{font-size:.8rem;padding:10px 5px;line-height:1.5}.course-list{grid-template-columns:1fr;gap:16px}.course-card.family{grid-column:auto}.course-card{padding:20px}.menu-items{padding:0 16px}.dish-name{font-size:.98rem}.dish-line{gap:12px}.dish-price{font-size:1rem}.menu-intro p{font-size:.9rem}.menu-heading h2{font-size:1.4rem}.menu-bottom a{display:inline-block;padding:8px 0}.menu-top{padding-top:env(safe-area-inset-top)}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 @media print{.menu-top,.menu-tabs,.menu-bottom,.course-book{display:none}.menu-wrap{width:100%}body{background:white}.course-card{break-inside:avoid}.course-list{display:block}.course-card{margin-bottom:20px}}
+
+/* スマートフォンの予約導線 */
+.menu-mobile-booking{display:none}
+@media(max-width:640px){
+  body{padding-bottom:calc(76px + env(safe-area-inset-bottom))}
+  .menu-mobile-booking{position:fixed;z-index:30;left:12px;right:12px;bottom:max(10px,env(safe-area-inset-bottom));display:flex;align-items:center;justify-content:center;min-height:52px;padding:10px 16px;border:1px solid #dfbb79;background:#72291f;color:#fff;text-decoration:none;font-weight:700;letter-spacing:.03em;box-shadow:0 8px 28px rgba(29,15,12,.28)}
+}
+@media print{.menu-mobile-booking{display:none}}
