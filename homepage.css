@@ -249,3 +249,7 @@ footer{background:#241a18;border-top:2px solid #ad8748}
 #menu .compact-category-grid .course-category .category-arrow{grid-column:2;grid-row:1/4;color:#7b3825}
 #menu .compact-category-grid .category-item:hover,#menu .compact-category-grid .category-item:focus-visible{border-color:#ad7f46;background:#fff2d5;transform:translateY(-2px);box-shadow:0 10px 22px rgba(65,37,24,.1)}
 @media(max-width:520px){#menu .compact-category-grid{grid-template-columns:1fr}#menu .compact-category-grid .category-item{padding:13px 15px}#menu .compact-category-grid .category-item h3{font-size:1.02rem}#menu .compact-category-grid .category-item p{display:block;font-size:.71rem}#menu .compact-category-grid .category-arrow{font-size:.68rem}}
+
+/* カード数に合わせてセクション全体の余白を調整 */
+#menu{padding:0}
+#menu .wrap{padding-top:clamp(30px,4vw,48px);padding-bottom:clamp(30px,4vw,48px)}
