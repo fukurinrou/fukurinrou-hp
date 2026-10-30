@@ -253,3 +253,6 @@ footer{background:#241a18;border-top:2px solid #ad8748}
 /* カード数に合わせてセクション全体の余白を調整 */
 #menu{padding:0}
 #menu .wrap{padding-top:clamp(30px,4vw,48px);padding-bottom:clamp(30px,4vw,48px)}
+
+/* 弁当写真の注記を常に読める位置へ */
+.bento-feature-photo span{left:12px;right:auto;top:12px;bottom:auto;padding:7px 11px;background:#6e2a20;color:#fff;font-size:.8rem;font-weight:700;box-shadow:0 4px 12px rgba(35,20,15,.3)}
