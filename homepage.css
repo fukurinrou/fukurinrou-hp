@@ -204,3 +204,33 @@ footer{background:#241a18;border-top:2px solid #ad8748}
 @media(max-width:720px){.seasonal-fallback{grid-template-columns:1fr}}
 @media(max-width:600px){.seasonal-fallback{padding:18px}.seasonal-fallback-grid{gap:9px}.seasonal-fallback-card span{left:10px;bottom:10px}.seasonal-fallback-card strong{font-size:.94rem}.seasonal-fallback-card small{font-size:.66rem}.map-panel .map-frame{min-height:260px}.gallery-close{right:4px;top:4px;min-width:86px;height:44px}}
 @media(prefers-reduced-motion:reduce){.seasonal-fallback-card img{transition:none}.seasonal-fallback-card:hover img{transform:none}}
+
+/* 2026-10-30 · お持ち帰り弁当を主役に、店内メニューをコンパクトに */
+.bento-feature{background:#f0e5d3}
+.bento-feature-layout{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);align-items:center;gap:clamp(30px,5vw,80px);padding-top:clamp(45px,7vw,100px);padding-bottom:clamp(45px,7vw,100px)}
+.bento-feature-photo{position:relative;min-height:360px;display:grid;place-items:center;overflow:hidden;background:radial-gradient(circle at center,#fff9e8,#d2b88f 75%);border:9px solid #f8f0e2;box-shadow:0 24px 42px rgba(65,36,24,.23)}
+.bento-feature-photo img{display:block;width:100%;height:100%;max-height:500px;object-fit:contain;filter:drop-shadow(0 17px 19px rgba(30,17,13,.45))}
+.bento-feature-photo span{position:absolute;right:12px;bottom:12px;padding:5px 9px;background:rgba(255,250,238,.9);color:#513829;font-size:.73rem}
+.bento-feature-copy .label{color:#976b36;letter-spacing:.19em}
+.bento-feature-copy h2{margin:16px 0 22px;color:#6e291d;font-family:'Noto Serif JP',serif;font-size:clamp(2.3rem,4vw,4.5rem);line-height:1.16;letter-spacing:.05em}
+.bento-feature-copy h2 small{font-size:.5em;color:#34251f;letter-spacing:.12em}
+.bento-feature-copy>p{line-height:1.95;color:#534438}
+.bento-feature-prices{display:grid;gap:8px;margin:27px 0 12px;padding:19px 0;border-top:1px solid #c8ad84;border-bottom:1px solid #c8ad84;font-size:.86rem;line-height:1.7}
+.bento-feature-prices b{color:#813328;font-size:1rem;white-space:nowrap}
+.bento-feature-options{font-size:.82rem}
+.bento-feature-cta{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:26px;padding:17px 20px;background:#742b22;color:#fff;text-decoration:none;font-size:.94rem;font-weight:700;transition:background .2s,transform .2s,box-shadow .2s}
+.bento-feature-cta:hover,.bento-feature-cta:focus-visible{background:#4e211a;transform:translateY(-3px);box-shadow:0 12px 26px rgba(74,30,20,.22)}
+.bento-feature-flow{font-size:.77rem;line-height:1.8!important}
+#menu{background:#f8f3eb}
+#menu .wrap{padding-top:clamp(34px,5vw,60px);padding-bottom:clamp(34px,5vw,60px)}
+#menu .section-head{margin-bottom:20px}
+#menu .section-head h2{font-size:clamp(1.45rem,2.6vw,2.05rem)}
+#menu .category-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+#menu .category-item{min-height:0;padding:14px 16px;border-top-width:1px;box-shadow:none}
+#menu .category-item h3{margin:4px 0;font-size:1rem}
+#menu .category-item p{font-size:.74rem;line-height:1.5}
+#menu .category-no,#menu .category-arrow{font-size:.68rem}
+#menu .menu-note{font-size:.78rem}
+@media(max-width:760px){.bento-feature-layout{grid-template-columns:1fr}.bento-feature-photo{min-height:285px;max-height:390px}#menu .category-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.bento-feature-photo{min-height:245px}.bento-feature-prices{font-size:.78rem}#menu .category-item{padding:12px}#menu .category-item h3{font-size:.91rem}#menu .category-item p{display:none}}
+@media(prefers-reduced-motion:reduce){.bento-feature-cta{transition:none}.bento-feature-cta:hover{transform:none}}

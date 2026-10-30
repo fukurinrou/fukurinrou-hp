@@ -37,14 +37,16 @@
       const card = element('article', isCourse ? 'course-card' + (family ? ' family' : '') : 'dish-row');
       if (item.badge) card.append(element('span', 'menu-badge' + (family ? ' family' : ''), item.badge));
       if (isCourse) {
-        card.append(element('h3', '', item.name), element('p', 'course-price', (family ? '合計 ' : 'お一人様 ') + item.price.toLocaleString('ja-JP') + '円（税込）'));
+        card.append(element('h3', '', item.name));
+        if (showPrices) card.append(element('p', 'course-price', (family ? '合計 ' : 'お一人様 ') + item.price.toLocaleString('ja-JP') + '円（税込）'));
         card.append(element('p', 'course-people', family ? '2〜4名様でお楽しみいただけます' : '2名様からご予約いただけます'));
         const dishes = element('ol', 'course-dishes');
         item.dishes.forEach(dish => dishes.append(element('li', '', dish)));
         card.append(dishes);
       } else {
         const line = element('div', 'dish-line');
-        line.append(element('h3', 'dish-name', item.name), element('span', 'dish-price', '¥' + Number(item.price).toLocaleString('ja-JP')));
+        line.append(element('h3', 'dish-name', item.name));
+        if (showPrices) line.append(element('span', 'dish-price', '¥' + Number(item.price).toLocaleString('ja-JP')));
         card.append(line);
         if (item.desc) card.append(element('p', 'dish-desc', item.desc));
       }

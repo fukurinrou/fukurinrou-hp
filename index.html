@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>中国料理 福林楼 | 博多駅南・山東料理・町中華</title>
-<meta name="description" content="福岡市博多区博多駅南の中国料理 福林楼。30年以上の経験を持つ中国人シェフによる山東料理・町中華です。店内予約、オードブル予約、メニュー、Instagramはこちらから。電話 092-481-1369。">
+<meta name="description" content="福岡市博多区博多駅南の中国料理 福林楼。30年以上の経験を持つ中国人シェフによる山東料理・町中華です。店内予約、福林楼弁当のお申込み、オードブル予約、メニュー、Instagramはこちらから。電話 092-481-1369。">
 <meta name="keywords" content="福林楼,フクリンロウ,博多,博多駅南,中国料理,中華料理,山東料理,町中華,オードブル,テイクアウト,宴会">
 <link rel="stylesheet" href="./style.css">
 <link rel="canonical" href="https://fukurinrou.jp/">
@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="福林楼">
 <meta property="og:url" content="https://fukurinrou.jp/">
 <meta property="og:title" content="中国料理 福林楼 | 博多駅南・山東料理・町中華">
-<meta property="og:description" content="店内予約・オードブル予約・メニュー・店舗情報はこちら。">
+<meta property="og:description" content="店内予約・お弁当・オードブル予約・店舗情報はこちら。">
 <meta property="og:locale" content="ja_JP">
 
 <script type="application/ld+json">
@@ -404,7 +404,7 @@
   footer .foot-links a:hover{ opacity:1; }
   .copyright{ margin-top: 30px; font-size: 0.76rem; opacity: 0.55; }
 </style>
-<link rel="stylesheet" href="./homepage.css?v=20261028b">
+<link rel="stylesheet" href="./homepage.css?v=20261030b">
 </head>
 <body>
 
@@ -414,6 +414,7 @@
     <button class="nav-toggle" id="navToggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="navList">☰</button>
     <nav>
       <ul id="navList">
+        <li><a href="#bento">お持ち帰り弁当</a></li>
         <li><a href="#limited">限定商品</a></li>
         <li><a href="#menu">お料理</a></li>
         <li><a href="./menu.html#course">コース料理</a></li>
@@ -446,12 +447,30 @@
     </div>
   </section>
 
+  <section id="bento" class="bento-feature">
+    <div class="wrap bento-feature-layout">
+      <div class="bento-feature-photo">
+        <img src="https://osechi.fukurinrou.jp/assets/bento-sweet-sour.webp" alt="酢豚弁当の盛り付け例" loading="lazy">
+        <span>写真は酢豚弁当です</span>
+      </div>
+      <div class="bento-feature-copy">
+        <div class="label">FUKURINROU TAKEOUT</div>
+        <h2>福林楼弁当<br><small>お持ち帰りメニュー</small></h2>
+        <p>選べる中華弁当は8種類。大人数のご注文も承ります。お好きな種類を組み合わせ、合計100個までお申し込みいただけます。</p>
+        <div class="bento-feature-prices"><span>からあげ・麻婆豆腐・チャーハン・焼きそば <b>¥680</b></span><span>油淋鶏 <b>¥750</b> ／ 酢豚・回鍋肉 <b>¥800</b> ／ エビチリ <b>¥850</b></span></div>
+        <p class="bento-feature-options">ご飯大盛り +¥200 ／ ご飯をチャーハンに変更 +¥150</p>
+        <a class="bento-feature-cta" href="https://osechi.fukurinrou.jp/bento/">メニューを見る・お弁当を申し込む <span aria-hidden="true">→</span></a>
+        <p class="bento-feature-flow">ネットで仮受付 → 店頭で先払い → お受け取り<br>オンライン決済は準備中です。今しばらくお待ちください。</p>
+      </div>
+    </div>
+  </section>
+
   <section id="reservation" class="quick-actions">
     <div class="wrap">
       <div class="section-head">
         <div class="label">RESERVATION / FOLLOW US</div>
         <h2>ご予約・最新情報</h2>
-        <p>お席・コース、おせち・オードブルのご予約、最新情報の確認はこちらからお進みください。</p>
+        <p>お席・コース、お弁当・オードブルのご予約、最新情報の確認はこちらからお進みください。</p>
       </div>
       <div class="link-grid">
         <a class="link-card primary" data-link="seatCourseReservation" href="#">
@@ -475,8 +494,8 @@
     <div class="wrap">
       <div class="section-head">
         <div class="label">FOOD MENU</div>
-        <h2>お料理メニュー</h2>
-        <p>種類を選んでタップすると、そのメニューだけをご覧いただけます。</p>
+        <h2>店内のお料理メニュー</h2>
+        <p>店内のお料理もご覧いただけます。種類を選ぶと詳細ページへ進みます。</p>
       </div>
       <div class="category-grid">
         <a class="category-item course-category" href="./menu.html#course"><span class="category-no">01</span><h3>コース料理</h3><p>福林・招福・家族コース／2名様から</p><span class="category-arrow" aria-hidden="true">詳しく見る →</span></a>
@@ -489,7 +508,7 @@
         <a class="category-item" href="./menu.html#dessert"><span class="category-no">08</span><h3>デザート</h3><p>お食事のしめくくりに</p><span class="category-arrow" aria-hidden="true">詳しく見る →</span></a>
         <a class="category-item" href="./menu.html#drinks"><span class="category-no">09</span><h3>お酒・ドリンク</h3><p>お料理に合わせた一杯を</p><span class="category-arrow" aria-hidden="true">詳しく見る →</span></a>
       </div>
-      <p class="menu-note">お料理の内容・価格をご覧いただけます。コースは2名様から承ります。</p>
+      <p class="menu-note">店内のお料理の内容をご覧いただけます。価格は店舗へお問い合わせください。コースは2名様から承ります。</p>
     </div>
   </section>
 
@@ -614,7 +633,7 @@
   <div class="wrap">
     <div><div class="brand">福林楼<small>CHINESE RESTAURANT · HAKATA</small></div></div>
     <div class="foot-links">
-      <a href="#limited">限定商品</a><a href="#menu">メニュー</a><a href="./menu.html#course">コース料理</a><a href="#gallery">店内・料理写真</a><a href="#reservation">ご予約</a><a href="#access">店舗案内</a><a data-link="instagram" href="#">Instagram</a>
+      <a href="#bento">お持ち帰り弁当</a><a href="#limited">限定商品</a><a href="#menu">店内メニュー</a><a href="./menu.html#course">コース料理</a><a href="#gallery">店内・料理写真</a><a href="#reservation">ご予約</a><a href="#access">店舗案内</a><a data-link="instagram" href="#">Instagram</a>
     </div>
   </div>
   <div class="wrap copyright">&copy; 中国料理 福林楼</div>

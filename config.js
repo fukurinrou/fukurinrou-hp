@@ -1,7 +1,7 @@
 // 2026-09-08 02:00 変更済み
 // 値段を表示する：true　／　値段を隠す：false
 const SITE_CONFIG = {
-  showPrices: true,
+  showPrices: false,
   imageVersion: '20260908',
   seasonalApiUrl: 'https://osechi.fukurinrou.jp/api/homepage-content'
 };
