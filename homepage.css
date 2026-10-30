@@ -234,3 +234,18 @@ footer{background:#241a18;border-top:2px solid #ad8748}
 @media(max-width:760px){.bento-feature-layout{grid-template-columns:1fr}.bento-feature-photo{min-height:285px;max-height:390px}#menu .category-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:520px){.bento-feature-photo{min-height:245px}.bento-feature-prices{font-size:.78rem}#menu .category-item{padding:12px}#menu .category-item h3{font-size:.91rem}#menu .category-item p{display:none}}
 @media(prefers-reduced-motion:reduce){.bento-feature-cta{transition:none}.bento-feature-cta:hover{transform:none}}
+
+/* 2026-10-30 · 店内メニューを二つの導線に整理 */
+#menu .compact-category-grid{grid-template-columns:1fr;gap:10px}
+#menu .compact-category-grid .category-item{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-rows:auto auto auto;align-items:center;column-gap:16px;min-height:0;padding:15px 20px;border:1px solid #d8c5a9;background:#fffdf8;box-shadow:none}
+#menu .compact-category-grid .category-item h3{grid-column:1;grid-row:2;margin:1px 0;color:#672b20;font-size:1.12rem;line-height:1.35}
+#menu .compact-category-grid .category-item p{grid-column:1;grid-row:3;display:block;margin:1px 0 0;color:#6d5a46;font-size:.76rem;line-height:1.5;opacity:1}
+#menu .compact-category-grid .category-no{grid-column:1;grid-row:1;color:#96733d;font-size:.63rem;line-height:1.4;letter-spacing:.12em}
+#menu .compact-category-grid .category-arrow{grid-column:2;grid-row:1/4;align-self:center;margin:0;padding:0;color:#793b28;font-size:.77rem;white-space:nowrap}
+#menu .compact-category-grid .category-item.course-category{grid-column:auto;background:linear-gradient(110deg,#fff6e3,#f5dfb7);border-color:#cfad73;color:#54281e}
+#menu .compact-category-grid .course-category h3{color:#662b20}
+#menu .compact-category-grid .course-category p{color:#5c4936}
+#menu .compact-category-grid .course-category .category-no{color:#8e6229;font-size:.63rem}
+#menu .compact-category-grid .course-category .category-arrow{grid-column:2;grid-row:1/4;color:#7b3825}
+#menu .compact-category-grid .category-item:hover,#menu .compact-category-grid .category-item:focus-visible{border-color:#ad7f46;background:#fff2d5;transform:translateY(-2px);box-shadow:0 10px 22px rgba(65,37,24,.1)}
+@media(max-width:520px){#menu .compact-category-grid{grid-template-columns:1fr}#menu .compact-category-grid .category-item{padding:13px 15px}#menu .compact-category-grid .category-item h3{font-size:1.02rem}#menu .compact-category-grid .category-item p{display:block;font-size:.71rem}#menu .compact-category-grid .category-arrow{font-size:.68rem}}
