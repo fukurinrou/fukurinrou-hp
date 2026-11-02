@@ -404,7 +404,7 @@
   footer .foot-links a:hover{ opacity:1; }
   .copyright{ margin-top: 30px; font-size: 0.76rem; opacity: 0.55; }
 </style>
-<link rel="stylesheet" href="./homepage.css?v=20261030e">
+<link rel="stylesheet" href="./homepage.css?v=20261102">
 </head>
 <body>
 
@@ -421,7 +421,7 @@
         <li><a href="#gallery">店内・料理写真</a></li>
         <li><a href="#reservation">ご予約・SNS</a></li>
         <li><a href="#access">店舗案内</a></li>
-        <li><a data-link="instagram" href="#">Instagram</a></li>
+        <li><a data-link="instagram" href="https://www.instagram.com/fukurinrou/">Instagram</a></li>
       </ul>
     </nav>
   </div>
@@ -429,7 +429,7 @@
 </header>
 
 <main id="top">
-  <div class="notice-bar"><div class="wrap">季節のお知らせ・新商品は <a data-link="instagram" href="#">Instagram</a> で発信しています。</div></div>
+  <div class="notice-bar"><div class="wrap">季節のお知らせ・新商品は <a data-link="instagram" href="https://www.instagram.com/fukurinrou/">Instagram</a> で発信しています。</div></div>
 
   <section class="hero" aria-labelledby="hero-title">
     <div class="hero-grid">
@@ -473,7 +473,7 @@
         <p>お席・コース、お弁当・オードブルのご予約、最新情報の確認はこちらからお進みください。</p>
       </div>
       <div class="link-grid">
-        <a class="link-card primary" data-link="seatCourseReservation" href="#">
+        <a class="link-card primary" data-link="seatCourseReservation" href="https://reserve.fukurinrou.jp/">
           <div><div class="eyebrow">ONLINE RESERVATION</div><h3>お席・コースを予約</h3><p>1名様〜45名様まで受付。お席のみ・コース料理を選んで、ネットでご予約いただけます。</p></div>
           <div class="card-arrow">予約ページへ →</div>
         </a>
@@ -481,12 +481,12 @@
           <div><div class="eyebrow">OSECHI / TAKEOUT</div><h3>おせち・オードブルを予約</h3><p>おせち・オードブルの内容と受取日時を、専用ページからお申し込みいただけます。</p></div>
           <div class="card-arrow">お申し込みページへ →</div>
         </a>
-        <a class="link-card social" data-link="instagram" href="#">
+        <a class="link-card social" data-link="instagram" href="https://www.instagram.com/fukurinrou/">
           <div><div class="eyebrow">FOLLOW US</div><h3>Instagram</h3><p>おすすめ料理、期間限定商品、営業に関するお知らせを発信しています。</p></div>
           <div class="card-arrow">Instagramを見る →</div>
         </a>
       </div>
-      <p class="cancel-note">ご予約をキャンセルされる場合は、<a data-link="reservationCancel" href="#">予約キャンセルページ</a>をご利用ください。</p>
+      <p class="cancel-note">ご予約をキャンセルされる場合は、<a data-link="reservationCancel" href="https://reserve.fukurinrou.jp/cancel.html">予約キャンセルページ</a>をご利用ください。</p>
     </div>
   </section>
 
@@ -636,7 +636,7 @@
   <div class="wrap">
     <div><div class="brand">福林楼<small>CHINESE RESTAURANT · HAKATA</small></div></div>
     <div class="foot-links">
-      <a href="#bento">お持ち帰り弁当</a><a href="#limited">限定商品</a><a href="#menu">店内メニュー</a><a href="./menu.html#course">コース料理</a><a href="#gallery">店内・料理写真</a><a href="#reservation">ご予約</a><a href="#access">店舗案内</a><a data-link="instagram" href="#">Instagram</a>
+      <a href="#bento">お持ち帰り弁当</a><a href="#limited">限定商品</a><a href="#menu">店内メニュー</a><a href="./menu.html#course">コース料理</a><a href="#gallery">店内・料理写真</a><a href="#reservation">ご予約</a><a href="#access">店舗案内</a><a data-link="instagram" href="https://www.instagram.com/fukurinrou/">Instagram</a>
     </div>
   </div>
   <div class="wrap copyright">&copy; 中国料理 福林楼</div>
@@ -644,10 +644,10 @@
 
 <script>
   const siteLinks = {
-    instagram: 'https://www.instagram.com/fukurinrou?stkn=aWtmb2x6bGxxd2Jv',
+    instagram: 'https://www.instagram.com/fukurinrou/',
     horsDOeuvreReservation: 'https://osechi.fukurinrou.jp/',
     seatCourseReservation: 'https://reserve.fukurinrou.jp/',
-    reservationCancel: 'https://reserve.fukurinrou.jp/cancel'
+    reservationCancel: 'https://reserve.fukurinrou.jp/cancel.html'
   };
 
   document.querySelectorAll('[data-link]').forEach(function(link){
@@ -687,7 +687,7 @@
 </script>
 
 <script src="./config.js?v=20261027"></script>
-<script src="./seasonal.js?v=20261028"></script>
+<script src="./seasonal.js?v=20261102"></script>
 <script>
   // Scroll effects are progressive: content stays visible if motion is disabled or unavailable.
   if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
