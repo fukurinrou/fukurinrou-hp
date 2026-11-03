@@ -42,7 +42,7 @@
         figure.append(img);
         const content = node('div', 'seasonal-content');
         content.append(node('div', 'seasonal-badge', Number(month.slice(5)) + '月限定'), node('h3', '', item.title));
-        if (SITE_CONFIG.showPrices !== false && item.priceText) content.append(node('p', 'seasonal-period', item.priceText));
+        if (SITE_CONFIG.showSeasonalPrices !== false && item.priceText) content.append(node('p', 'seasonal-period', item.priceText));
         if (item.description) content.append(node('p', 'seasonal-description', item.description));
         content.append(instagramLink('Instagramで限定商品をチェック →', 'seasonal-cta'));
         article.append(figure, content); return article;
