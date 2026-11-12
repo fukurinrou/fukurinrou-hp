@@ -256,3 +256,21 @@ footer{background:#241a18;border-top:2px solid #ad8748}
 
 /* 弁当写真の注記を常に読める位置へ */
 .bento-feature-photo span{left:12px;right:auto;top:12px;bottom:auto;padding:7px 11px;background:#6e2a20;color:#fff;font-size:.8rem;font-weight:700;box-shadow:0 4px 12px rgba(35,20,15,.3)}
+
+/* 2026-11-13 · First-visit path to food, hours and booking */
+header nav .nav-booking{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:8px 15px;background:#a85734;border:1px solid #e4b77d;color:#fff9ee;font-weight:700;white-space:nowrap;text-decoration:none;box-shadow:0 4px 12px rgba(0,0,0,.16)}
+header nav .nav-booking:hover,header nav .nav-booking:focus-visible{background:#c16a40;color:#fff;border-color:#f2ce95}
+.hero-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px;width:min(100%,31em);margin-top:22px}
+.hero-actions a{display:flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:9px 12px;text-decoration:none;font-size:.83rem;font-weight:700;line-height:1.5;transition:background .2s,transform .2s}
+.hero-actions a:hover{transform:translateY(-2px)}
+.hero-actions .hero-booking{grid-column:1/-1;background:#d4a65f;color:#2d1a14;border:1px solid #eed3a1;box-shadow:0 8px 22px rgba(10,3,2,.2);font-size:.95rem}
+.hero-actions .hero-booking:hover{background:#f0c889}
+.hero-actions .hero-menu-link{border:1px solid rgba(225,190,134,.58);color:#f8e9d0;background:rgba(255,255,255,.05)}
+.hero-actions .hero-menu-link:hover{background:rgba(225,190,134,.15)}
+.hero-facts{margin-top:23px}
+.quick-actions{padding-top:clamp(48px,5vw,72px);padding-bottom:clamp(48px,5vw,72px)}
+@media(max-width:900px){header nav .nav-booking{width:100%;justify-content:center;margin-top:10px;padding:12px}}
+@media(max-width:760px){.hero-copy{padding-top:46px;padding-bottom:43px}.hero-photo{min-height:245px;max-height:340px}}
+@media(max-width:600px){.hero-copy{padding:38px 22px 35px}.hero .kicker{margin-bottom:14px}.hero .kicker::after{margin-top:10px}.hero h1{font-size:clamp(2rem,8vw,2.8rem)}.hero .yomi{margin-top:7px}.hero p.copy{margin-top:15px;font-size:.86rem;line-height:1.75}.hero-actions{margin-top:16px}.hero-actions a{min-height:44px;font-size:.77rem;padding:8px 6px}.hero-actions .hero-booking{min-height:49px;font-size:.88rem}.hero-facts{margin-top:17px;padding-top:14px}.hero-photo{min-height:210px;max-height:265px}.quick-actions .section-head{margin-bottom:20px}.link-card{min-height:0;padding:22px 20px}.link-card h3{font-size:1.15rem}.mobile-booking{font-size:.95rem}}
+@media(prefers-reduced-motion:no-preference){.hero-copy .hero-actions{animation:home-rise .75s .36s both}.hero-copy .hero-facts{animation-delay:.5s}}
+@media(prefers-reduced-motion:reduce){.hero-actions a{transition:none}.hero-actions a:hover{transform:none}}

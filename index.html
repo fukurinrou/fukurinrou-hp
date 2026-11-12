@@ -404,7 +404,7 @@
   footer .foot-links a:hover{ opacity:1; }
   .copyright{ margin-top: 30px; font-size: 0.76rem; opacity: 0.55; }
 </style>
-<link rel="stylesheet" href="./homepage.css?v=20261102">
+<link rel="stylesheet" href="./homepage.css?v=20261113">
 </head>
 <body>
 
@@ -414,14 +414,11 @@
     <button class="nav-toggle" id="navToggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="navList">☰</button>
     <nav>
       <ul id="navList">
+        <li><a href="#menu">お料理・コース</a></li>
         <li><a href="#bento">お持ち帰り弁当</a></li>
-        <li><a href="#limited">限定商品</a></li>
-        <li><a href="#menu">お料理</a></li>
-        <li><a href="./menu.html#course">コース料理</a></li>
         <li><a href="#gallery">店内・料理写真</a></li>
-        <li><a href="#reservation">ご予約・SNS</a></li>
-        <li><a href="#access">店舗案内</a></li>
-        <li><a data-link="instagram" href="https://www.instagram.com/fukurinrou/">Instagram</a></li>
+        <li><a href="#access">営業時間・アクセス</a></li>
+        <li><a class="nav-booking" data-link="seatCourseReservation" href="https://reserve.fukurinrou.jp/">ネット予約 →</a></li>
       </ul>
     </nav>
   </div>
@@ -437,31 +434,18 @@
         <div class="kicker">博多駅南 · 山東料理 · 町中華</div>
         <h1 id="hero-title"><span class="hero-title-type">中華料理</span><span class="hero-title-name">福林楼</span><span class="yomi">フクリンロウ</span></h1>
         <p class="copy">山東料理を中心に、30年以上の経験を持つシェフが一皿ずつ丁寧にお作りします。普段のお食事からご宴会まで、心地よいひとときを。</p>
+        <div class="hero-actions" aria-label="ご利用案内">
+          <a class="hero-booking" data-link="seatCourseReservation" href="https://reserve.fukurinrou.jp/">お席・コースをネット予約 <span aria-hidden="true">→</span></a>
+          <a class="hero-menu-link" href="#menu">料理・コースを見る <span aria-hidden="true">↓</span></a>
+          <a class="hero-menu-link" href="#access">営業時間・アクセス <span aria-hidden="true">↓</span></a>
+        </div>
         <div class="hero-facts">
-          <div class="hero-time"><strong>ランチ</strong><span>月〜土 11:30〜14:00<small>日曜の昼はお休み</small></span></div>
+          <div class="hero-time"><strong>ランチ</strong><span>月〜土 11:30〜14:00<small>日曜は夜のみ営業</small></span></div>
           <div class="hero-time"><strong>ディナー</strong><span>毎日 17:30〜22:00</span></div>
           <div class="hero-reservation-note">1〜45名様のご予約を承ります</div>
         </div>
       </div>
       <div class="hero-photo"><img src="assets/store-interior.jpg" alt="中国料理 福林楼の店内" fetchpriority="high"><div class="hero-signatures" aria-label="福林楼のこだわり"><span>山東料理</span><span>30年以上の経験</span></div></div>
-    </div>
-  </section>
-
-  <section id="bento" class="bento-feature">
-    <div class="wrap bento-feature-layout">
-      <div class="bento-feature-photo">
-        <img src="https://osechi.fukurinrou.jp/assets/bento-sweet-sour.webp" alt="酢豚弁当の盛り付け例" loading="lazy">
-        <span>酢豚弁当の盛り付け例</span>
-      </div>
-      <div class="bento-feature-copy">
-        <div class="label">FUKURINROU TAKEOUT</div>
-        <h2>福林楼弁当<br><small>お持ち帰りメニュー</small></h2>
-        <p>選べる中華弁当は8種類。大人数のご注文も承ります。お好きな種類を組み合わせ、合計100個までお申し込みいただけます。</p>
-        <div class="bento-feature-prices"><span>からあげ・麻婆豆腐・チャーハン・焼きそば <b>¥680</b></span><span>油淋鶏 <b>¥750</b> ／ 酢豚・回鍋肉 <b>¥800</b> ／ エビチリ <b>¥850</b></span></div>
-        <p class="bento-feature-options">ご飯付きのお弁当は、大盛り +¥200 ／ チャーハンに変更 +¥150</p>
-        <a class="bento-feature-cta" href="https://osechi.fukurinrou.jp/bento/">メニューを見る・お弁当を申し込む <span aria-hidden="true">→</span></a>
-        <p class="bento-feature-flow">５個以上は事前会計／４個以下は受け渡し時に会計<br>受取時間は店舗からご案内します。オンライン決済は準備中です。</p>
-      </div>
     </div>
   </section>
 
@@ -487,6 +471,24 @@
         </a>
       </div>
       <p class="cancel-note">お席・コース予約のキャンセルは<a data-link="reservationCancel" href="https://reserve.fukurinrou.jp/cancel.html">予約キャンセルページ</a>へ。お弁当・おせち・オードブルの変更・キャンセルは<a href="tel:0924811369">店舗へお電話ください（092-481-1369）</a>。</p>
+    </div>
+  </section>
+
+  <section id="bento" class="bento-feature">
+    <div class="wrap bento-feature-layout">
+      <div class="bento-feature-photo">
+        <img src="https://osechi.fukurinrou.jp/assets/bento-sweet-sour.webp" alt="酢豚弁当の盛り付け例" loading="lazy">
+        <span>酢豚弁当の盛り付け例</span>
+      </div>
+      <div class="bento-feature-copy">
+        <div class="label">FUKURINROU TAKEOUT</div>
+        <h2>福林楼弁当<br><small>お持ち帰りメニュー</small></h2>
+        <p>選べる中華弁当は8種類。大人数のご注文も承ります。お好きな種類を組み合わせ、合計100個までお申し込みいただけます。</p>
+        <div class="bento-feature-prices"><span>からあげ・麻婆豆腐・チャーハン・焼きそば <b>¥680</b></span><span>油淋鶏 <b>¥750</b> ／ 酢豚・回鍋肉 <b>¥800</b> ／ エビチリ <b>¥850</b></span></div>
+        <p class="bento-feature-options">ご飯付きのお弁当は、大盛り +¥200 ／ チャーハンに変更 +¥150</p>
+        <a class="bento-feature-cta" href="https://osechi.fukurinrou.jp/bento/">メニューを見る・お弁当を申し込む <span aria-hidden="true">→</span></a>
+        <p class="bento-feature-flow">５個以上は事前会計／４個以下は受け渡し時に会計<br>受取時間は店舗からご案内します。オンライン決済は準備中です。</p>
+      </div>
     </div>
   </section>
 
@@ -598,7 +600,7 @@
             <div class="info-row"><dt>店名</dt><dd>中国料理 福林楼</dd></div>
             <div class="info-row"><dt>住所</dt><dd>〒812-0016<br>福岡県福岡市博多区博多駅南3丁目7-14 岡元ビル</dd></div>
             <div class="info-row"><dt>電話</dt><dd><a href="tel:0924811369">092-481-1369</a></dd></div>
-            <div class="info-row"><dt>営業時間</dt><dd>ランチ（月〜土）11:30〜14:00<br>ディナー（毎日）17:30〜22:00<br>日曜のランチはお休みです</dd></div>
+            <div class="info-row"><dt>営業時間</dt><dd>ランチ（月〜土）11:30〜14:00<br>ディナー（毎日）17:30〜22:00<br>日曜は夜のみ営業</dd></div>
             <div class="info-row"><dt>アクセス</dt><dd>博多駅より徒歩約10分。詳しい道順は下の経路案内をご利用ください。</dd></div>
             <div class="info-row"><dt>駐車場</dt><dd>店舗専用駐車場 2台</dd></div>
           </dl>
@@ -654,7 +656,10 @@
     const url = siteLinks[link.dataset.link];
     if (url) {
       link.href = url;
-      if (/^https?:/i.test(url)) { link.target = '_blank'; link.rel = 'noopener'; }
+      if (/^https?:/i.test(url)) {
+        if (link.dataset.link === 'instagram') { link.target = '_blank'; link.rel = 'noopener noreferrer'; }
+        else { link.removeAttribute('target'); link.removeAttribute('rel'); }
+      }
     } else {
       link.classList.add('is-disabled');
       link.addEventListener('click', function(event){ event.preventDefault(); });
