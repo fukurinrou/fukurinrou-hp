@@ -490,7 +490,7 @@ const MENU_DATA = [
         "desc": "8個",
         "price": 780,
         "badge": "",
-        "photo": "assets/dishes/menshoku_yakigyoza8.webp"
+        "photo": "assets/dishes/menshoku_yakigyoza8.webp?v=20261116dimsum"
       },
       {
         "id": "menshoku_xiaolongbao6",
@@ -498,7 +498,7 @@ const MENU_DATA = [
         "desc": "6個",
         "price": 780,
         "badge": "",
-        "photo": "assets/dishes/menshoku_xiaolongbao6.webp"
+        "photo": "assets/dishes/menshoku_xiaolongbao6.webp?v=20261116dimsum"
       },
       {
         "id": "menshoku_suigyoza8",
@@ -506,7 +506,7 @@ const MENU_DATA = [
         "desc": "8個",
         "price": 780,
         "badge": "",
-        "photo": "assets/dishes/menshoku_suigyoza8.webp"
+        "photo": "assets/dishes/menshoku_suigyoza8.webp?v=20261116dimsum"
       },
       {
         "id": "menshoku_harumaki",
@@ -514,7 +514,7 @@ const MENU_DATA = [
         "desc": "",
         "price": 600,
         "badge": "",
-        "photo": "assets/dishes/menshoku_harumaki.webp"
+        "photo": "assets/dishes/menshoku_harumaki.webp?v=20261116dimsum"
       },
       {
         "id": "menshoku_niramanju3",
@@ -522,7 +522,7 @@ const MENU_DATA = [
         "desc": "3個",
         "price": 600,
         "badge": "",
-        "photo": "assets/dishes/menshoku_niramanju3.webp"
+        "photo": "assets/dishes/menshoku_niramanju3.webp?v=20261116dimsum"
       },
       {
         "id": "menshoku_mushiset6",
