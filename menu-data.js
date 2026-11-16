@@ -76,15 +76,8 @@ const MENU_DATA = [
       {
         "id": "main1_ebichili",
         "name": "エビのチリソース炒め",
-        "desc": "通常サイズ",
+        "desc": "",
         "price": 1300,
-        "badge": ""
-      },
-      {
-        "id": "main1_ebichili_small",
-        "name": "エビのチリソース炒め（小）",
-        "desc": "小サイズ",
-        "price": 1000,
         "badge": ""
       },
       {
@@ -97,15 +90,8 @@ const MENU_DATA = [
       {
         "id": "main1_subuta",
         "name": "酢豚",
-        "desc": "通常サイズ",
+        "desc": "",
         "price": 1100,
-        "badge": ""
-      },
-      {
-        "id": "main1_subuta_small",
-        "name": "酢豚（小）",
-        "desc": "小サイズ",
-        "price": 800,
         "badge": ""
       },
       {
@@ -132,29 +118,15 @@ const MENU_DATA = [
       {
         "id": "main1_yurinchi",
         "name": "油淋鶏",
-        "desc": "揚げ鶏肉のねぎ醤油かけ／通常サイズ",
+        "desc": "揚げ鶏肉のねぎ醤油かけ",
         "price": 980,
-        "badge": ""
-      },
-      {
-        "id": "main1_yurinchi_small",
-        "name": "油淋鶏（小）",
-        "desc": "小サイズ",
-        "price": 780,
         "badge": ""
       },
       {
         "id": "main1_tomatotamago",
         "name": "トマトと玉子炒め",
-        "desc": "通常サイズ",
+        "desc": "",
         "price": 1000,
-        "badge": ""
-      },
-      {
-        "id": "main1_tomatotamago_small",
-        "name": "トマトと玉子炒め（小）",
-        "desc": "小サイズ",
-        "price": 800,
         "badge": ""
       },
       {
@@ -195,15 +167,8 @@ const MENU_DATA = [
       {
         "id": "main1_ebiten",
         "name": "エビの天ぷら",
-        "desc": "通常サイズ",
+        "desc": "",
         "price": 1300,
-        "badge": ""
-      },
-      {
-        "id": "main1_ebiten_small",
-        "name": "エビの天ぷら（小）",
-        "desc": "小サイズ",
-        "price": 1000,
         "badge": ""
       },
       {
@@ -589,71 +554,36 @@ const MENU_DATA = [
       {
         "id": "soup_fukahire",
         "name": "フカヒレスープ",
-        "desc": "通常サイズ",
+        "desc": "",
         "price": 1600,
-        "badge": ""
-      },
-      {
-        "id": "soup_fukahire_small",
-        "name": "フカヒレスープ（小）",
-        "desc": "小サイズ",
-        "price": 900,
         "badge": ""
       },
       {
         "id": "soup_suuratan",
         "name": "スーラータン",
-        "desc": "豆腐と色々酸味スープ／通常サイズ",
+        "desc": "豆腐と色々酸味スープ",
         "price": 800,
-        "badge": ""
-      },
-      {
-        "id": "soup_suuratan_small",
-        "name": "スーラータン（小）",
-        "desc": "小サイズ",
-        "price": 600,
         "badge": ""
       },
       {
         "id": "soup_tamago",
         "name": "玉子スープ",
-        "desc": "通常サイズ",
+        "desc": "",
         "price": 800,
-        "badge": ""
-      },
-      {
-        "id": "soup_tamago_small",
-        "name": "玉子スープ（小）",
-        "desc": "小サイズ",
-        "price": 600,
         "badge": ""
       },
       {
         "id": "soup_harusame",
         "name": "春雨スープ",
-        "desc": "通常サイズ",
+        "desc": "",
         "price": 800,
-        "badge": ""
-      },
-      {
-        "id": "soup_harusame_small",
-        "name": "春雨スープ（小）",
-        "desc": "小サイズ",
-        "price": 600,
         "badge": ""
       },
       {
         "id": "soup_corn",
         "name": "コンスープ",
-        "desc": "通常サイズ",
+        "desc": "",
         "price": 800,
-        "badge": ""
-      },
-      {
-        "id": "soup_corn_small",
-        "name": "コンスープ（小）",
-        "desc": "小サイズ",
-        "price": 600,
         "badge": ""
       }
     ]
