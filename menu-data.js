@@ -1,71 +1,33 @@
 // 料理写真はメニューの料理名に照合して掲載。
 const MENU_DATA = [
   {
-    "id": "course",
-    "title": "コース料理",
-    "items": [
-      {
-        "id": "course-fukurin",
-        "name": "福林コース",
-        "desc": "",
-        "price": 3000,
-        "badge": "おすすめ",
-        "dishes": [
-          "前菜4種",
-          "エビチリソース",
-          "我が家の酢豚",
-          "揚げ物2種（鶏唐揚げ・春巻き）",
-          "手作り焼き餃子",
-          "麻婆豆腐",
-          "チャーハン",
-          "玉子スープ",
-          "日替わりデザート"
-        ],
-        "minPeople": 2
-      },
-      {
-        "id": "course-shofuku",
-        "name": "招福コース",
-        "desc": "",
-        "price": 3500,
-        "badge": "",
-        "dishes": [
-          "前菜5種",
-          "大きなエビチリソース",
-          "我が家の酢豚",
-          "揚げ物2種（鶏唐揚げ・春巻き）",
-          "手作り焼き餃子",
-          "海鮮三種炒め",
-          "ピーマンと牛肉の炒め",
-          "チャーハン",
-          "フカヒレスープ",
-          "日替わりデザート"
-        ],
-        "minPeople": 2
-      },
-      {
-        "id": "course-family",
-        "name": "家族コース",
-        "desc": "",
-        "price": 5800,
-        "badge": "ご家族向け",
-        "dishes": [
-          "前菜3種",
-          "油淋鶏（揚げ鶏肉のネギ醤油かけ）",
-          "チャーハン",
-          "麻婆豆腐",
-          "エビのチリソース炒め",
-          "焼き餃子",
-          "玉子スープ"
-        ],
-        "minPeople": 2
-      }
-    ]
-  },
-  {
     "id": "main-1",
     "title": "一品料理",
     "items": [
+      {
+        "id": "main1_subuta",
+        "name": "酢豚",
+        "desc": "",
+        "price": 1100,
+        "badge": "",
+        "photo": "assets/dishes/main1_subuta.webp?v=20261116main"
+      },
+      {
+        "id": "main1_ebichili",
+        "name": "エビのチリソース炒め",
+        "desc": "",
+        "price": 1300,
+        "badge": "",
+        "photo": "assets/dishes/main1_ebichili.webp?v=20261116main"
+      },
+      {
+        "id": "main1_mapotofu",
+        "name": "マーボー豆腐",
+        "desc": "",
+        "price": 980,
+        "badge": "",
+        "photo": "assets/dishes/main1_mapotofu.webp"
+      },
       {
         "id": "main1_ikatoubanjan",
         "name": "イカと野菜の豆板醤炒め",
@@ -75,28 +37,12 @@ const MENU_DATA = [
         "photo": "assets/dishes/main1_ikatoubanjan.webp"
       },
       {
-        "id": "main1_ebichili",
-        "name": "エビのチリソース炒め",
-        "desc": "",
-        "price": 1300,
-        "badge": "",
-        "photo": "assets/dishes/main1_ebichili.webp"
-      },
-      {
         "id": "main1_hoikoro",
         "name": "回鍋肉",
         "desc": "豚の辛味噌炒め",
         "price": 1100,
         "badge": "",
         "photo": "assets/dishes/main1_hoikoro.webp"
-      },
-      {
-        "id": "main1_subuta",
-        "name": "酢豚",
-        "desc": "",
-        "price": 1100,
-        "badge": "",
-        "photo": "assets/dishes/main1_subuta.webp"
       },
       {
         "id": "main1_happosai",
@@ -155,14 +101,6 @@ const MENU_DATA = [
         "photo": "assets/dishes/main1_malanabe.webp"
       },
       {
-        "id": "main1_mapotofu",
-        "name": "マーボー豆腐",
-        "desc": "",
-        "price": 980,
-        "badge": "",
-        "photo": "assets/dishes/main1_mapotofu.webp"
-      },
-      {
         "id": "main1_kurozusubuta",
         "name": "黒酢酢豚",
         "desc": "店長おすすめ",
@@ -184,7 +122,7 @@ const MENU_DATA = [
         "desc": "",
         "price": 1300,
         "badge": "",
-        "photo": "assets/dishes/main1_ebiten.webp"
+        "photo": "assets/dishes/main1_ebiten.webp?v=20261116main"
       },
       {
         "id": "main1_ebimayo",
@@ -193,6 +131,68 @@ const MENU_DATA = [
         "price": 1300,
         "badge": "",
         "photo": "assets/dishes/main1_ebimayo.webp"
+      }
+    ]
+  },
+  {
+    "id": "course",
+    "title": "コース料理",
+    "items": [
+      {
+        "id": "course-fukurin",
+        "name": "福林コース",
+        "desc": "",
+        "price": 3000,
+        "badge": "おすすめ",
+        "dishes": [
+          "前菜4種",
+          "エビチリソース",
+          "我が家の酢豚",
+          "揚げ物2種（鶏唐揚げ・春巻き）",
+          "手作り焼き餃子",
+          "麻婆豆腐",
+          "チャーハン",
+          "玉子スープ",
+          "日替わりデザート"
+        ],
+        "minPeople": 2
+      },
+      {
+        "id": "course-shofuku",
+        "name": "招福コース",
+        "desc": "",
+        "price": 3500,
+        "badge": "",
+        "dishes": [
+          "前菜5種",
+          "大きなエビチリソース",
+          "我が家の酢豚",
+          "揚げ物2種（鶏唐揚げ・春巻き）",
+          "手作り焼き餃子",
+          "海鮮三種炒め",
+          "ピーマンと牛肉の炒め",
+          "チャーハン",
+          "フカヒレスープ",
+          "日替わりデザート"
+        ],
+        "minPeople": 2
+      },
+      {
+        "id": "course-family",
+        "name": "家族コース",
+        "desc": "",
+        "price": 5800,
+        "badge": "ご家族向け",
+        "dishes": [
+          "前菜3種",
+          "油淋鶏（揚げ鶏肉のネギ醤油かけ）",
+          "チャーハン",
+          "麻婆豆腐",
+          "エビのチリソース炒め",
+          "焼き餃子",
+          "玉子スープ"
+        ],
+        "minPeople": 2
       }
     ]
   },
