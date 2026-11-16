@@ -580,10 +580,11 @@ const MENU_DATA = [
       },
       {
         "id": "veg_chingensai",
-        "name": "チンゲン菜とクコシの炒め",
+        "name": "チンゲン菜のニンニク炒め",
         "desc": "",
         "price": 800,
-        "badge": ""
+        "badge": "",
+        "photo": "assets/dishes/veg_chingensai_garlic.webp"
       },
       {
         "id": "veg_moyashipork",
@@ -700,166 +701,6 @@ const MENU_DATA = [
         "price": 400,
         "badge": "",
         "photo": "assets/dishes/dessert_mangopudding.webp"
-      }
-    ]
-  },
-  {
-    "id": "drinks",
-    "title": "お酒・ドリンク",
-    "items": [
-      {
-        "id": "drink-0",
-        "name": "レモンサワー",
-        "desc": "",
-        "price": 400,
-        "badge": ""
-      },
-      {
-        "id": "drink-1",
-        "name": "カルピスサワー",
-        "desc": "",
-        "price": 400,
-        "badge": ""
-      },
-      {
-        "id": "drink-2",
-        "name": "巨峰サワー",
-        "desc": "",
-        "price": 400,
-        "badge": ""
-      },
-      {
-        "id": "drink-3",
-        "name": "梅酒",
-        "desc": "",
-        "price": 450,
-        "badge": ""
-      },
-      {
-        "id": "drink-4",
-        "name": "桂花陳酒",
-        "desc": "",
-        "price": 450,
-        "badge": ""
-      },
-      {
-        "id": "drink-5",
-        "name": "杏露酒",
-        "desc": "",
-        "price": 450,
-        "badge": ""
-      },
-      {
-        "id": "drink-6",
-        "name": "もも酒",
-        "desc": "",
-        "price": 450,
-        "badge": ""
-      },
-      {
-        "id": "drink-7",
-        "name": "赤ワイン",
-        "desc": "",
-        "price": 450,
-        "badge": ""
-      },
-      {
-        "id": "drink-8",
-        "name": "生ビール（アサヒ）",
-        "desc": "",
-        "price": 600,
-        "badge": ""
-      },
-      {
-        "id": "drink-9",
-        "name": "アサヒ瓶ビール",
-        "desc": "",
-        "price": 600,
-        "badge": ""
-      },
-      {
-        "id": "drink-10",
-        "name": "キリン瓶ビール",
-        "desc": "",
-        "price": 600,
-        "badge": ""
-      },
-      {
-        "id": "drink-11",
-        "name": "青島ビール",
-        "desc": "",
-        "price": 600,
-        "badge": ""
-      },
-      {
-        "id": "drink-12",
-        "name": "ノンアルコール",
-        "desc": "",
-        "price": 500,
-        "badge": ""
-      },
-      {
-        "id": "drink-13",
-        "name": "角ハイボール",
-        "desc": "",
-        "price": 500,
-        "badge": ""
-      },
-      {
-        "id": "drink-14",
-        "name": "黒霧島（芋）",
-        "desc": "",
-        "price": 400,
-        "badge": ""
-      },
-      {
-        "id": "drink-15",
-        "name": "二階堂（麦）",
-        "desc": "",
-        "price": 400,
-        "badge": ""
-      },
-      {
-        "id": "drink-16",
-        "name": "紹興酒（関帝5年）",
-        "desc": "",
-        "price": 450,
-        "badge": ""
-      },
-      {
-        "id": "drink-17",
-        "name": "中国白酒（42度）",
-        "desc": "",
-        "price": 400,
-        "badge": ""
-      },
-      {
-        "id": "drink-18",
-        "name": "コーラ",
-        "desc": "ソフトドリンク",
-        "price": 300,
-        "badge": ""
-      },
-      {
-        "id": "drink-19",
-        "name": "オレンジジュース",
-        "desc": "ソフトドリンク",
-        "price": 300,
-        "badge": ""
-      },
-      {
-        "id": "drink-20",
-        "name": "カルピス",
-        "desc": "ソフトドリンク",
-        "price": 250,
-        "badge": ""
-      },
-      {
-        "id": "drink-21",
-        "name": "ウーロン茶",
-        "desc": "ソフトドリンク",
-        "price": 250,
-        "badge": ""
       }
     ]
   }
