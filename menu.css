@@ -11,3 +11,26 @@
   .menu-mobile-booking{position:fixed;z-index:30;left:12px;right:12px;bottom:max(10px,env(safe-area-inset-bottom));display:flex;align-items:center;justify-content:center;min-height:52px;padding:10px 16px;border:1px solid #dfbb79;background:#72291f;color:#fff;text-decoration:none;font-weight:700;letter-spacing:.03em;box-shadow:0 8px 28px rgba(29,15,12,.28)}
 }
 @media print{.menu-mobile-booking{display:none}}
+
+/* 写真で選べる料理一覧。価格非表示時も余白を残さない。 */
+.menu-items.with-photos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;padding:0;border:0;background:transparent}
+.with-photos .dish-row{min-width:0;overflow:hidden;padding:0;border:1px solid var(--menu-line);border-radius:8px;background:var(--menu-paper);box-shadow:0 5px 17px rgba(56,33,20,.06)}
+.dish-photo{display:block;position:relative;width:100%;padding:0;border:0;background:#e9ddc9;cursor:zoom-in;overflow:hidden}
+.dish-photo::after{content:'↗';position:absolute;right:9px;bottom:9px;display:grid;place-items:center;width:29px;height:29px;border-radius:50%;background:rgba(41,28,21,.75);color:#fff;font-size:1.1rem}
+.dish-photo img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform .25s ease}
+.dish-photo:hover img{transform:scale(1.035)}
+.with-photos .dish-content{padding:13px 14px 15px}
+.with-photos .dish-name{font-size:.98rem;line-height:1.5}
+.with-photos .dish-desc{font-size:.78rem;line-height:1.5;margin-top:5px}
+.photo-note{margin:16px 0 0;color:#665748;font-size:.8rem;line-height:1.6}
+.dish-dialog{position:fixed;inset:0;width:100%;height:100%;max-width:none;max-height:none;margin:0;padding:18px;border:0;background:transparent;color:#fff;overflow:auto}
+.dish-dialog::backdrop{background:rgba(19,12,9,.9)}
+.dish-dialog[open]{display:flex;align-items:center;justify-content:center}
+.dish-dialog-box{position:relative;display:flex;flex-direction:column;align-items:center;max-width:min(100%,1000px);max-height:100%}
+.dish-dialog img{display:block;max-width:100%;max-height:calc(100dvh - 115px);width:auto;height:auto;object-fit:contain}
+.dish-dialog p{margin:12px 0 0;text-align:center;font-weight:700}
+.dish-dialog-close{position:absolute;right:4px;top:4px;z-index:1;min-height:44px;padding:7px 13px;border:1px solid #ead3a8;border-radius:99px;background:#281b18;color:#fff;font:inherit;font-weight:700;cursor:pointer}
+@media(max-width:720px){.menu-items.with-photos{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.with-photos .dish-content{padding:10px 11px 12px}.with-photos .dish-name{font-size:.87rem}.with-photos .dish-desc{font-size:.75rem}}
+@media(max-width:380px){.menu-items.with-photos{gap:8px}.with-photos .dish-name{font-size:.82rem}}
+@media(prefers-reduced-motion:reduce){.dish-photo img{transition:none}}
+@media print{.dish-dialog{display:none!important}.menu-items.with-photos{grid-template-columns:repeat(3,minmax(0,1fr))}}
