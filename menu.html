@@ -10,9 +10,11 @@
   <link rel="icon" href="./favicon.png" type="image/png" sizes="512x512">
   <link rel="apple-touch-icon" href="./apple-touch-icon.png" sizes="180x180">
   <link rel="stylesheet" href="./menu.css?v=20261116photos">
+  <script src="./config.js?v=20261119"></script>
+  <script defer src="./analytics.js?v=20261119"></script>
 </head>
 <body>
-  <header class="menu-top"><div class="menu-wrap"><a class="menu-brand" href="./index.html">福林楼</a><a class="home-link" href="./index.html#menu">ホームへ戻る</a></div></header>
+  <header class="menu-top"><div class="menu-wrap"><a class="menu-brand" href="./index.html">福林楼</a><a class="home-link" href="./zh/" lang="zh-Hans">中文指南</a><a class="home-link" href="./index.html#menu">ホームへ戻る</a></div></header>
   <main class="menu-wrap">
     <div class="menu-intro"><div class="menu-eyebrow">FUKURINROU · FOOD MENU</div><h1>お料理メニュー</h1><p>種類を選んで料理写真をご覧ください。写真をタップすると拡大できます。</p></div>
     <nav class="menu-tabs" id="menuTabs" aria-label="料理の種類"></nav>
@@ -22,8 +24,9 @@
   </main>
   <dialog class="dish-dialog" id="dishDialog" aria-labelledby="dishDialogTitle"><div class="dish-dialog-box"><button type="button" class="dish-dialog-close" aria-label="写真を閉じる">閉じる ×</button><img id="dishDialogImage" alt=""><p id="dishDialogTitle"></p></div></dialog>
   <a class="menu-mobile-booking" href="https://reserve.fukurinrou.jp/" target="_blank" rel="noopener noreferrer">ネット予約はこちら →</a>
-  <footer class="menu-bottom"><div class="menu-wrap"><p>閲覧専用のメニューです。ご予約・お問い合わせ：<a href="tel:0924811369">092-481-1369</a></p><a href="./index.html#menu">← ホームページに戻る</a></div></footer>
-  <script src="./config.js?v=20261030"></script>
+  <footer class="menu-bottom"><div class="menu-wrap"><p>閲覧専用のメニューです。ご予約・お問い合わせ：<a href="tel:0924811369">092-481-1369</a></p><a href="./index.html#menu">← ホームページに戻る</a></div><p data-analytics-notice hidden style="text-align:center;font-size:.8rem">当サイトはGoogle アナリティクスで閲覧数やボタンの利用状況を集計します。 <a href="https://policies.google.com/technologies/partner-sites?hl=ja">Google のデータの取り扱い</a></p>
+</footer>
+
   <script src="./menu-data.js?v=20261116dimsum"></script>
   <script src="./menu.js?v=20261116photos"></script>
 </body>
