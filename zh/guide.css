@@ -14,3 +14,8 @@ dt { font-weight: 700; } dd { margin: 0; }
 @media (max-width: 520px) { .dishes { gap: 7px; } small { font-size: .76rem; } }
 
 html:lang(ko) body { font-family: system-ui, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; word-break: keep-all; overflow-wrap: anywhere; }
+
+@media (max-width: 600px) {
+  .dim-sum-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 12px; }
+  .dim-sum-grid small { font-size: .875rem; }
+}

@@ -407,7 +407,8 @@
   footer .foot-links a:hover{ opacity:1; }
   .copyright{ margin-top: 30px; font-size: 0.76rem; opacity: 0.55; }
 </style>
-<link rel="stylesheet" href="./homepage.css?v=20261116photos">
+<link rel="stylesheet" href="./homepage.css?v=20261126">
+  <link rel="stylesheet" href="./language-switch.css?v=20261126">
   <script src="./config.js?v=20261119"></script>
   <script defer src="./analytics.js?v=20261119"></script>
 </head>
@@ -415,7 +416,12 @@
 
 <header>
   <div class="wrap nav-row">
-    <a class="brand" href="#top" aria-label="福林楼 トップへ">福林楼<small>CHINESE RESTAURANT · HAKATA</small></a>
+    <div class="header-identity">
+      <a class="brand" href="#top" aria-label="福林楼 トップへ">福林楼<small>CHINESE RESTAURANT · HAKATA</small></a>
+      <div class="language-switch" role="navigation" aria-label="言語選択"><span lang="ja" aria-current="page">日本語</span>
+          <a href="./zh/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+          <a href="./ko/" hreflang="ko" lang="ko">한국어</a></div>
+    </div>
     <button class="nav-toggle" id="navToggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="navList">☰</button>
     <nav>
       <ul id="navList">
@@ -431,7 +437,7 @@
 </header>
 
 <main id="top">
-  <div class="notice-bar"><div class="wrap">季節のお知らせ・新商品は <a data-link="instagram" href="https://www.instagram.com/fukurinrou/">Instagram</a> で発信しています。 <a href="./zh/" lang="zh-Hans" hreflang="zh-Hans">简体中文</a> · <a href="./ko/" lang="ko" hreflang="ko">한국어</a></div></div>
+  <div class="notice-bar"><div class="wrap">季節のお知らせ・新商品は <a data-link="instagram" href="https://www.instagram.com/fukurinrou/">Instagram</a> で発信しています。</div></div>
 
   <section class="hero" aria-labelledby="hero-title">
     <div class="hero-grid">
@@ -492,7 +498,7 @@
         <div class="bento-feature-prices"><span>からあげ・麻婆豆腐・チャーハン・焼きそば <b>¥680</b></span><span>油淋鶏 <b>¥750</b> ／ 酢豚・回鍋肉 <b>¥800</b> ／ エビチリ <b>¥850</b></span></div>
         <p class="bento-feature-options">ご飯付きのお弁当は、大盛り +¥200 ／ チャーハンに変更 +¥150</p>
         <a class="bento-feature-cta" href="https://osechi.fukurinrou.jp/bento/">メニューを見る・お弁当を申し込む <span aria-hidden="true">→</span></a>
-        <p class="bento-feature-flow">５個以上は事前会計／４個以下は受け渡し時に会計<br>受取時間は店舗からご案内します。オンライン決済は準備中です。</p>
+        <p class="bento-feature-flow"><strong>合計5個以上</strong>は、お申込み時に会計日時を選び、受取日の前日までに福林楼の店頭でお支払いください。お支払いを確認すると、ご注文が確定します。<br><strong>1〜4個</strong>は、お弁当を受け取る際に店頭でお支払いください。受取時間は店舗からご案内します。</p>
       </div>
     </div>
   </section>
